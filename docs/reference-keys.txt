@@ -28,3 +28,7 @@ applications
 example-one
 example-two
 final-words
+fig:partesgrafico-fig
+fig:usotamanodiscreto-fig
+fig:usotamanocontinuo-fig
+fig:usocolorrepresentar-fig
