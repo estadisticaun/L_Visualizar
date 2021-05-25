@@ -20,13 +20,14 @@ En muchas ocasiones estamos interesados en visualizar la magnitud de algún conj
 
 Suponga que queremos visualizar la cantidad de estudiantes de estudiantes admitidos por nivel de formación para el periodo 2021-1, este tipo de datos se visualiza comúnmente con barras verticales, para cada nivel de formación de dibuja una barra que inicia en cero y se extiende hasta la cantidad de estudiantes admitidos. La figura \@ref(fig:barrasadmitidosnivel-fig) muestra el uso del gráfico de barras para visualizar estas cantidades.
 
-```{r barrasadmitidosnivel-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del gráfico de barras para representar cantidades', out.width='80%'}
+```{r barrasadmitidosnivel-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del gráfico de barras para representar cantidades'}
 Aspirantes <- UnalData::Aspirantes
 Admitidos <- Aspirantes %>% 
   filter(ADMITIDO == 'Sí', YEAR == '2021', SEMESTRE == 1) %>% 
   group_by(NIVEL) %>% 
   count()
-ggplot(data = Admitidos, aes(x = reorder(NIVEL,-n), y = n, fill = NIVEL, width=.5)) +
+ggplot(data = Admitidos, aes(x = reorder(NIVEL,-n), y = n, fill = NIVEL,
+                             width=.5)) +
   geom_bar(stat = "identity") +
   scale_fill_manual(values = c("#6d6666", "#fbb03b", "#29abe2", "#c1272d", "#8cc63f")) +
   theme(legend.position = 'none') +
@@ -38,7 +39,7 @@ ggplot(data = Admitidos, aes(x = reorder(NIVEL,-n), y = n, fill = NIVEL, width=.
 
 Uno de los problemas mas comunes con los gráficos de barras verticales es que las etiquetas que identifican cada barra ocupan mucho espacio horizontal. Por esta razón en la figura \@ref(fig:barrasadmitidosnivel-fig) fue necesario aumentar la separación entre las barras para poder ubicar las etiquetas en la parte inferior de cada barra y que estas no se traslaparan. Una solución a este problema es girar las etiquetas de cada barra como se muestra en la figura \@ref(fig:barrasadmitidosnivelgirar-fig), pero esto no estéticamente correcto, ya que es incómodo para el usuario.
 
-```{r barrasadmitidosnivelgirar-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del gráfico de barras para representar cantidades, girando etiquetas', out.width='80%'}
+```{r barrasadmitidosnivelgirar-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del gráfico de barras para representar cantidades, girando etiquetas'}
 ggplot(data = Admitidos, aes(x = reorder(NIVEL,-n), y = n, fill = NIVEL)) +
   geom_bar(stat = "identity") +
   scale_fill_manual(values = c("#6d6666", "#fbb03b", "#29abe2", "#c1272d", "#8cc63f")) +
@@ -51,21 +52,22 @@ ggplot(data = Admitidos, aes(x = reorder(NIVEL,-n), y = n, fill = NIVEL)) +
 
 La mejor solución para etiquetas largas es cambiar a un gráfico de barras horizontales, de esta manera no será necesario aumentar el espaciado entre barras ni girar las etiquetas y se obtiene una visualización compacta en la cual todos los elementos visuales están ubicados de manera horizontal y hace que el gráfico sea más fácil de leer.
 
-```{r barrasadmitidosnivelhorizontal-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del gráfico de barras horizontales para representar cantidades', out.width='80%'}
+```{r barrasadmitidosnivelhorizontal-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del gráfico de barras horizontales para representar cantidades'}
 ggplot(data = Admitidos, aes(x = reorder(NIVEL,n), y = n, fill = NIVEL)) +
   geom_bar(stat = "identity") +
   scale_fill_manual(values = c("#6d6666", "#fbb03b", "#29abe2", "#c1272d", "#8cc63f")) +
   theme(legend.position = 'none') +
+  coord_flip() +
   labs(x = "", 
        y = "Número de admitidos", 
-       title = "Distribución de estudiantes admitidos por nivel de formación, periodo 2021-1") + 
-  coord_flip()
+       title = "Distribución de estudiantes admitidos por nivel de formación,
+       periodo 2021-1") 
 ```
 Sin importar la posición de las barras es decir si son horizontales o verticales se debe prestar mucha atención al orden en el cual se ubica cada barra, en muchas ocasiones las barras están dispuestas de forma arbitraria o por algún criterio que no es significativo en el contexto de la figura, algunos programas simplemente ubican las etiquetas por orden alfabético o algún otro criterio.
 
 Sin embargo, las etiquetas solo pueden ser reordenadas cuando las categorías que representan no tienen un orden natural establecido. Siempre que exista un orden natural en los datos es necesario mantener este orden para representar los datos de la manera correcta. Suponga que se desea visualizar la cantidad de estudiantes graduados en el periodo 2020-2 por grupos de edad. En este caso las barras deben ordenarse de manera creciente según el grupo de edad como se ilustra en la figura \@ref(fig:graduadosporgrupoedad-fig). En este caso no tiene sentido ordenar por la altura de la barra, es decir de forma ascendente o descendente ya que las etiquetas perderán el orden natural que poseen.
 
-```{r graduadosporgrupoedad-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Etiquetas con un orden natural', out.width='80%'}
+```{r graduadosporgrupoedad-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Etiquetas con un orden natural'}
 Graduados <- UnalData::Graduados
 
 cat_edad <- Graduados %>% 
@@ -84,7 +86,7 @@ ggplot(cat_edad, aes(x = CATE_EDAD, y = n, fill = CATE_EDAD)) +
   theme(legend.position = 'none') +
   labs(x = "Edad en años",
        y = "Número de graduados", 
-       title = "Distribución de estudiantes graduados por grupo de edad, 
+       title = "Distribución de estudiantes graduados por grupo de edad,
        periodo 2020-2")
 ```
 
@@ -92,7 +94,7 @@ ggplot(cat_edad, aes(x = CATE_EDAD, y = n, fill = CATE_EDAD)) +
 
 Las figuras mostradas en la subsección anterior representan variables cualitativas en relación con una variable categórica. Sin embargo, a menudo es de interés visualizar como estos valores varían según dos variables categóricas; en un diagrama de barras apiladas, se dibuja un grupo de barras en cada posición del eje X, determinado por una variable categórica, y luego se dibujan barras dentro de cada grupo con la otra variable categórica de interés, por ejemplo, es posible representar el número de funcionarios adminsitrativos por años de servicio prestado y sexo para el periodo 2020-2 tal y como se ilustra en la figura \@ref(fig:barrasagrupadasservicioedad-fig).
 
-```{r barrasagrupadasservicioedad-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso de barras agrupadas para representar valores usando dos categorías', out.width='80%'}
+```{r barrasagrupadasservicioedad-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso de barras agrupadas para representar valores usando dos categorías'}
 Administrativos <- UnalData::Administrativos
 servicio_sexo <- Administrativos %>% 
   group_by(CAT_SERVICIO, SEXO) %>% 
@@ -106,6 +108,76 @@ servicio_sexo$CAT_SERVICIO <- factor(servicio_sexo$CAT_SERVICIO,
 
 ggplot(data = servicio_sexo, aes(x = CAT_SERVICIO, y = n, fill = SEXO)) +
   geom_bar(stat = "identity", position = "dodge") + 
+  scale_fill_manual(values = c("#f15a24", "#8cc63f"), name = "Sexo") +
+  theme(legend.position = 'bottom') + 
+  labs(x = "Años de servicio",
+       y = "Número de funcionarios", 
+       title = "Distribución de funcionarios por años de servicio y sexo, periodo 2020-2")
+```
+
+Con los gráficos de barras agrupadas se debe tener cuidado ya que las variables categóricas elegidas pueden tener muchos niveles y harán que le grafico se sature y el usuario no comprenda la información de manera correcta, la figura \@ref(fig:barrasagrupadasserviciosede-fig) muestra la distribución del número de funcionarios por años de servicio y sede para el periodo 2020-2, aunque la figura es correcta resulta difícil de interpretar por la cantidad de sedes existentes dentro de la Universidad Nacional de Colombia, observe que para cada grupo de años de servicio se crean ocho barras
+
+```{r barrasagrupadasserviciosede-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Cantidad de funcionarios por años de servicio y sede'}
+Administrativos <- UnalData::Administrativos
+servicio_sede <- Administrativos %>% 
+  group_by(CAT_SERVICIO, SEDE) %>% 
+  count() %>% 
+  mutate(CAT_SERVICIO = str_replace_all(CAT_SERVICIO, " años", ""))
+servicio_sede$CAT_SERVICIO <- factor(servicio_sede$CAT_SERVICIO, 
+                                     levels = c("9 o menos", "10 a 19", 
+                                                "20 a 29", "30 a 39", 
+                                                "40 o más")) 
+servicio_sede$SEDE <- factor(servicio_sede$SEDE, 
+                             levels = c("Bogotá", "Medellín", "Nivel Nacional", 
+                                        "Manizales", "Palmira", "La Paz",
+                                        "Amazonía", "Orinoquía", "Caribe",
+                                        "Tumaco"))
+
+
+ggplot(data = servicio_sede, aes(x = CAT_SERVICIO, y = n, fill = SEDE)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_fill_manual(values = c("#8cc63f", "#f15a24", "#2ca25f", "#0071bc", 
+                               "#93278f", "#9e9ac8", "#5bc0de", "#fbb03b", 
+                               "#c1272d", "#6d6666"), name = "Sede") +
+  theme(legend.position = 'bottom') + 
+  labs(x = "Años de servicio",
+       y = "Número de funcionarios", 
+       title = "Distribución de funcionarios por años de servicio y sede, periodo 2020-2")
+```
+
+Una alternativa a esta figura es visualizar como categoría principal la sede a la que pertenece cada funcionario y que los grupos de barras para cada sede se creen a partir de los años de servicio prestados, usando una escala de color secuencial para representar cada uno de los años de servicio prestado por los funcionarios administrativos, con esto solo se tendrán 5 barras por cada sede y el gráfico será más sencillo y comprensible, como se muestra en la figura \@ref(fig:barrasagrupadassedeservicio-fig).
+
+```{r barrasagrupadassedeservicio-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Cantidad de funcionarios por sede y años de servicio'}
+
+ggplot(data = servicio_sede, aes(x = reorder(SEDE,n), y = n, 
+                                 fill = CAT_SERVICIO)) +
+  geom_bar(stat = "identity", position = "dodge") +
+  scale_fill_manual(values = c('#48CAE4', '#00B4D8', '#0096C7', '#0077B6', 
+                               '#023E8A'), 
+                    name = "Años de servicio") +
+  theme(legend.position = 'bottom') + 
+  labs(x = "",
+       y = "Número de funcionarios", 
+       title = "Distribución de funcionarios sede y años de servicio, periodo 2020-2") + 
+  coord_flip()
+```
+
+Como ya vimos los gráficos de barras agrupadas consisten en dibujar una barra al lado de la otra, pero hay ocasiones en las cuales se prefiere apiliar las barras, es decir, ubicar una encima de la otra, esto generalmente se realiza cuando la cantidad representada por las barras dispuestas en esta posición es significativa, también es necesario tener cuidado con este tipo de gráficos ya que utilizar muchas categorías para apilar las barras resultara en una visualización saturada y poco informativa. Un uso común de este tipo de gráficos es cuando las barras individuales representan recuentos, por ejemplo, el conjunto de datos llamado Administrativos posee el recuento de funcionarios por sexo, para este casi si apilamos una barra que representa el recuento de mujeres encima de una barra que representa el recuento de hombres, entonces la altura de la barra combinada mostrara el total de funcionarios independiente del género. La figura \@ref(fig:barrasaplidasserviciosexo-fig) presenta el uso de barras apiladas como alternativa del uso de barras agrupadas ilustrado en la figura \@ref(fig:barrasagrupadasservicioedad-fig).
+
+```{r barrasaplidasserviciosexo-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Barras apiladas como una alternativa a las barras agrupadas'}
+Administrativos <- UnalData::Administrativos
+servicio_sexo <- Administrativos %>% 
+  group_by(CAT_SERVICIO, SEXO) %>% 
+  count() %>% 
+  mutate(CAT_SERVICIO = str_replace_all(CAT_SERVICIO, " años", ""))
+
+servicio_sexo$CAT_SERVICIO <- factor(servicio_sexo$CAT_SERVICIO, 
+                                     levels = c("9 o menos", "10 a 19", 
+                                                "20 a 29", "30 a 39", 
+                                                "40 o más"))
+
+ggplot(data = servicio_sexo, aes(x = CAT_SERVICIO, y = n, fill = SEXO)) +
+  geom_bar(stat = "identity", position = "stack") + 
   scale_fill_manual(values = c("#f15a24", "#8cc63f"), name = "Sexo") +
   theme(legend.position = 'bottom') + 
   labs(x = "Años de servicio",

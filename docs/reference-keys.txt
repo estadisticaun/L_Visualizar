@@ -1,6 +1,12 @@
 fig:nice-fig
 tab:nice-tab
 fig:barrasadmitidosnivel-fig
+fig:barrasadmitidosnivelgirar-fig
+fig:barrasadmitidosnivelhorizontal-fig
+fig:graduadosporgrupoedad-fig
+fig:barrasagrupadasservicioedad-fig
+fig:barrasagrupadasserviciosede-fig
+fig:barrasagrupadassedeservicio-fig
 intro
 partes-principales-de-un-gráfico
 ejes
@@ -15,12 +21,9 @@ texto
 cómo-visualizar-los-datos
 visualización-de-cantidades
 gráfico-de-barras
+barras-agrupadas-y-apiladas
 applications
 example-one
 example-two
 final-words
-fig:barrasadmitidosnivelgirar-fig
-fig:barrasadmitidosnivelhorizontal-fig
-fig:graduadosporgrupoedad-fig
-fig:barrasagrupadasservicioedad-fig
-barras-agrupadas-y-apiladas
+fig:barrasaplidasserviciosexo-fig
