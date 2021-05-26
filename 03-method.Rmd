@@ -186,3 +186,59 @@ ggplot(data = servicio_sexo, aes(x = CAT_SERVICIO, y = n, fill = SEXO)) +
        y = "Número de funcionarios", 
        title = "Distribución de funcionarios por años de servicio y sexo, periodo 2020-2")
 ```
+
+### Gráficos de puntos y mapas de calor
+
+Una de las mayores limitaciones al usar los gráficos de barras ya sean simples o alguna de sus variaciones es que los ejes deben iniciar en cero para lograr que la altura de la barra sea proporcional a la cantidad que representa, existen muchas ocasiones en las cuales es poco practico iniciar siempre los ejes en cero y una alternativa es usar puntos ubicados en lugares apropiados a lo largo del eje X o Y.
+
+Suponga que se quiere visualizar la edad promedio de los estudiantes graduados por nivel de formación, observe que en este caso no tiene mucho sentido iniciar el eje Y en cero ya que la edad promedio estará por encima de los 20 años aproximadamente y las discrepancias entre los promedios de edades no son muy grandes, por esta razón es conveniente restringir el dominio de eje x al intervalo de 20 a 40 años, para que las diferencias sean notorias y la información sea interpretada con mayor facilidad, como se ilustra en la figura \@ref(fig:diagramapuntos-fig).
+
+```{r diagramapuntos-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Diagrama de puntos como alternativa a los gráficos de barras', warning=FALSE, message=FALSE}
+Graduados <- UnalData::Graduados
+Graduados %<>% drop_na(EDAD_MOD)
+edad <-  Graduados %>%
+  mutate(NIVEL = str_replace_all(NIVEL, "(M|m)?édicas", "Médicas")) %>% 
+  group_by(NIVEL) %>% 
+  summarise(MEAN_EDAD = mean(EDAD_MOD))
+
+ggplot(edad, aes(x = reorder(NIVEL, MEAN_EDAD), y = MEAN_EDAD, col = NIVEL)) +
+  geom_point(size = 3.5) +
+  coord_cartesian(ylim = c(20, 40))  +
+  scale_colour_manual(values = c("#8cc63f" , "#29abe2", "#fbb03b", "#c1272d", 
+                                 "#6d6666")) + 
+  theme(legend.position = 'none') +
+  labs(y = "Edad promedio en años", 
+       x = "",
+       title = "Edad promedio de estudiantes gradudos por nivel de formación") +
+  coord_flip() 
+```
+
+Para este tipo de visualización también aplica reordenar las categorías por la variable numérica si las categorías no tienen un orden natural, este grafico es recomendable cuando no se tiene un orden natural en los datos ya que pueden ser reordenados logrando una visualización atractiva y entendible.
+
+Las visualizaciones presentadas hasta el momento representan variables numéricas usando categorías a través de las posiciones en uno de los ejes, ya sea con un punto final en el valor que representa o el tamaño de la barra. Sin embargo, estos gráficos no son adecuados cuando el conjunto de datos muy grandes, ya que la cantidad de barras será excesiva y proporcionará una figura saturada. Ya se había observado en la figura \@ref(fig:barrasagrupadasserviciosede-fig) que grupos de 8 barras resultan en una visualización compleja y no tan fácil de interpretar, imagine que en lugar de 8 barras por grupo se tuvieran 20 o más, resultaría aun más complejo y probablemente muy confusa. 
+
+Una alternativa a las barras y puntos son los mapas de calor, los cuales están formados por dos variables categóricas, una en cada eje, y los valores son representados a través de una escala de color secuencial. La figura \@ref(fig: mapadecalor-fig) utiliza este enfoque para mostrar el número de accidentes ocurridos por día y mes en los años 2014 a 2016, es una figura útil para detectar tendencias más amplias que para visualizar exactamente cada uno de los valores que representa, se identifica con claridad que los primeros 15 días del mes de enero se presenta menor accidentalidad comparado con los días restantes de este mismo mes.
+
+```{r mapadecalor-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Mapa de calor para representar la accidentalidad en la ciudad de Medelllín', warning=FALSE, message=FALSE}
+accidentalidad <- read.csv("accidentalidad_dia_mes.csv")
+
+accidentalidad$MES_NOMBRE <- factor(accidentalidad$MES_NOMBRE, 
+                                     levels = c("Diciembre", "Noviembre", 
+                                                "Octubre", "Septiembre",
+                                                "Agosto", "Julio","Junio", 
+                                                "Mayo", "Abril", "Marzo",
+                                                "Febrero", "Enero"))
+
+ggplot(accidentalidad, aes(x = DIA, y = MES_NOMBRE, fill = n)) + 
+  geom_tile() +
+  scale_fill_gradient(low = "#caf0f8", high = "#023e8a", 
+  name = "Número de
+  accidentes") + 
+  scale_x_continuous(expand = c(0, 0)) + 
+  scale_y_discrete(expand = c(0,0)) +
+  labs(x = "Día", 
+       y = "Mes", 
+       title = "Accidentalidad en la ciudad de Medellín")
+```
+
+Como ya se ha mencionado en múltiples ocasiones se debe prestar mucha atención al orden de llas variables categóricas, en este caso dichas variables presentan un orden natural ya que son meses y días, en el caso de no presentarse un orden natural podría reordenarse las categorías usando la variable numérica para lograr una visualización mas clara, atractiva y estéticamente llamativa. 
