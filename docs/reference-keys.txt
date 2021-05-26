@@ -7,6 +7,7 @@ fig:graduadosporgrupoedad-fig
 fig:barrasagrupadasservicioedad-fig
 fig:barrasagrupadasserviciosede-fig
 fig:barrasagrupadassedeservicio-fig
+fig:barrasaplidasserviciosexo-fig
 intro
 partes-principales-de-un-gráfico
 ejes
@@ -22,8 +23,9 @@ cómo-visualizar-los-datos
 visualización-de-cantidades
 gráfico-de-barras
 barras-agrupadas-y-apiladas
+gráficos-de-puntos-y-mapas-de-calor
 applications
 example-one
 example-two
 final-words
-fig:barrasaplidasserviciosexo-fig
+fig:diagramapuntos-fig

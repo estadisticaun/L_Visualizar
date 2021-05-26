@@ -6,6 +6,8 @@ library(UnalData)
 library(dplyr)
 library(ggplot2)
 library(stringr)
+library(magrittr)
+library(tidyverse)
 ```
 
 
@@ -184,4 +186,3 @@ ggplot(data = servicio_sexo, aes(x = CAT_SERVICIO, y = n, fill = SEXO)) +
        y = "Número de funcionarios", 
        title = "Distribución de funcionarios por años de servicio y sexo, periodo 2020-2")
 ```
-

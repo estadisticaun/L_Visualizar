@@ -163,7 +163,7 @@ Plot.Mapa(datos    = Graduados,
           compacto = FALSE,
           textSize = 16,
           limpio   = TRUE,
-          colores = c('#e8f5ff', '#c3e3fd', '#9acef8', '#6eb8f5', '2196f3'),
+          colores = c('#e8f5ff', '#c3e3fd', '#9acef8', '#6eb8f5', '#2196f3'),
           cortes = c(0, 20, 50, 200, 1000, Inf)
 )
 ```
