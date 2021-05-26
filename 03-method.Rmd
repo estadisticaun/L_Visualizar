@@ -151,12 +151,14 @@ Una alternativa a esta figura es visualizar como categoría principal la sede a 
 
 ```{r barrasagrupadassedeservicio-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Cantidad de funcionarios por sede y años de servicio'}
 
+servicio_sede$CAT_SERVICIO <- factor(servicio_sede$CAT_SERVICIO, 
+                                     levels = c("40 o más", "30 a 39", "20 a 29",
+                                                "10 a 19", "9 o menos"))
 ggplot(data = servicio_sede, aes(x = reorder(SEDE,n), y = n, 
                                  fill = CAT_SERVICIO)) +
   geom_bar(stat = "identity", position = "dodge") +
-  scale_fill_manual(values = c('#48CAE4', '#00B4D8', '#0096C7', '#0077B6', 
-                               '#023E8A'), 
-                    name = "Años de servicio") +
+  scale_fill_manual(values = c('#023E8A', '#0077B6', '#0096C7', '#00B4D8',
+                               '#48CAE4'), name = "Años de servicio") +
   theme(legend.position = 'bottom') + 
   labs(x = "",
        y = "Número de funcionarios", 
