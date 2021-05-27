@@ -50,6 +50,7 @@ ggplot(filtrar, aes(x = State, y = Sales)) +
   labs(y = "Sales USD", 
        title = "Sales by states in USA")
 ```
+
 ## Geometría
 
 La geometría es una parte primordial y que hará las visualizaciones mucho mas claras y entendibles. Dentro de las geometrías principales podemos considerar la forma, tamaño, tipo de línea y color.
@@ -76,6 +77,7 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width)) +
   labs(x = "Sepal Lenght", y = "Sepal Width", 
        title = "Sepal Lenght vs Sepal Width by species")
 ```
+
 ### Tamaño 
 
 El tamaño generalmente es una estética usada en gráficos de dispersión, se incluye una nueva variable continua o discreta que determina el tamaño de cada observación representada en el gráfico. Este atributo es de gran utilidad, pero se debe tener mucho cuidado al usarlo, ya que en el caso de datos desproporcionados un solo punto ocupará un tamaño exagerado que será poco comparable con los demás datos.
@@ -102,6 +104,7 @@ data %>%
   theme(legend.position = 'none') +
   labs(title = "GDP per capita and life expectancy")
 ```
+
 ### Color
 
 El color es una de las estéticas más importantes y que pueden marcar una gran diferencia en la interpretación de sus datos. Existen algunos colores que destacan más que otros por lo que darán un peso innecesario a los datos, es decir, que atraen la atención de los usuarios a esos puntos y que pueden no necesariamente ser los de interés central, también es recomendable no superar los seis colores por gráfico. El color dentro de una visualización puede ser usado principalmente para tres casos: para distinguir grupos de datos entre sí, uso del color para representar valores de datos y finalmente puede ser usado para resaltar.
@@ -112,145 +115,4 @@ Emplear el color como una herramienta para distinguir es uno de los usos más co
 
 La figura \@ref(fig:usocolordistinguir-fig) muestra el uso correcto de los colores como herramienta para distinguir, se seleccionaron colores que contrastan entre sí pero no compiten por la atención, este gráfico en particular posee ocho categorías distintas pero aún así se logra identificar claramente cada una de las sedes de admisión.
 
-```{r usocolordistinguir-fig,echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del color como herramienta para distinguir grupos de datos', message=FALSE, warning=FALSE, out.width='100%'}
-col <- c("#29ABE2", # AZUL CLARO  | Amazonia
-         "#8CC63F", # VERDE       | Bogota
-         "#CC241D", # ROJO        | Caribe
-         "#FF3673", # MORADO CLARO| De la paz
-         "#0071BC", # AZUL VIVO   | Manizales
-         "#F15A24", # NARANJA     | Medellin
-         "#FBB03B", # AMARILLO    | Orinoquia
-         "#93278F", # MORADO      | Palmira
-         "#8A381A") # GRIS        | Tumaco
-Msj <- ""
-Plot.Series(datos     = Consolidado,
-            categoria = "SEDE_NOMBRE_ADM",
-            colores   = col,
-            titulo    = "EVOLUCI\u00d3N DEL N\u00daMERO DE GRADUADOS POR SEDE",
-            labelY    = "N\u00famero de graduados (k: miles)",
-            libreria  = "plotly",
-            estilo    = list(LegendTitle = "SEDE:", ply.Interaction = "closest",
-                             ply.LegendPosition = list(x = 0.16, y = -0.25, orientation = "h"),
-                             ply.Credits = list(x = 0.5, y = 0.95, text = Msj))
-)
-```
-
-#### Representar valores
-
-El color también puede ser usado como herramienta para representar variables cuantitativas como ingresos, temperatura, entre otros. En este caso se usa una escala de color secuencial, la cual indica claramente que valores son más grandes o pequeños y que tan distantes se encuentran dos valores específicos entre sí. Estas escalas secuenciales de color pueden basarse en un solo tono por ejemplo de azul oscuro a azul claro, o en múltiples matices por ejemplo de rojo oscuro a amarillo claro.
-
-En la figura \@ref(fig:usocolorrepresentar-fig) presenta un uso adecuado de la escala de colores secuencial, se usa una paleta de un solo tono que inicia en azul claro y termina en un azul un poco más fuerte. Esta visualización presenta la cantidad de estudiantes graduados en el periodo 2020-II por departamento de nacimiento y la escala de color fue usada para colorear el conteo por cada uno de estos departamentos.
-
-```{r usocolorrepresentar-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del color para representar valores', message=FALSE, warning=FALSE, out.width='100%'}
-Graduados <- UnalData::Graduados
-if (require("dplyr")) {
-  Graduados <- Graduados %>%
-    select(Code_Dept    = COD_DEP_NAC,
-           Code_Mun     = COD_CIU_NAC,
-           Departamento = DEP_NAC,
-           Municipio    = CIU_NAC,
-           Longitud     = LON_CIU_NAC,
-           Latitud      = LAT_CIU_NAC) %>%
-    filter(!is.na(Departamento))
-}
-Plot.Mapa(datos    = Graduados,
-          tipo     = "Deptos",
-          titulo   = "Graduados 2020-II",
-          baldosas = c("Stamen.Toner", "Stamen.TonerLite", "Stamen.TonerLines", "Esri.DeLorme",
-                       "Esri.WorldTerrain", "Esri.WorldShadedRelief", "Esri.WorldPhysical",
-                       "Esri.OceanBasemap", "Esri.WorldGrayCanvas"),
-          colSedes = rep("green", 9),
-          compacto = FALSE,
-          textSize = 16,
-          limpio   = TRUE,
-          colores = c('#e8f5ff', '#c3e3fd', '#9acef8', '#6eb8f5', '#2196f3'),
-          cortes = c(0, 20, 50, 200, 1000, Inf)
-)
-```
-
-Existen algunas ocasiones en las cuales es necesario visualizar la desviación de los valores de los datos en una de dos direcciones en relación con un punto medio neutral. Un ejemplo sencillo y muy básico de estos casos es cuando se tienen números positivos y negativos, que se representan por dos colores, puede ser verde para los números positivos y rojo para los negativos, a partir de la intensidad de estos colores se indica la lejanía con el cero. La escala de color usada en estos casos se denomina divergente y puede pensarse como dos escalas de colores secuenciales que se unen en un punto medio; estas escalas deben ser equilibradas, de modo que la progresión de los colores claros en el centro a los colores oscuros del exterior debe ser la aproximadamente igual para ambas direcciones.
-
-```{r escaladivergente-fig,echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Escala divergente para representar valores', out.width='100%'}
-knitr::include_graphics("Imágenes/escaladivergente.jpg")
-```
-
-La figura \@ref(fig:escaladivergente-fig) presenta una de los tantos usos que se le puede dar a las escalas de colores divergentes, se presenta los beneficios por estados. Es importante notar que la escala de colores no se encuentra equilibrada y esto se debe a la desproporción de los datos, a pesar de esto la visualización sigue siendo informativa y se logra distinción entre los colores.
-
-#### Resaltar observaciones
-
-Emplear el color para resaltar observaciones es de gran utilidad cuando el conjunto de datos contiene información clave sobre la historia que se quiere contar a través del gráfico y enfatizar en estos elementos conlleva a una mejor comprensión de la información que se desea comunicar. Para lograr este énfasis podemos colorear estos elementos de la figura con colores o tonalidades que se destaquen vívidamente contra el resto de la figura; generalmente se usan escalas de color de acento, las cuales contienen tanto un conjunto de colores tenues como un conjunto coincidente de colores más fuertes.
-
-Cuando se trabaja con una escala de color de acento, es fundamental que los colores básicos no compitan por la atención. Estos colores de base deben ser monótonos pero que apoye bien el color de acento, es muy común cometer el error de usar colores de línea de base que son demasiado coloridos, de modo que terminan compitiendo por la atención del lector. Una alternativa fácil es usar un color neutro en todos los elementos de la figura, excepto para la categoría de puntos que se quiere resaltar.
-
-La figura \@ref(fig:resaltardatos-fig) muestra el total de estudiantes admitidos por departamento de nacimiento, se hace uso de una escala de color de acento para resaltar los departamentos pertenecientes a la región andina. Observe que se usa un color neutro para los departamentos que no son de interés y un color azul llamativo para atraer la atención del usuario a la región andina. Esta figura presenta uno de los tantos usos que se le puede dar a las escalas de colores de acento para resaltar datos, es posible aplicarla a gráficos de líneas, diagramas de dispersión, entre otros.
-
-```{r resaltardatos-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Escala de color de acento para resaltar observaciones', out.width='80%'}
-Aspirantes <- UnalData::Aspirantes
-Admitidos <- Aspirantes %>% filter(ADMITIDO == 'Sí', YEAR == '2020', SEMESTRE == 2, DEP_NAC != "NA") %>% 
-  mutate(DEP_NAC = str_replace(DEP_NAC, 
-                               'ARCHIPIÉLAGO DE SAN ANDRÉS, PROVIDENCIA Y( SANTA CATALINA)?', 
-                               'SAN ANDRÉS'))
-Admitidos$DEP_NAC <- str_replace(Admitidos$DEP_NAC, 'DEPARTAMENTO EXTRANJERO', 'DPTO EXTRANJERO')
-Admitidos$DEP_NAC <- str_to_title(str_to_lower(Admitidos$DEP_NAC))
-
-deptosnac <- Admitidos %>% group_by(DEP_NAC) %>% count()
-
-Regiones <- read.csv("Datos/Regiones_colombia.csv", sep = ";", header = TRUE)
-deptos_region <- left_join(Regiones, deptosnac, 
-                        by = c("Departamento" = "DEP_NAC"))
-
-ggplot(data=deptos_region, 
-       aes(x=reorder(Departamento, n), 
-           y=n, 
-           fill = Region)) + 
-  geom_bar(stat="identity", position="dodge") +
-  coord_flip() + 
-  labs(y = "Número de estudiantes admitidos", 
-       x = "Departamento de nacimiento", 
-       title = "Distribución de estudiantes admitidos por departamento") +
-  scale_y_continuous(breaks=seq(0, 3000, 500)) +
-  scale_fill_manual(values = c("cornsilk3", "#29abe2", "cornsilk3" , 
-                               "cornsilk3", "cornsilk3"))
-
-```
-
-## Texto
-
-Al momento de realizar una visualización el texto es uno de los elementos a los cuales se les presta poca atención pero que podrían hacer el gráfico aún mas informativo, se debe manejar una misma fuente pero proporcionar un balance entre los tamaños con el fin de destacar los elementos importantes, por ejemplo, el título de la visualización debe atraer más la atención del usuario que las etiquetas del eje por esta razón no es correcto utilizar un tamaño mayor para las etiquetas del eje que para el título. El éxito de la estética de este elemento se basa en establecer correctamente la jerarquía que existe entre los textos que involucra el gráfico.
-
-El objetivo principal de una visualización es informar y transmitir información de manera clara y concisa, por esta razón se deben colocar los datos en contexto proporcionando títulos, subtítulos y otras anotaciones que los acompañen. A continuación, analizaremos algunas recomendaciones utiles que nos ayudarán a contextualizar los datos de manera correcta.
-
-Uno de los elementos principales dentro de un gráfico es su título, este debe ser claro e informativo ya que su función es transmitir con precisión al lector de qué se trata la figura, también existen ocasiones en las que es necesario usar subtítulos para contextualizar por completo al usuario acerca de la información que se presenta. Otro elemento importante y que logra que las visualizaciones se expliquen por sí mismas son los títulos de los ejes, estos deben indicar de manera clara lo que representan y la unidad en que se miden, observe la figura \@ref(fig:usocorrectoejeyinicio0-fig) en la cual el eje Y esta titulado de manera correcta ya que indica que representa las ventas y esta medido en dólares; los títulos de las leyendas también deben ser claros e indicar lo que representan como se muestra en la figura \@ref(fig:resaltardatos-fig), donde el título de la leyenda hace referencia a la región geográfica del país, en algunas ocasiones es posible omitir el título de los ejes o de las leyendas, es decir, cuando las etiquetas son completamnete explícitas.
-
-La figura \@ref(fig:usoincorrectotextos-fig) ilustra lo que no se debe hacer en una visualización ya que se le da enfoque princical a las etiquetas del eje y leyenda y no al título de la figura, el cual informa acerca de la visualización.
-
-```{r usoincorrectotextos-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso incorrecto del texto', message=FALSE, warning=FALSE, out.width='80%'}
-  ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) + 
-  geom_point(stat = "identity", size = 4, color = "#000000") +
-  geom_point(stat = "identity", size = 3) + 
-  labs(title = "Sepal Width vs Sepal Length by Species",
-                               x = "Sepal Width", 
-                               y = "Sepal Length") + 
-  theme(text = element_text(family="Arial", size = 15),
-        plot.title = element_text(size = 10)) 
-```
-
-La figura \@ref(fig:manejotextos-fig) presenta la clara jerarquía existente entre los textos del gráfico, observe que se traba con la misma fuente pero se juega con mayúsculas y minúscolas para dar la importancia que cada elemento requiere, esta visualización es un ejemplo en el cual se puede omitir el título de la leyenda, ya que las etiquetas son tan claras que usar un título conlleva a un gráfico saturado. 
-
-```{r manejotextos-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso correcto del texto para contextualizar', out.width='90%'}
-ano <- 2020; semestre <- 2
-col <- c("#F15A24", "#8CC63F")
-Msj <- ""
-Plot.Torta(datos      = Consolidado,
-           categoria  = "SEXO",
-           ano        = ano,
-           periodo    = semestre,
-           colores    = col,
-           titulo     = "DISTRIBUCI\u00d3N DE GRADUADOS POR SEXO",
-           addPeriodo = TRUE,
-           libreria   = "highcharter",
-           estilo     = list(LegendTitle = "",
-                             hc.Tema = 4, hc.Credits = Msj)
-)
-```
 
