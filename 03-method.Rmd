@@ -8,19 +8,20 @@ library(ggplot2)
 library(stringr)
 library(magrittr)
 library(tidyverse)
+library(cowplot)
+library(multipanelfigure)
 ```
 
-
-En la actualidad hay muchos gráficos disponibles para visualizar nuestros datos, pero no todos los gráficos pueden ser usados para lo que se quiere representar, por esta razón es importante conocer cuáles son los gráficos apropiados para los datos que se quieren mostrar. Dentro de los datos mas comunes a visualizar se tienen las cantidades, proporciones, distribuciones, series de tiempo, datos geoespaciales y las relaciones X-Y.
+En la actualidad hay muchos gráficos disponibles para visualizar nuestros datos, pero no todos los gráficos pueden ser usados para lo que se quiere representar, por esta razón es importante conocer cuáles son los gráficos apropiados para los datos que se quieren mostrar. Dentro de los datos mas comunes a visualizar se tienen las cantidades, proporciones, distribuciones, series de tiempo, datos geoespaciales, relaciones X-Y e indicadores hacia una meta en particular.
 En este capitulo se presenta la forma correcta de representar estos datos con los gráficos que se tienen disponibles, teniendo el contraste entre lo correcto e incorrecto con el fin de informar al usuario acerca de lo que se debe o no hacer para crear las visualizaciones.
 
 ## Visualización de cantidades
 
-En muchas ocasiones estamos interesados en visualizar la magnitud de algún conjunto de números, por ejemplo, visualizar el volumen de ventas por estados, total de estudiantes admitidos por modalidad de formación, estudiantes graduados por grupos de edad o departamento. Observe que en todos estos casos de tiene un conjunto de categorías y un valor cuantitativo para cada categoría. La visualización recomendada y más usada en este escenario es el gráfico de barras en el cual se incluyen distintas variaciones tales como las barras simples, agrupadas y apiladas tanto verticales como horizontales. Las alternativas al diagrama de barras son los diagramas de puntos y mapas de calor.
+En muchas ocasiones estamos interesados en visualizar la magnitud de algún conjunto de números, por ejemplo, visualizar el volumen de ventas por estados, total de estudiantes admitidos por modalidad de formación, estudiantes graduados por grupos de edad o departamento, entre muchos otros ejemplos. Observe que en todos estos casos se tiene un conjunto de categorías y un valor cuantitativo para cada categoría. La visualización recomendada y más usada en este escenario es el gráfico de barras en el cual se incluyen distintas variaciones tales como las barras simples, agrupadas y apiladas tanto verticales como horizontales. Las alternativas al diagrama de barras son los diagramas de puntos y mapas de calor.
 
 ### Gráfico de barras
 
-Suponga que queremos visualizar la cantidad de estudiantes de estudiantes admitidos por nivel de formación para el periodo 2021-1, este tipo de datos se visualiza comúnmente con barras verticales, para cada nivel de formación de dibuja una barra que inicia en cero y se extiende hasta la cantidad de estudiantes admitidos. La figura \@ref(fig:barrasadmitidosnivel-fig) muestra el uso del gráfico de barras para visualizar estas cantidades.
+Suponga que queremos visualizar la cantidad de estudiantes de estudiantes admitidos por nivel de formación para el periodo 2021-1, este tipo de datos se visualiza comúnmente con barras verticales, para cada nivel de formación se dibuja una barra que inicia en cero y se extiende hasta la cantidad de estudiantes admitidos. La figura \@ref(fig:barrasadmitidosnivel-fig) muestra el uso del gráfico de barras para visualizar estas cantidades.
 
 ```{r barrasadmitidosnivel-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del gráfico de barras para representar cantidades'}
 Aspirantes <- UnalData::Aspirantes
@@ -28,15 +29,19 @@ Admitidos <- Aspirantes %>%
   filter(ADMITIDO == 'Sí', YEAR == '2021', SEMESTRE == 1) %>% 
   group_by(NIVEL) %>% 
   count()
-ggplot(data = Admitidos, aes(x = reorder(NIVEL,-n), y = n, fill = NIVEL,
-                             width=.5)) +
+
+ggplot(data = Admitidos, 
+             aes(x = reorder(NIVEL,-n),
+                 y = n, 
+                 fill = NIVEL, 
+                 width=.5)) +
   geom_bar(stat = "identity") +
-  scale_fill_manual(values = c("#6d6666", "#fbb03b", "#29abe2", "#c1272d", "#8cc63f")) +
+  scale_fill_manual(values = c("#6d6666", "#fbb03b", "#29abe2", "#c1272d",
+                               "#8cc63f")) +
   theme(legend.position = 'none') +
   labs(x = "", 
        y = "Número de admitidos", 
        title = "Distribución de estudiantes admitidos por nivel de formación, periodo 2021-1")
-
 ```
 
 Uno de los problemas mas comunes con los gráficos de barras verticales es que las etiquetas que identifican cada barra ocupan mucho espacio horizontal. Por esta razón en la figura \@ref(fig:barrasadmitidosnivel-fig) fue necesario aumentar la separación entre las barras para poder ubicar las etiquetas en la parte inferior de cada barra y que estas no se traslaparan. Una solución a este problema es girar las etiquetas de cada barra como se muestra en la figura \@ref(fig:barrasadmitidosnivelgirar-fig), pero esto no estéticamente correcto, ya que es incómodo para el usuario.
@@ -65,7 +70,24 @@ ggplot(data = Admitidos, aes(x = reorder(NIVEL,n), y = n, fill = NIVEL)) +
        title = "Distribución de estudiantes admitidos por nivel de formación,
        periodo 2021-1") 
 ```
-Sin importar la posición de las barras es decir si son horizontales o verticales se debe prestar mucha atención al orden en el cual se ubica cada barra, en muchas ocasiones las barras están dispuestas de forma arbitraria o por algún criterio que no es significativo en el contexto de la figura, algunos programas simplemente ubican las etiquetas por orden alfabético o algún otro criterio.
+
+Sin importar la posición de las barras es decir si son horizontales o verticales se debe prestar mucha atención al orden en el cual se ubica cada barra, en muchas ocasiones las barras están dispuestas de forma arbitraria o por algún criterio que no es significativo en el contexto de la figura, algunos programas simplemente ubican las etiquetas por orden alfabético o algún otro criterio. 
+
+
+```{r barrasadmitidosnivelhorizontal-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del gráfico de barras horizontales para representar cantidades'}
+
+ggplot(data = Admitidos, aes(x = NIVEL, y = n, fill = NIVEL)) +
+  geom_bar(stat = "identity") +
+  scale_fill_manual(values = c("#6d6666", "#fbb03b", "#29abe2", "#c1272d",
+                               "#8cc63f")) +
+  theme(legend.position = 'none') +
+  coord_flip() +
+  labs(x = "", 
+       y = "Número de admitidos", 
+       title = "Distribución de estudiantes admitidos por nivel de formación,
+       periodo 2021-1") 
+```
+
 
 Sin embargo, las etiquetas solo pueden ser reordenadas cuando las categorías que representan no tienen un orden natural establecido. Siempre que exista un orden natural en los datos es necesario mantener este orden para representar los datos de la manera correcta. Suponga que se desea visualizar la cantidad de estudiantes graduados en el periodo 2020-2 por grupos de edad. En este caso las barras deben ordenarse de manera creciente según el grupo de edad como se ilustra en la figura \@ref(fig:graduadosporgrupoedad-fig). En este caso no tiene sentido ordenar por la altura de la barra, es decir de forma ascendente o descendente ya que las etiquetas perderán el orden natural que poseen.
 
@@ -243,4 +265,5 @@ ggplot(accidentalidad, aes(x = DIA, y = MES_NOMBRE, fill = n)) +
        title = "Accidentalidad en la ciudad de Medellín")
 ```
 
-Como ya se ha mencionado en múltiples ocasiones se debe prestar mucha atención al orden de llas variables categóricas, en este caso dichas variables presentan un orden natural ya que son meses y días, en el caso de no presentarse un orden natural podría reordenarse las categorías usando la variable numérica para lograr una visualización mas clara, atractiva y estéticamente llamativa. 
+Como ya se ha mencionado en múltiples ocasiones se debe prestar mucha atención al orden de llas variables categóricas, en este caso dichas variables presentan un orden natural ya que son meses y días, en el caso de no presentarse un orden natural podría reordenarse las categorías usando la variable numérica para lograr una visualización mas clara, atractiva y estéticamente llamativa.
+

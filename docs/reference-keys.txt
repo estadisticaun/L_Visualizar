@@ -34,3 +34,12 @@ applications
 example-one
 example-two
 final-words
+fig:usocolordistinguir-fig
+fig:usocolorrepresentar-fig
+fig:escaladivergente-fig
+fig:resaltardatos-fig
+fig:usoincorrectotextos-fig
+fig:manejotextos-fig
+representar-valores
+resaltar-observaciones
+texto

@@ -24,7 +24,7 @@
 <meta name="author" content="Camila Acosta Ramirez" />
 
 
-<meta name="date" content="2021-05-27" />
+<meta name="date" content="2021-05-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -32,7 +32,7 @@
   
   
 <link rel="prev" href="2-1-ejes.html"/>
-<link rel="next" href="3-cómo-visualizar-los-datos.html"/>
+<link rel="next" href="2-3-texto.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -146,6 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.2" data-path="2-2-geometría.html"><a href="2-2-geometría.html#tamaño"><i class="fa fa-check"></i><b>2.2.2</b> Tamaño</a></li>
 <li class="chapter" data-level="2.2.3" data-path="2-2-geometría.html"><a href="2-2-geometría.html#color"><i class="fa fa-check"></i><b>2.2.3</b> Color</a></li>
 </ul></li>
+<li class="chapter" data-level="2.3" data-path="2-3-texto.html"><a href="2-3-texto.html"><i class="fa fa-check"></i><b>2.3</b> Texto</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="3-cómo-visualizar-los-datos.html"><a href="3-cómo-visualizar-los-datos.html"><i class="fa fa-check"></i><b>3</b> ¿Cómo visualizar los datos?</a><ul>
 <li class="chapter" data-level="3.1" data-path="3-1-visualización-de-cantidades.html"><a href="3-1-visualización-de-cantidades.html"><i class="fa fa-check"></i><b>3.1</b> Visualización de cantidades</a><ul>
@@ -222,19 +223,54 @@ Figura 2.7: Asignación de tamaños mediante una variable continua
 <div id="distinguir-grupos-de-datos" class="section level4">
 <h4><span class="header-section-number">2.2.3.1</span> Distinguir grupos de datos</h4>
 <p>Emplear el color como una herramienta para distinguir es uno de los usos más comunes que se le da al color cuando se trata de gráficos que incluyen variables categóricas y que no tienen un orden específico como diferentes niveles de formación dentro de una universidad o departamentos dentro de un mapa. En este caso, se utiliza una escala de colores cualitativa la cual contiene un conjunto finito de colores específicos que se eligen para versen claramente distintos entre sí y que al mismo tiempo deben ser equivalentes entre sí. Es decir que lo colores seleccionados se deben poder diferenciar de manera clara y precisa, pero uno no debe resaltar más que otro. También es importante que el conjunto de colores seleccionados no presente un orden ya que esto creara un orden en la visualización que por definición de los datos no se tiene. Como recomendación general, las escalas de color cualitativas funcionan mejor cuando hay de tres a cinco categorías diferentes; tener ocho o diez categorías hará que la tarea de hacer coincidir los colores sea tediosa, a demás la leyenda será demasiado extensa y el usuario tendrá que hacer un fuerte trabajo de búsqueda para identificar el color correspondiente a cada categoría; en el caso de muchas categorías se recomienda usar etiquetas directas sobre la observación para así facilitar la comprensión del gráfico aunque con esto también se debe tener cuidado ya que muchas etiquetas hará que la visualización se sature y la información no sea transmitida de la manera correcta.</p>
-<p>La figura <a href="#fig:usocolordistinguir-fig"><strong>??</strong></a> muestra el uso correcto de los colores como herramienta para distinguir, se seleccionaron colores que contrastan entre sí pero no compiten por la atención, este gráfico en particular posee ocho categorías distintas pero aún así se logra identificar claramente cada una de las sedes de admisión.</p>
-
+<p>La figura <a href="2-2-geometría.html#fig:usocolordistinguir-fig">2.8</a> muestra el uso correcto de los colores como herramienta para distinguir, se seleccionaron colores que contrastan entre sí pero no compiten por la atención, este gráfico en particular posee ocho categorías distintas pero aún así se logra identificar claramente cada una de las sedes de admisión.</p>
+<div class="figure" style="text-align: center"><span id="fig:usocolordistinguir-fig"></span>
+<img src="Lineamientos-Visualizar_files/figure-html/usocolordistinguir-fig-1.png" alt="Uso del color como herramienta para distinguir grupos de datos" width="100%" />
+<p class="caption">
+Figura 2.8: Uso del color como herramienta para distinguir grupos de datos
+</p>
+</div>
+</div>
+<div id="representar-valores" class="section level4">
+<h4><span class="header-section-number">2.2.3.2</span> Representar valores</h4>
+<p>El color también puede ser usado como herramienta para representar variables cuantitativas como ingresos, temperatura, entre otros. En este caso se usa una escala de color secuencial, la cual indica claramente que valores son más grandes o pequeños y que tan distantes se encuentran dos valores específicos entre sí. Estas escalas secuenciales de color pueden basarse en un solo tono por ejemplo de azul oscuro a azul claro, o en múltiples matices por ejemplo de rojo oscuro a amarillo claro.</p>
+<p>En la figura <a href="2-2-geometría.html#fig:usocolorrepresentar-fig">2.9</a> presenta un uso adecuado de la escala de colores secuencial, se usa una paleta de un solo tono que inicia en azul claro y termina en un azul un poco más fuerte. Esta visualización presenta la cantidad de estudiantes graduados en el periodo 2020-II por departamento de nacimiento y la escala de color fue usada para colorear el conteo por cada uno de estos departamentos.</p>
+<div class="figure" style="text-align: center"><span id="fig:usocolorrepresentar-fig"></span>
+<img src="Imágenes/escaladecolorsecuencial.jpg" alt="Uso de la escala de color secuencial para representar valores" width="100%" />
+<p class="caption">
+Figura 2.9: Uso de la escala de color secuencial para representar valores
+</p>
+</div>
+<p>Existen algunas ocasiones en las cuales es necesario visualizar la desviación de los valores de los datos en una de dos direcciones en relación con un punto medio neutral. Un ejemplo sencillo y muy básico de estos casos es cuando se tienen números positivos y negativos, que se representan por dos colores, puede ser verde para los números positivos y rojo para los negativos, a partir de la intensidad de estos colores se indica la lejanía con el cero. La escala de color usada en estos casos se denomina divergente y puede pensarse como dos escalas de colores secuenciales que se unen en un punto medio; estas escalas deben ser equilibradas, de modo que la progresión de los colores claros en el centro a los colores oscuros del exterior debe ser la aproximadamente igual para ambas direcciones.</p>
+<div class="figure" style="text-align: center"><span id="fig:escaladivergente-fig"></span>
+<img src="Imágenes/escaladivergente.jpg" alt="Escala divergente para representar valores" width="100%" />
+<p class="caption">
+Figura 2.10: Escala divergente para representar valores
+</p>
+</div>
+<p>La figura <a href="2-2-geometría.html#fig:escaladivergente-fig">2.10</a> presenta una de los tantos usos que se le puede dar a las escalas de colores divergentes, se presenta los beneficios por estados. Es importante notar que la escala de colores no se encuentra equilibrada y esto se debe a la desproporción de los datos, a pesar de esto la visualización sigue siendo informativa y se logra distinción entre los colores.</p>
+</div>
+<div id="resaltar-observaciones" class="section level4">
+<h4><span class="header-section-number">2.2.3.3</span> Resaltar observaciones</h4>
+<p>Emplear el color para resaltar observaciones es de gran utilidad cuando el conjunto de datos contiene información clave sobre la historia que se quiere contar a través del gráfico y enfatizar en estos elementos conlleva a una mejor comprensión de la información que se desea comunicar. Para lograr este énfasis podemos colorear estos elementos de la figura con colores o tonalidades que se destaquen vívidamente contra el resto de la figura; generalmente se usan escalas de color de acento, las cuales contienen tanto un conjunto de colores tenues como un conjunto coincidente de colores más fuertes.</p>
+<p>Cuando se trabaja con una escala de color de acento, es fundamental que los colores básicos no compitan por la atención. Estos colores de base deben ser monótonos pero que apoye bien el color de acento, es muy común cometer el error de usar colores de línea de base que son demasiado coloridos, de modo que terminan compitiendo por la atención del lector. Una alternativa fácil es usar un color neutro en todos los elementos de la figura, excepto para la categoría de puntos que se quiere resaltar.</p>
+<p>La figura <a href="2-2-geometría.html#fig:resaltardatos-fig">2.11</a> muestra el total de estudiantes admitidos por departamento de nacimiento, se hace uso de una escala de color de acento para resaltar los departamentos pertenecientes a la región andina. Observe que se usa un color neutro para los departamentos que no son de interés y un color azul llamativo para atraer la atención del usuario a la región andina. Esta figura presenta uno de los tantos usos que se le puede dar a las escalas de colores de acento para resaltar datos, es posible aplicarla a gráficos de líneas, diagramas de dispersión, entre otros.</p>
+<div class="figure" style="text-align: center"><span id="fig:resaltardatos-fig"></span>
+<img src="Lineamientos-Visualizar_files/figure-html/resaltardatos-fig-1.png" alt="Escala de color de acento para resaltar observaciones" width="80%" />
+<p class="caption">
+Figura 2.11: Escala de color de acento para resaltar observaciones
+</p>
 </div>
 </div>
 </div>
-<!-- </div> -->
+</div>
             </section>
 
           </div>
         </div>
       </div>
 <a href="2-1-ejes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="3-cómo-visualizar-los-datos.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="2-3-texto.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
