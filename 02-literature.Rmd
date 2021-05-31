@@ -116,30 +116,26 @@ Emplear el color como una herramienta para distinguir es uno de los usos más co
 La figura \@ref(fig:usocolordistinguir-fig) muestra el uso correcto de los colores como herramienta para distinguir, se seleccionaron colores que contrastan entre sí pero no compiten por la atención, este gráfico en particular posee ocho categorías distintas pero aún así se logra identificar claramente cada una de las sedes de admisión.
 
 ```{r usocolordistinguir-fig,echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del color como herramienta para distinguir grupos de datos', message=FALSE, warning=FALSE, out.width='100%'}
-graduados <- Graduados %>% 
-  mutate(YEAR_SEMESTER = paste(YEAR, SEMESTRE, sep = " - ")) %>% 
-  group_by(YEAR_SEMESTER, SEDE_NOMBRE_ADM) %>% 
-  count()
-ggplot(data = graduados, aes(x = YEAR_SEMESTER, y = n, group = SEDE_NOMBRE_ADM,
-                             colour = SEDE_NOMBRE_ADM)) +
-  geom_line(size  = 1) + 
-  geom_point(size = 2) +
-  scale_colour_manual(values = c("#29ABE2", # AZUL CLARO  | Amazonia
-                               "#8CC63F", # VERDE       | Bogota
-                               "#CC241D", # ROJO        | Caribe
-                               "#0071BC", # AZUL VIVO   | Manizales
-                               "#F15A24", # NARANJA     | Medellin
-                               "#FBB03B", # AMARILLO    | Orinoquia
-                               "#93278F" # MORADO      | Palmira
-                               )) +
-  theme(panel.background = element_rect(fill = "#ecf0f1"),
-  panel.grid.minor = element_line(linetype = "dotted"),
-  axis.text.x = element_text(angle = 45, hjust = 1),
-  legend.position = 'bottom',
-  plot.title = element_text(hjust = 0.5)) +
-  labs(x = "Periodo", y = "Número de graduados",
-       title = "Evolución del número de graduados por sede",
-       colour = "")
+col <- c("#29ABE2", # AZUL CLARO  | Amazonia
+         "#8CC63F", # VERDE       | Bogota
+         "#CC241D", # ROJO        | Caribe
+         "#FF3673", # MORADO CLARO| De la paz
+         "#0071BC", # AZUL VIVO   | Manizales
+         "#F15A24", # NARANJA     | Medellin
+         "#FBB03B", # AMARILLO    | Orinoquia
+         "#93278F", # MORADO      | Palmira
+         "#8A381A") # GRIS        | Tumaco
+Msj <- ""
+Plot.Series(datos     = Consolidado,
+            categoria = "SEDE_NOMBRE_ADM",
+            colores   = col,
+            titulo    = "EVOLUCI\u00d3N DEL N\u00daMERO DE GRADUADOS POR SEDE",
+            labelY    = "N\u00famero de graduados (k: miles)",
+            libreria  = "plotly",
+            estilo    = list(LegendTitle = "SEDE:", ply.Interaction = "closest",
+                             ply.LegendPosition = list(x = 0.16, y = -0.25, orientation = "h"),
+                             ply.Credits = list(x = 0.5, y = 0.95, text = Msj))
+)
 ```
 
 #### Representar valores
@@ -148,8 +144,30 @@ El color también puede ser usado como herramienta para representar variables cu
 
 En la figura \@ref(fig:usocolorrepresentar-fig) presenta un uso adecuado de la escala de colores secuencial, se usa una paleta de un solo tono que inicia en azul claro y termina en un azul un poco más fuerte. Esta visualización presenta la cantidad de estudiantes graduados en el periodo 2020-II por departamento de nacimiento y la escala de color fue usada para colorear el conteo por cada uno de estos departamentos.
 
-```{r usocolorrepresentar-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso de la escala de color secuencial para representar valores', out.width='100%'}
-knitr::include_graphics("Imágenes/escaladecolorsecuencial.jpg")
+```{r usocolorrepresentar-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del color para representar valores', message=FALSE, warning=FALSE, out.width='100%'}
+Graduados <- UnalData::Graduados
+if (require("dplyr")) {
+  Graduados <- Graduados %>%
+    select(Code_Dept    = COD_DEP_NAC,
+           Code_Mun     = COD_CIU_NAC,
+           Departamento = DEP_NAC,
+           Municipio    = CIU_NAC,
+           Longitud     = LON_CIU_NAC,
+           Latitud      = LAT_CIU_NAC) %>%
+    filter(!is.na(Departamento))
+}
+Plot.Mapa(datos    = Graduados,
+          tipo     = "Deptos",
+          titulo   = "Graduados 2020-II",
+          baldosas = c("Stamen.Toner", "Stamen.TonerLite", "Stamen.TonerLines", "Esri.DeLorme",
+                       "Esri.WorldTerrain", "Esri.WorldShadedRelief", "Esri.WorldPhysical",
+                       "Esri.OceanBasemap", "Esri.WorldGrayCanvas"),
+          colSedes = rep("green", 9),
+          compacto = FALSE,
+          textSize = 16,
+          limpio   = TRUE,
+          colores = c('#e8f5ff', '#c3e3fd', '#9acef8', '#6eb8f5', '#2196f3'),
+          cortes = c(0, 20, 50, 200, 1000, Inf))
 ```
 
 Existen algunas ocasiones en las cuales es necesario visualizar la desviación de los valores de los datos en una de dos direcciones en relación con un punto medio neutral. Un ejemplo sencillo y muy básico de estos casos es cuando se tienen números positivos y negativos, que se representan por dos colores, puede ser verde para los números positivos y rojo para los negativos, a partir de la intensidad de estos colores se indica la lejanía con el cero. La escala de color usada en estos casos se denomina divergente y puede pensarse como dos escalas de colores secuenciales que se unen en un punto medio; estas escalas deben ser equilibradas, de modo que la progresión de los colores claros en el centro a los colores oscuros del exterior debe ser la aproximadamente igual para ambas direcciones.
