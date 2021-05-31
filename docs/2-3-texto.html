@@ -33,7 +33,7 @@
   
 <link rel="prev" href="2-2-geometría.html"/>
 <link rel="next" href="3-cómo-visualizar-los-datos.html"/>
-<script src="libs/jquery-3.5.1/jquery.min.js"></script>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
@@ -53,31 +53,6 @@
 <script src="libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 <link href="libs/anchor-sections-1.0.1/anchor-sections.css" rel="stylesheet" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
-<script src="libs/htmlwidgets-1.5.3/htmlwidgets.js"></script>
-<script src="libs/plotly-binding-4.9.3/plotly.js"></script>
-<script src="libs/typedarray-0.1/typedarray.min.js"></script>
-<link href="libs/crosstalk-1.1.1/css/crosstalk.css" rel="stylesheet" />
-<script src="libs/crosstalk-1.1.1/js/crosstalk.min.js"></script>
-<link href="libs/plotly-htmlwidgets-css-1.57.1/plotly-htmlwidgets.css" rel="stylesheet" />
-<script src="libs/plotly-main-1.57.1/plotly-latest.min.js"></script>
-<script src="libs/plotly-locale-es-1.57.1/es.js"></script>
-<link href="libs/leaflet-1.3.1/leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-1.3.1/leaflet.js"></script>
-<link href="libs/leafletfix-1.0.0/leafletfix.css" rel="stylesheet" />
-<script src="libs/proj4-2.6.2/proj4.min.js"></script>
-<script src="libs/Proj4Leaflet-1.0.1/proj4leaflet.js"></script>
-<link href="libs/rstudio_leaflet-1.3.1/rstudio_leaflet.css" rel="stylesheet" />
-<script src="libs/leaflet-binding-2.0.4.1/leaflet.js"></script>
-<script src="libs/leaflet-providers-1.9.0/leaflet-providers_1.9.0.js"></script>
-<script src="libs/leaflet-providers-plugin-2.0.4.1/leaflet-providers-plugin.js"></script>
-<script src="libs/fuse_js-3.2.0/fuse_js-prod.js"></script>
-<link href="libs/lfx-search-2.3.7/lfx-search-prod.css" rel="stylesheet" />
-<script src="libs/lfx-search-2.3.7/lfx-search-prod.js"></script>
-<script src="libs/lfx-search-2.3.7/lfx-search-bindings.js"></script>
-<link href="libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.css" rel="stylesheet" />
-<script src="libs/leaflet-awesomemarkers-2.0.3/leaflet.awesome-markers.min.js"></script>
-<link href="libs/bootstrap-3.3.7/bootstrap.min.css" rel="stylesheet" />
-<script src="libs/bootstrap-3.3.7/bootstrap.min.js"></script>
 
 
 <style type="text/css">
@@ -208,12 +183,18 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>Al momento de realizar una visualización el texto es uno de los elementos a los cuales se les presta poca atención pero que podrían hacer el gráfico aún mas informativo, se debe manejar una misma fuente pero proporcionar un balance entre los tamaños con el fin de destacar los elementos importantes, por ejemplo, el título de la visualización debe atraer más la atención del usuario que las etiquetas del eje por esta razón no es correcto utilizar un tamaño mayor para las etiquetas del eje que para el título. El éxito de la estética de este elemento se basa en establecer correctamente la jerarquía que existe entre los textos que involucra el gráfico.</p>
 <p>El objetivo principal de una visualización es informar y transmitir información de manera clara y concisa, por esta razón se deben colocar los datos en contexto proporcionando títulos, subtítulos y otras anotaciones que los acompañen. A continuación, analizaremos algunas recomendaciones utiles que nos ayudarán a contextualizar los datos de manera correcta.</p>
 <p>Uno de los elementos principales dentro de un gráfico es su título, este debe ser claro e informativo ya que su función es transmitir con precisión al lector de qué se trata la figura, también existen ocasiones en las que es necesario usar subtítulos para contextualizar por completo al usuario acerca de la información que se presenta. Otro elemento importante y que logra que las visualizaciones se expliquen por sí mismas son los títulos de los ejes, estos deben indicar de manera clara lo que representan y la unidad en que se miden, observe la figura <a href="2-1-ejes.html#fig:usocorrectoejeyinicio0-fig">2.3</a> en la cual el eje Y esta titulado de manera correcta ya que indica que representa las ventas y esta medido en dólares; los títulos de las leyendas también deben ser claros e indicar lo que representan como se muestra en la figura <a href="2-2-geometría.html#fig:resaltardatos-fig">2.11</a>, donde el título de la leyenda hace referencia a la región geográfica del país, en algunas ocasiones es posible omitir el título de los ejes o de las leyendas, es decir, cuando las etiquetas son completamnete explícitas.</p>
-<p>La figura <a href="#fig:usoincorrectotextos-fig"><strong>??</strong></a> ilustra lo que no se debe hacer en una visualización ya que se le da enfoque princical a las etiquetas del eje y leyenda y no al título de la figura, el cual informa acerca de la visualización.</p>
-<p>La figura <a href="2-3-texto.html#fig:manejotextos-fig">2.12</a> presenta la clara jerarquía existente entre los textos del gráfico, observe que se trabaja con la misma fuente pero se juega con mayúsculas y minúsculas para dar la importancia que cada elemento requiere, esta visualización es un ejemplo en el cual se puede omitir el título de la leyenda, ya que las etiquetas son tan claras que usar un título conlleva a un gráfico saturado.</p>
+<p>La figura <a href="2-3-texto.html#fig:usoincorrectotextos-fig">2.12</a> ilustra lo que no se debe hacer en una visualización ya que se le da enfoque princical a las etiquetas del eje y leyenda y no al título de la figura, el cual informa acerca de la visualización.</p>
+<div class="figure" style="text-align: center"><span id="fig:usoincorrectotextos-fig"></span>
+<img src="Lineamientos-Visualizar_files/figure-html/usoincorrectotextos-fig-1.png" alt="Uso incorrecto del texto" width="80%" />
+<p class="caption">
+Figura 2.12: Uso incorrecto del texto
+</p>
+</div>
+<p>La figura <a href="2-3-texto.html#fig:manejotextos-fig">2.13</a> presenta la clara jerarquía existente entre los textos del gráfico, observe que se trabaja con la misma fuente pero se juega con mayúsculas y minúsculas para dar la importancia que cada elemento requiere, esta visualización es un ejemplo en el cual se puede omitir el título de la leyenda, ya que las etiquetas son tan claras que usar un título conlleva a un gráfico saturado.</p>
 <div class="figure" style="text-align: center"><span id="fig:manejotextos-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/manejotextos-fig-1.png" alt="Uso correcto del texto para contextualizar" width="90%" />
 <p class="caption">
-Figura 2.12: Uso correcto del texto para contextualizar
+Figura 2.13: Uso correcto del texto para contextualizar
 </p>
 </div>
 
