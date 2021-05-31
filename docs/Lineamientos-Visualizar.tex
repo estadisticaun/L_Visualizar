@@ -113,7 +113,7 @@
 
 \title{Lineamientos conceptuales para la visualización estadística}
 \author{Camila Acosta Ramirez}
-\date{2021-05-27}
+\date{2021-05-31}
 
 \begin{document}
 \maketitle
@@ -318,21 +318,100 @@ Emplear el color como una herramienta para distinguir es uno de los usos más co
 
 La figura \ref{fig:usocolordistinguir-fig} muestra el uso correcto de los colores como herramienta para distinguir, se seleccionaron colores que contrastan entre sí pero no compiten por la atención, este gráfico en particular posee ocho categorías distintas pero aún así se logra identificar claramente cada una de las sedes de admisión.
 
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Lineamientos-Visualizar_files/figure-latex/usocolordistinguir-fig-1} 
+
+}
+
+\caption{Uso del color como herramienta para distinguir grupos de datos}\label{fig:usocolordistinguir-fig}
+\end{figure}
+
+\hypertarget{representar-valores}{%
+\subsubsection{Representar valores}\label{representar-valores}}
+
+El color también puede ser usado como herramienta para representar variables cuantitativas como ingresos, temperatura, entre otros. En este caso se usa una escala de color secuencial, la cual indica claramente que valores son más grandes o pequeños y que tan distantes se encuentran dos valores específicos entre sí. Estas escalas secuenciales de color pueden basarse en un solo tono por ejemplo de azul oscuro a azul claro, o en múltiples matices por ejemplo de rojo oscuro a amarillo claro.
+
+En la figura \ref{fig:usocolorrepresentar-fig} presenta un uso adecuado de la escala de colores secuencial, se usa una paleta de un solo tono que inicia en azul claro y termina en un azul un poco más fuerte. Esta visualización presenta la cantidad de estudiantes graduados en el periodo 2020-II por departamento de nacimiento y la escala de color fue usada para colorear el conteo por cada uno de estos departamentos.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/escaladecolorsecuencial} 
+
+}
+
+\caption{Uso de la escala de color secuencial para representar valores}\label{fig:usocolorrepresentar-fig}
+\end{figure}
+
+Existen algunas ocasiones en las cuales es necesario visualizar la desviación de los valores de los datos en una de dos direcciones en relación con un punto medio neutral. Un ejemplo sencillo y muy básico de estos casos es cuando se tienen números positivos y negativos, que se representan por dos colores, puede ser verde para los números positivos y rojo para los negativos, a partir de la intensidad de estos colores se indica la lejanía con el cero. La escala de color usada en estos casos se denomina divergente y puede pensarse como dos escalas de colores secuenciales que se unen en un punto medio; estas escalas deben ser equilibradas, de modo que la progresión de los colores claros en el centro a los colores oscuros del exterior debe ser la aproximadamente igual para ambas direcciones.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/escaladivergente} 
+
+}
+
+\caption{Escala divergente para representar valores}\label{fig:escaladivergente-fig}
+\end{figure}
+
+La figura \ref{fig:escaladivergente-fig} presenta una de los tantos usos que se le puede dar a las escalas de colores divergentes, se presenta los beneficios por estados. Es importante notar que la escala de colores no se encuentra equilibrada y esto se debe a la desproporción de los datos, a pesar de esto la visualización sigue siendo informativa y se logra distinción entre los colores.
+
+\hypertarget{resaltar-observaciones}{%
+\subsubsection{Resaltar observaciones}\label{resaltar-observaciones}}
+
+Emplear el color para resaltar observaciones es de gran utilidad cuando el conjunto de datos contiene información clave sobre la historia que se quiere contar a través del gráfico y enfatizar en estos elementos conlleva a una mejor comprensión de la información que se desea comunicar. Para lograr este énfasis podemos colorear estos elementos de la figura con colores o tonalidades que se destaquen vívidamente contra el resto de la figura; generalmente se usan escalas de color de acento, las cuales contienen tanto un conjunto de colores tenues como un conjunto coincidente de colores más fuertes.
+
+Cuando se trabaja con una escala de color de acento, es fundamental que los colores básicos no compitan por la atención. Estos colores de base deben ser monótonos pero que apoye bien el color de acento, es muy común cometer el error de usar colores de línea de base que son demasiado coloridos, de modo que terminan compitiendo por la atención del lector. Una alternativa fácil es usar un color neutro en todos los elementos de la figura, excepto para la categoría de puntos que se quiere resaltar.
+
+La figura \ref{fig:resaltardatos-fig} muestra el total de estudiantes admitidos por departamento de nacimiento, se hace uso de una escala de color de acento para resaltar los departamentos pertenecientes a la región andina. Observe que se usa un color neutro para los departamentos que no son de interés y un color azul llamativo para atraer la atención del usuario a la región andina. Esta figura presenta uno de los tantos usos que se le puede dar a las escalas de colores de acento para resaltar datos, es posible aplicarla a gráficos de líneas, diagramas de dispersión, entre otros.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/resaltardatos-fig-1} 
+
+}
+
+\caption{Escala de color de acento para resaltar observaciones}\label{fig:resaltardatos-fig}
+\end{figure}
+
+\hypertarget{texto}{%
+\section{Texto}\label{texto}}
+
+Al momento de realizar una visualización el texto es uno de los elementos a los cuales se les presta poca atención pero que podrían hacer el gráfico aún mas informativo, se debe manejar una misma fuente pero proporcionar un balance entre los tamaños con el fin de destacar los elementos importantes, por ejemplo, el título de la visualización debe atraer más la atención del usuario que las etiquetas del eje por esta razón no es correcto utilizar un tamaño mayor para las etiquetas del eje que para el título. El éxito de la estética de este elemento se basa en establecer correctamente la jerarquía que existe entre los textos que involucra el gráfico.
+
+El objetivo principal de una visualización es informar y transmitir información de manera clara y concisa, por esta razón se deben colocar los datos en contexto proporcionando títulos, subtítulos y otras anotaciones que los acompañen. A continuación, analizaremos algunas recomendaciones utiles que nos ayudarán a contextualizar los datos de manera correcta.
+
+Uno de los elementos principales dentro de un gráfico es su título, este debe ser claro e informativo ya que su función es transmitir con precisión al lector de qué se trata la figura, también existen ocasiones en las que es necesario usar subtítulos para contextualizar por completo al usuario acerca de la información que se presenta. Otro elemento importante y que logra que las visualizaciones se expliquen por sí mismas son los títulos de los ejes, estos deben indicar de manera clara lo que representan y la unidad en que se miden, observe la figura \ref{fig:usocorrectoejeyinicio0-fig} en la cual el eje Y esta titulado de manera correcta ya que indica que representa las ventas y esta medido en dólares; los títulos de las leyendas también deben ser claros e indicar lo que representan como se muestra en la figura \ref{fig:resaltardatos-fig}, donde el título de la leyenda hace referencia a la región geográfica del país, en algunas ocasiones es posible omitir el título de los ejes o de las leyendas, es decir, cuando las etiquetas son completamnete explícitas.
+
+La figura \ref{fig:usoincorrectotextos-fig} ilustra lo que no se debe hacer en una visualización ya que se le da enfoque princical a las etiquetas del eje y leyenda y no al título de la figura, el cual informa acerca de la visualización.
+
+La figura \ref{fig:manejotextos-fig} presenta la clara jerarquía existente entre los textos del gráfico, observe que se trabaja con la misma fuente pero se juega con mayúsculas y minúsculas para dar la importancia que cada elemento requiere, esta visualización es un ejemplo en el cual se puede omitir el título de la leyenda, ya que las etiquetas son tan claras que usar un título conlleva a un gráfico saturado.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.9\linewidth]{Lineamientos-Visualizar_files/figure-latex/manejotextos-fig-1} 
+
+}
+
+\caption{Uso correcto del texto para contextualizar}\label{fig:manejotextos-fig}
+\end{figure}
+
 \hypertarget{cuxf3mo-visualizar-los-datos}{%
 \chapter{¿Cómo visualizar los datos?}\label{cuxf3mo-visualizar-los-datos}}
 
-En la actualidad hay muchos gráficos disponibles para visualizar nuestros datos, pero no todos los gráficos pueden ser usados para lo que se quiere representar, por esta razón es importante conocer cuáles son los gráficos apropiados para los datos que se quieren mostrar. Dentro de los datos mas comunes a visualizar se tienen las cantidades, proporciones, distribuciones, series de tiempo, datos geoespaciales y las relaciones X-Y.
-En este capitulo se presenta la forma correcta de representar estos datos con los gráficos que se tienen disponibles, teniendo el contraste entre lo correcto e incorrecto con el fin de informar al usuario acerca de lo que se debe o no hacer para crear las visualizaciones.
+En la actualidad hay muchos gráficos disponibles para visualizar nuestros datos, pero no todos los gráficos pueden ser usados para lo que se quiere representar, por esta razón es importante conocer cuáles son los gráficos apropiados para los datos que se quieren mostrar. Dentro de los datos más comunes a visualizar se tienen las cantidades, proporciones, distribuciones, series de tiempo, datos geoespaciales, relaciones X-Y e indicadores hacia una meta en particular.
+
+En este capítulo se presenta la forma correcta de representar estos datos con los gráficos que se tienen disponibles, teniendo el contraste entre lo correcto e incorrecto con el fin de informar al usuario acerca de lo que se debe o no hacer para crear las visualizaciones.
 
 \hypertarget{visualizaciuxf3n-de-cantidades}{%
 \section{Visualización de cantidades}\label{visualizaciuxf3n-de-cantidades}}
 
-En muchas ocasiones estamos interesados en visualizar la magnitud de algún conjunto de números, por ejemplo, visualizar el volumen de ventas por estados, total de estudiantes admitidos por modalidad de formación, estudiantes graduados por grupos de edad o departamento. Observe que en todos estos casos de tiene un conjunto de categorías y un valor cuantitativo para cada categoría. La visualización recomendada y más usada en este escenario es el gráfico de barras en el cual se incluyen distintas variaciones tales como las barras simples, agrupadas y apiladas tanto verticales como horizontales. Las alternativas al diagrama de barras son los diagramas de puntos y mapas de calor.
+En muchas ocasiones estamos interesados en visualizar la magnitud de algún conjunto de números, por ejemplo, visualizar el volumen de ventas por estados, total de estudiantes admitidos por modalidad de formación, estudiantes graduados por grupos de edad o departamento, entre muchos otros ejemplos. Observe que en todos estos casos se tiene un conjunto de categorías y un valor cuantitativo para cada categoría. La visualización recomendada y más usada en este escenario es el gráfico de barras en el cual se incluyen distintas variaciones tales como las barras simples, agrupadas y apiladas tanto verticales como horizontales. Las alternativas al diagrama de barras son los diagramas de puntos y mapas de calor.
 
 \hypertarget{gruxe1fico-de-barras}{%
 \subsection{Gráfico de barras}\label{gruxe1fico-de-barras}}
 
-Suponga que queremos visualizar la cantidad de estudiantes de estudiantes admitidos por nivel de formación para el periodo 2021-1, este tipo de datos se visualiza comúnmente con barras verticales, para cada nivel de formación de dibuja una barra que inicia en cero y se extiende hasta la cantidad de estudiantes admitidos. La figura \ref{fig:barrasadmitidosnivel-fig} muestra el uso del gráfico de barras para visualizar estas cantidades.
+Suponga que queremos visualizar la cantidad de estudiantes de estudiantes admitidos por nivel de formación para el periodo 2021-1, este tipo de datos se visualiza comúnmente con barras verticales, para cada nivel de formación se dibuja una barra que inicia en cero y se extiende hasta la cantidad de estudiantes admitidos. La figura \ref{fig:barrasadmitidosnivel-fig} muestra el uso del gráfico de barras para visualizar estas cantidades.
 
 \begin{figure}
 
@@ -343,11 +422,11 @@ Suponga que queremos visualizar la cantidad de estudiantes de estudiantes admiti
 \caption{Uso del gráfico de barras para representar cantidades}\label{fig:barrasadmitidosnivel-fig}
 \end{figure}
 
-Uno de los problemas mas comunes con los gráficos de barras verticales es que las etiquetas que identifican cada barra ocupan mucho espacio horizontal. Por esta razón en la figura \ref{fig:barrasadmitidosnivel-fig} fue necesario aumentar la separación entre las barras para poder ubicar las etiquetas en la parte inferior de cada barra y que estas no se traslaparan. Una solución a este problema es girar las etiquetas de cada barra como se muestra en la figura \ref{fig:barrasadmitidosnivelgirar-fig}, pero esto no estéticamente correcto, ya que es incómodo para el usuario.
+Uno de los problemas más comunes con los gráficos de barras verticales es que las etiquetas que identifican cada barra ocupan mucho espacio horizontal. Por esta razón en la figura \ref{fig:barrasadmitidosnivel-fig} fue necesario aumentar la separación entre las barras para poder ubicar las etiquetas en la parte inferior de cada barra y que estas no se traslaparan. Una solución a este problema es girar las etiquetas de cada barra como se muestra en la figura \ref{fig:barrasadmitidosnivelgirar-fig}, pero esto no es estéticamente correcto, ya que es incómodo para el usuario.
 
 \begin{figure}
 
-{\centering \includegraphics{Lineamientos-Visualizar_files/figure-latex/barrasadmitidosnivelgirar-fig-1} 
+{\centering \includegraphics[width=1\linewidth]{Imágenes/etiquetasgiradas} 
 
 }
 
@@ -378,6 +457,15 @@ Sin embargo, las etiquetas solo pueden ser reordenadas cuando las categorías qu
 \caption{Etiquetas con un orden natural}\label{fig:graduadosporgrupoedad-fig}
 \end{figure}
 
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/ordenarbarrasincorrectas} 
+
+}
+
+\caption{Reordenar etiquetas cuando se tiene un orden natural}\label{fig:partesgrafico2-fig}
+\end{figure}
+
 \hypertarget{barras-agrupadas-y-apiladas}{%
 \subsection{Barras agrupadas y apiladas}\label{barras-agrupadas-y-apiladas}}
 
@@ -392,7 +480,7 @@ Las figuras mostradas en la subsección anterior representan variables cualitati
 \caption{Uso de barras agrupadas para representar valores usando dos categorías}\label{fig:barrasagrupadasservicioedad-fig}
 \end{figure}
 
-Con los gráficos de barras agrupadas se debe tener cuidado ya que las variables categóricas elegidas pueden tener muchos niveles y harán que le grafico se sature y el usuario no comprenda la información de manera correcta, la figura \ref{fig:barrasagrupadasserviciosede-fig} muestra la distribución del número de funcionarios por años de servicio y sede para el periodo 2020-2, aunque la figura es correcta resulta difícil de interpretar por la cantidad de sedes existentes dentro de la Universidad Nacional de Colombia, observe que para cada grupo de años de servicio se crean ocho barras
+Con los gráficos de barras agrupadas se debe tener cuidado ya que las variables categóricas elegidas pueden tener muchos niveles y harán que le gráfico se sature y el usuario no comprenda la información de manera correcta, la figura \ref{fig:barrasagrupadasserviciosede-fig} muestra la distribución del número de funcionarios por años de servicio y sede para el periodo 2020-2, aunque la figura es correcta resulta difícil de interpretar por la cantidad de sedes existentes dentro de la Universidad Nacional de Colombia, observe que para cada grupo de años de servicio se crean diez barras
 
 \begin{figure}
 
@@ -407,14 +495,14 @@ Una alternativa a esta figura es visualizar como categoría principal la sede a 
 
 \begin{figure}
 
-{\centering \includegraphics{Lineamientos-Visualizar_files/figure-latex/barrasagrupadassedeservicio-fig-1} 
+{\centering \includegraphics[width=1\linewidth]{Imágenes/barrasagrupadas} 
 
 }
 
 \caption{Cantidad de funcionarios por sede y años de servicio}\label{fig:barrasagrupadassedeservicio-fig}
 \end{figure}
 
-Como ya vimos los gráficos de barras agrupadas consisten en dibujar una barra al lado de la otra, pero hay ocasiones en las cuales se prefiere apiliar las barras, es decir, ubicar una encima de la otra, esto generalmente se realiza cuando la cantidad representada por las barras dispuestas en esta posición es significativa, también es necesario tener cuidado con este tipo de gráficos ya que utilizar muchas categorías para apilar las barras resultara en una visualización saturada y poco informativa. Un uso común de este tipo de gráficos es cuando las barras individuales representan recuentos, por ejemplo, el conjunto de datos llamado Administrativos posee el recuento de funcionarios por sexo, para este casi si apilamos una barra que representa el recuento de mujeres encima de una barra que representa el recuento de hombres, entonces la altura de la barra combinada mostrara el total de funcionarios independiente del género. La figura \ref{fig:barrasaplidasserviciosexo-fig} presenta el uso de barras apiladas como alternativa del uso de barras agrupadas ilustrado en la figura \ref{fig:barrasagrupadasservicioedad-fig}.
+Como ya vimos los gráficos de barras agrupadas consisten en dibujar una barra al lado de la otra, pero hay ocasiones en las cuales se prefiere apiliar las barras, es decir, ubicar una encima de la otra, esto generalmente se realiza cuando la cantidad representada por las barras dispuestas en esta posición es significativa, también es necesario tener cuidado con este tipo de gráficos ya que utilizar muchas categorías para apilar las barras resultara en una visualización saturada y poco informativa. Un uso común de este tipo de gráficos es cuando las barras individuales representan recuentos, por ejemplo, el conjunto de datos llamado Administrativos posee el recuento de funcionarios por sexo, para este caso si apilamos una barra que representa el recuento de mujeres encima de una barra que representa el recuento de hombres, entonces la altura de la barra combinada mostrara el total de funcionarios independiente del género. La figura \ref{fig:barrasaplidasserviciosexo-fig} presenta el uso de barras apiladas como alternativa del uso de barras agrupadas ilustrado en la figura \ref{fig:barrasagrupadasservicioedad-fig}.
 
 \begin{figure}
 
@@ -428,7 +516,7 @@ Como ya vimos los gráficos de barras agrupadas consisten en dibujar una barra a
 \hypertarget{gruxe1ficos-de-puntos-y-mapas-de-calor}{%
 \subsection{Gráficos de puntos y mapas de calor}\label{gruxe1ficos-de-puntos-y-mapas-de-calor}}
 
-Una de las mayores limitaciones al usar los gráficos de barras ya sean simples o alguna de sus variaciones es que los ejes deben iniciar en cero para lograr que la altura de la barra sea proporcional a la cantidad que representa, existen muchas ocasiones en las cuales es poco practico iniciar siempre los ejes en cero y una alternativa es usar puntos ubicados en lugares apropiados a lo largo del eje X o Y.
+Una de las mayores limitaciones al usar los gráficos de barras ya sean simples o alguna de sus variaciones es que los ejes deben iniciar en cero para lograr que la altura de la barra sea proporcional a la cantidad que representa, existen muchas ocasiones en las cuales es poco práctico iniciar siempre los ejes en cero y una alternativa es usar puntos ubicados en lugares apropiados a lo largo del eje X o Y.
 
 Suponga que se quiere visualizar la edad promedio de los estudiantes graduados por nivel de formación, observe que en este caso no tiene mucho sentido iniciar el eje Y en cero ya que la edad promedio estará por encima de los 20 años aproximadamente y las discrepancias entre los promedios de edades no son muy grandes, por esta razón es conveniente restringir el dominio de eje x al intervalo de 20 a 40 años, para que las diferencias sean notorias y la información sea interpretada con mayor facilidad, como se ilustra en la figura \ref{fig:diagramapuntos-fig}.
 
@@ -441,19 +529,41 @@ Suponga que se quiere visualizar la edad promedio de los estudiantes graduados p
 \caption{Diagrama de puntos como alternativa a los gráficos de barras}\label{fig:diagramapuntos-fig}
 \end{figure}
 
+La figura @ref(fig: barrasedadpromedio-fig) muestra la edad promedio de los estudiantes graduados por nivel de formación usando un gráfico de barras, esta figura fue etiquetada como incorrecta ya que al usar barras el eje debe iniciar en cero y las discrepancias existentes entre las edades promedios de los niveles especialidades médicas y especialización no se logra apreciar con claridad.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/edadpromediograduados} 
+
+}
+
+\caption{Edad promedio de estudiantes graduados}\label{fig:barrasedadpromedio-fig}
+\end{figure}
+
 Para este tipo de visualización también aplica reordenar las categorías por la variable numérica si las categorías no tienen un orden natural, este grafico es recomendable cuando no se tiene un orden natural en los datos ya que pueden ser reordenados logrando una visualización atractiva y entendible.
 
 Las visualizaciones presentadas hasta el momento representan variables numéricas usando categorías a través de las posiciones en uno de los ejes, ya sea con un punto final en el valor que representa o el tamaño de la barra. Sin embargo, estos gráficos no son adecuados cuando el conjunto de datos muy grandes, ya que la cantidad de barras será excesiva y proporcionará una figura saturada. Ya se había observado en la figura \ref{fig:barrasagrupadasserviciosede-fig} que grupos de 8 barras resultan en una visualización compleja y no tan fácil de interpretar, imagine que en lugar de 8 barras por grupo se tuvieran 20 o más, resultaría aun más complejo y probablemente muy confusa.
 
-Una alternativa a las barras y puntos son los mapas de calor, los cuales están formados por dos variables categóricas, una en cada eje, y los valores son representados a través de una escala de color secuencial. La figura @ref(fig: mapadecalor-fig) utiliza este enfoque para mostrar el número de accidentes ocurridos por día y mes en los años 2014 a 2016, es una figura útil para detectar tendencias más amplias que para visualizar exactamente cada uno de los valores que representa, se identifica con claridad que los primeros 15 días del mes de enero se presenta menor accidentalidad comparado con los días restantes de este mismo mes.
+Una alternativa a las barras y puntos son los mapas de calor, los cuales están formados por dos variables categóricas, una en cada eje, y los valores son representados a través de una escala de color secuencial. La figura \ref{fig:mapadecalor-fig} utiliza este enfoque para mostrar el número de accidentes ocurridos por día y mes en los años 2014 a 2016, es una figura útil para detectar tendencias más amplias que para visualizar exactamente cada uno de los valores que representa, se identifica con claridad que los primeros 15 días del mes de enero se presenta menor accidentalidad comparado con los días restantes de este mismo mes.
 
 \begin{figure}
 
-{\centering \includegraphics{Lineamientos-Visualizar_files/figure-latex/mapadecalor-fig-1} 
+{\centering \includegraphics[width=1\linewidth]{Imágenes/mapadecalor} 
 
 }
 
 \caption{Mapa de calor para representar la accidentalidad en la ciudad de Medelllín}\label{fig:mapadecalor-fig}
+\end{figure}
+
+La figura \ref{fig:mapadecalor-fig} es informativa pero incorrecta ya que no se respeta el orden natural que poseen los datos, la figura correcta para visualizar los datos usando un mapa de calor se presenta a continuación.
+
+\begin{figure}
+
+{\centering \includegraphics{Lineamientos-Visualizar_files/figure-latex/mapadecalorcorrecto-fig-1} 
+
+}
+
+\caption{Mapa de calor para representar la accidentalidad en la ciudad de Medelllín}\label{fig:mapadecalorcorrecto-fig}
 \end{figure}
 
 Como ya se ha mencionado en múltiples ocasiones se debe prestar mucha atención al orden de llas variables categóricas, en este caso dichas variables presentan un orden natural ya que son meses y días, en el caso de no presentarse un orden natural podría reordenarse las categorías usando la variable numérica para lograr una visualización mas clara, atractiva y estéticamente llamativa.

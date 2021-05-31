@@ -220,7 +220,12 @@ Las visualizaciones presentadas hasta el momento representan variables numérica
 
 Una alternativa a las barras y puntos son los mapas de calor, los cuales están formados por dos variables categóricas, una en cada eje, y los valores son representados a través de una escala de color secuencial. La figura \@ref(fig:mapadecalor-fig) utiliza este enfoque para mostrar el número de accidentes ocurridos por día y mes en los años 2014 a 2016, es una figura útil para detectar tendencias más amplias que para visualizar exactamente cada uno de los valores que representa, se identifica con claridad que los primeros 15 días del mes de enero se presenta menor accidentalidad comparado con los días restantes de este mismo mes.
 
-```{r mapadecalor-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Mapa de calor para representar la accidentalidad en la ciudad de Medelllín', warning=FALSE, message=FALSE}
+```{r mapadecalor-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Mapa de calor para representar la accidentalidad en la ciudad de Medelllín', out.width='100%'}
+knitr::include_graphics("Imágenes/mapadecalor.jpg")
+```
+La figura \@ref(fig:mapadecalor-fig) es informativa pero incorrecta ya que no se respeta el orden natural que poseen los datos, la figura correcta para visualizar los datos usando un mapa de calor se presenta a continuación.
+
+```{r mapadecalorcorrecto-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Mapa de calor para representar la accidentalidad en la ciudad de Medelllín', warning=FALSE, message=FALSE}
 accidentalidad <- read.csv("accidentalidad_dia_mes.csv")
 
 accidentalidad$MES_NOMBRE <- factor(accidentalidad$MES_NOMBRE, 
@@ -243,3 +248,4 @@ ggplot(accidentalidad, aes(x = DIA, y = MES_NOMBRE, fill = n)) +
 ```
 
 Como ya se ha mencionado en múltiples ocasiones se debe prestar mucha atención al orden de llas variables categóricas, en este caso dichas variables presentan un orden natural ya que son meses y días, en el caso de no presentarse un orden natural podría reordenarse las categorías usando la variable numérica para lograr una visualización mas clara, atractiva y estéticamente llamativa.
+

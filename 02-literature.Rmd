@@ -120,7 +120,6 @@ graduados <- Graduados %>%
   mutate(YEAR_SEMESTER = paste(YEAR, SEMESTRE, sep = " - ")) %>% 
   group_by(YEAR_SEMESTER, SEDE_NOMBRE_ADM) %>% 
   count()
-
 ggplot(data = graduados, aes(x = YEAR_SEMESTER, y = n, group = SEDE_NOMBRE_ADM,
                              colour = SEDE_NOMBRE_ADM)) +
   geom_line(size  = 1) + 
@@ -142,6 +141,7 @@ ggplot(data = graduados, aes(x = YEAR_SEMESTER, y = n, group = SEDE_NOMBRE_ADM,
        title = "Evolución del número de graduados por sede",
        colour = "")
 ```
+
 #### Representar valores
 
 El color también puede ser usado como herramienta para representar variables cuantitativas como ingresos, temperatura, entre otros. En este caso se usa una escala de color secuencial, la cual indica claramente que valores son más grandes o pequeños y que tan distantes se encuentran dos valores específicos entre sí. Estas escalas secuenciales de color pueden basarse en un solo tono por ejemplo de azul oscuro a azul claro, o en múltiples matices por ejemplo de rojo oscuro a amarillo claro.
@@ -209,16 +209,7 @@ Uno de los elementos principales dentro de un gráfico es su título, este debe 
 
 La figura \@ref(fig:usoincorrectotextos-fig) ilustra lo que no se debe hacer en una visualización ya que se le da enfoque princical a las etiquetas del eje y leyenda y no al título de la figura, el cual informa acerca de la visualización.
 
-```{r usoincorrectotextos-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso incorrecto del texto', message=FALSE, warning=FALSE, out.width='80%'}
-  ggplot(iris, aes(x = Sepal.Width, y = Sepal.Length, color = Species)) + 
-  geom_point(stat = "identity", size = 4, color = "#000000") +
-  geom_point(stat = "identity", size = 3) + 
-  labs(title = "Sepal Width vs Sepal Length by Species",
-                               x = "Sepal Width", 
-                               y = "Sepal Length") + 
-  theme(text = element_text(family="Arial", size = 15),
-        plot.title = element_text(size = 10, hjust = 0.5)) 
-```
+
 
 La figura \@ref(fig:manejotextos-fig) presenta la clara jerarquía existente entre los textos del gráfico, observe que se trabaja con la misma fuente pero se juega con mayúsculas y minúsculas para dar la importancia que cada elemento requiere, esta visualización es un ejemplo en el cual se puede omitir el título de la leyenda, ya que las etiquetas son tan claras que usar un título conlleva a un gráfico saturado. 
 
