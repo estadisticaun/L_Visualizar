@@ -24,7 +24,7 @@
 <meta name="author" content="Camila Acosta Ramirez" />
 
 
-<meta name="date" content="2021-05-27" />
+<meta name="date" content="2021-05-31" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -146,6 +146,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2.2" data-path="2-2-geometría.html"><a href="2-2-geometría.html#tamaño"><i class="fa fa-check"></i><b>2.2.2</b> Tamaño</a></li>
 <li class="chapter" data-level="2.2.3" data-path="2-2-geometría.html"><a href="2-2-geometría.html#color"><i class="fa fa-check"></i><b>2.2.3</b> Color</a></li>
 </ul></li>
+<li class="chapter" data-level="2.3" data-path="2-3-texto.html"><a href="2-3-texto.html"><i class="fa fa-check"></i><b>2.3</b> Texto</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="3-cómo-visualizar-los-datos.html"><a href="3-cómo-visualizar-los-datos.html"><i class="fa fa-check"></i><b>3</b> ¿Cómo visualizar los datos?</a><ul>
 <li class="chapter" data-level="3.1" data-path="3-1-visualización-de-cantidades.html"><a href="3-1-visualización-de-cantidades.html"><i class="fa fa-check"></i><b>3.1</b> Visualización de cantidades</a><ul>
@@ -189,9 +190,9 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 Figura 3.1: Uso del gráfico de barras para representar cantidades
 </p>
 </div>
-<p>Uno de los problemas mas comunes con los gráficos de barras verticales es que las etiquetas que identifican cada barra ocupan mucho espacio horizontal. Por esta razón en la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasadmitidosnivel-fig">3.1</a> fue necesario aumentar la separación entre las barras para poder ubicar las etiquetas en la parte inferior de cada barra y que estas no se traslaparan. Una solución a este problema es girar las etiquetas de cada barra como se muestra en la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasadmitidosnivelgirar-fig">3.2</a>, pero esto no estéticamente correcto, ya que es incómodo para el usuario.</p>
+<p>Uno de los problemas más comunes con los gráficos de barras verticales es que las etiquetas que identifican cada barra ocupan mucho espacio horizontal. Por esta razón en la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasadmitidosnivel-fig">3.1</a> fue necesario aumentar la separación entre las barras para poder ubicar las etiquetas en la parte inferior de cada barra y que estas no se traslaparan. Una solución a este problema es girar las etiquetas de cada barra como se muestra en la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasadmitidosnivelgirar-fig">3.2</a>, pero esto no es estéticamente correcto, ya que es incómodo para el usuario.</p>
 <div class="figure" style="text-align: center"><span id="fig:barrasadmitidosnivelgirar-fig"></span>
-<img src="Lineamientos-Visualizar_files/figure-html/barrasadmitidosnivelgirar-fig-1.png" alt="Uso del gráfico de barras para representar cantidades, girando etiquetas" width="672" />
+<img src="Imágenes/etiquetasgiradas.jpg" alt="Uso del gráfico de barras para representar cantidades, girando etiquetas" width="100%" />
 <p class="caption">
 Figura 3.2: Uso del gráfico de barras para representar cantidades, girando etiquetas
 </p>
@@ -211,55 +212,68 @@ Figura 3.3: Uso del gráfico de barras horizontales para representar cantidades
 Figura 3.4: Etiquetas con un orden natural
 </p>
 </div>
+<div class="figure" style="text-align: center"><span id="fig:partesgrafico2-fig"></span>
+<img src="Imágenes/ordenarbarrasincorrectas.jpg" alt="Reordenar etiquetas cuando se tiene un orden natural" width="100%" />
+<p class="caption">
+Figura 3.5: Reordenar etiquetas cuando se tiene un orden natural
+</p>
+</div>
 </div>
 <div id="barras-agrupadas-y-apiladas" class="section level3">
 <h3><span class="header-section-number">3.1.2</span> Barras agrupadas y apiladas</h3>
-<p>Las figuras mostradas en la subsección anterior representan variables cualitativas en relación con una variable categórica. Sin embargo, a menudo es de interés visualizar como estos valores varían según dos variables categóricas; en un diagrama de barras apiladas, se dibuja un grupo de barras en cada posición del eje X, determinado por una variable categórica, y luego se dibujan barras dentro de cada grupo con la otra variable categórica de interés, por ejemplo, es posible representar el número de funcionarios adminsitrativos por años de servicio prestado y sexo para el periodo 2020-2 tal y como se ilustra en la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasagrupadasservicioedad-fig">3.5</a>.</p>
+<p>Las figuras mostradas en la subsección anterior representan variables cualitativas en relación con una variable categórica. Sin embargo, a menudo es de interés visualizar como estos valores varían según dos variables categóricas; en un diagrama de barras apiladas, se dibuja un grupo de barras en cada posición del eje X, determinado por una variable categórica, y luego se dibujan barras dentro de cada grupo con la otra variable categórica de interés, por ejemplo, es posible representar el número de funcionarios adminsitrativos por años de servicio prestado y sexo para el periodo 2020-2 tal y como se ilustra en la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasagrupadasservicioedad-fig">3.6</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:barrasagrupadasservicioedad-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/barrasagrupadasservicioedad-fig-1.png" alt="Uso de barras agrupadas para representar valores usando dos categorías" width="672" />
 <p class="caption">
-Figura 3.5: Uso de barras agrupadas para representar valores usando dos categorías
+Figura 3.6: Uso de barras agrupadas para representar valores usando dos categorías
 </p>
 </div>
-<p>Con los gráficos de barras agrupadas se debe tener cuidado ya que las variables categóricas elegidas pueden tener muchos niveles y harán que le grafico se sature y el usuario no comprenda la información de manera correcta, la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasagrupadasserviciosede-fig">3.6</a> muestra la distribución del número de funcionarios por años de servicio y sede para el periodo 2020-2, aunque la figura es correcta resulta difícil de interpretar por la cantidad de sedes existentes dentro de la Universidad Nacional de Colombia, observe que para cada grupo de años de servicio se crean ocho barras</p>
+<p>Con los gráficos de barras agrupadas se debe tener cuidado ya que las variables categóricas elegidas pueden tener muchos niveles y harán que le gráfico se sature y el usuario no comprenda la información de manera correcta, la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasagrupadasserviciosede-fig">3.7</a> muestra la distribución del número de funcionarios por años de servicio y sede para el periodo 2020-2, aunque la figura es correcta resulta difícil de interpretar por la cantidad de sedes existentes dentro de la Universidad Nacional de Colombia, observe que para cada grupo de años de servicio se crean diez barras</p>
 <div class="figure" style="text-align: center"><span id="fig:barrasagrupadasserviciosede-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/barrasagrupadasserviciosede-fig-1.png" alt="Cantidad de funcionarios por años de servicio y sede" width="672" />
 <p class="caption">
-Figura 3.6: Cantidad de funcionarios por años de servicio y sede
+Figura 3.7: Cantidad de funcionarios por años de servicio y sede
 </p>
 </div>
-<p>Una alternativa a esta figura es visualizar como categoría principal la sede a la que pertenece cada funcionario y que los grupos de barras para cada sede se creen a partir de los años de servicio prestados, usando una escala de color secuencial para representar cada uno de los años de servicio prestado por los funcionarios administrativos, con esto solo se tendrán 5 barras por cada sede y el gráfico será más sencillo y comprensible, como se muestra en la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasagrupadassedeservicio-fig">3.7</a>.</p>
+<p>Una alternativa a esta figura es visualizar como categoría principal la sede a la que pertenece cada funcionario y que los grupos de barras para cada sede se creen a partir de los años de servicio prestados, usando una escala de color secuencial para representar cada uno de los años de servicio prestado por los funcionarios administrativos, con esto solo se tendrán 5 barras por cada sede y el gráfico será más sencillo y comprensible, como se muestra en la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasagrupadassedeservicio-fig">3.8</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:barrasagrupadassedeservicio-fig"></span>
-<img src="Lineamientos-Visualizar_files/figure-html/barrasagrupadassedeservicio-fig-1.png" alt="Cantidad de funcionarios por sede y años de servicio" width="672" />
+<img src="Imágenes/barrasagrupadas.jpg" alt="Cantidad de funcionarios por sede y años de servicio" width="100%" />
 <p class="caption">
-Figura 3.7: Cantidad de funcionarios por sede y años de servicio
+Figura 3.8: Cantidad de funcionarios por sede y años de servicio
 </p>
 </div>
-<p>Como ya vimos los gráficos de barras agrupadas consisten en dibujar una barra al lado de la otra, pero hay ocasiones en las cuales se prefiere apiliar las barras, es decir, ubicar una encima de la otra, esto generalmente se realiza cuando la cantidad representada por las barras dispuestas en esta posición es significativa, también es necesario tener cuidado con este tipo de gráficos ya que utilizar muchas categorías para apilar las barras resultara en una visualización saturada y poco informativa. Un uso común de este tipo de gráficos es cuando las barras individuales representan recuentos, por ejemplo, el conjunto de datos llamado Administrativos posee el recuento de funcionarios por sexo, para este casi si apilamos una barra que representa el recuento de mujeres encima de una barra que representa el recuento de hombres, entonces la altura de la barra combinada mostrara el total de funcionarios independiente del género. La figura <a href="3-1-visualización-de-cantidades.html#fig:barrasaplidasserviciosexo-fig">3.8</a> presenta el uso de barras apiladas como alternativa del uso de barras agrupadas ilustrado en la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasagrupadasservicioedad-fig">3.5</a>.</p>
+<p>Como ya vimos los gráficos de barras agrupadas consisten en dibujar una barra al lado de la otra, pero hay ocasiones en las cuales se prefiere apiliar las barras, es decir, ubicar una encima de la otra, esto generalmente se realiza cuando la cantidad representada por las barras dispuestas en esta posición es significativa, también es necesario tener cuidado con este tipo de gráficos ya que utilizar muchas categorías para apilar las barras resultara en una visualización saturada y poco informativa. Un uso común de este tipo de gráficos es cuando las barras individuales representan recuentos, por ejemplo, el conjunto de datos llamado Administrativos posee el recuento de funcionarios por sexo, para este caso si apilamos una barra que representa el recuento de mujeres encima de una barra que representa el recuento de hombres, entonces la altura de la barra combinada mostrara el total de funcionarios independiente del género. La figura <a href="3-1-visualización-de-cantidades.html#fig:barrasaplidasserviciosexo-fig">3.9</a> presenta el uso de barras apiladas como alternativa del uso de barras agrupadas ilustrado en la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasagrupadasservicioedad-fig">3.6</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:barrasaplidasserviciosexo-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/barrasaplidasserviciosexo-fig-1.png" alt="Barras apiladas como una alternativa a las barras agrupadas" width="672" />
 <p class="caption">
-Figura 3.8: Barras apiladas como una alternativa a las barras agrupadas
+Figura 3.9: Barras apiladas como una alternativa a las barras agrupadas
 </p>
 </div>
 </div>
 <div id="gráficos-de-puntos-y-mapas-de-calor" class="section level3">
 <h3><span class="header-section-number">3.1.3</span> Gráficos de puntos y mapas de calor</h3>
-<p>Una de las mayores limitaciones al usar los gráficos de barras ya sean simples o alguna de sus variaciones es que los ejes deben iniciar en cero para lograr que la altura de la barra sea proporcional a la cantidad que representa, existen muchas ocasiones en las cuales es poco practico iniciar siempre los ejes en cero y una alternativa es usar puntos ubicados en lugares apropiados a lo largo del eje X o Y.</p>
-<p>Suponga que se quiere visualizar la edad promedio de los estudiantes graduados por nivel de formación, observe que en este caso no tiene mucho sentido iniciar el eje Y en cero ya que la edad promedio estará por encima de los 20 años aproximadamente y las discrepancias entre los promedios de edades no son muy grandes, por esta razón es conveniente restringir el dominio de eje x al intervalo de 20 a 40 años, para que las diferencias sean notorias y la información sea interpretada con mayor facilidad, como se ilustra en la figura <a href="3-1-visualización-de-cantidades.html#fig:diagramapuntos-fig">3.9</a>.</p>
+<p>Una de las mayores limitaciones al usar los gráficos de barras ya sean simples o alguna de sus variaciones es que los ejes deben iniciar en cero para lograr que la altura de la barra sea proporcional a la cantidad que representa, existen muchas ocasiones en las cuales es poco práctico iniciar siempre los ejes en cero y una alternativa es usar puntos ubicados en lugares apropiados a lo largo del eje X o Y.</p>
+<p>Suponga que se quiere visualizar la edad promedio de los estudiantes graduados por nivel de formación, observe que en este caso no tiene mucho sentido iniciar el eje Y en cero ya que la edad promedio estará por encima de los 20 años aproximadamente y las discrepancias entre los promedios de edades no son muy grandes, por esta razón es conveniente restringir el dominio de eje x al intervalo de 20 a 40 años, para que las diferencias sean notorias y la información sea interpretada con mayor facilidad, como se ilustra en la figura <a href="3-1-visualización-de-cantidades.html#fig:diagramapuntos-fig">3.10</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:diagramapuntos-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/diagramapuntos-fig-1.png" alt="Diagrama de puntos como alternativa a los gráficos de barras" width="672" />
 <p class="caption">
-Figura 3.9: Diagrama de puntos como alternativa a los gráficos de barras
+Figura 3.10: Diagrama de puntos como alternativa a los gráficos de barras
+</p>
+</div>
+<p>La figura @ref(fig: barrasedadpromedio-fig) muestra la edad promedio de los estudiantes graduados por nivel de formación usando un gráfico de barras, esta figura fue etiquetada como incorrecta ya que al usar barras el eje debe iniciar en cero y las discrepancias existentes entre las edades promedios de los niveles especialidades médicas y especialización no se logra apreciar con claridad.</p>
+<div class="figure" style="text-align: center"><span id="fig:barrasedadpromedio-fig"></span>
+<img src="Imágenes/edadpromediograduados.jpg" alt="Edad promedio de estudiantes graduados" width="100%" />
+<p class="caption">
+Figura 3.11: Edad promedio de estudiantes graduados
 </p>
 </div>
 <p>Para este tipo de visualización también aplica reordenar las categorías por la variable numérica si las categorías no tienen un orden natural, este grafico es recomendable cuando no se tiene un orden natural en los datos ya que pueden ser reordenados logrando una visualización atractiva y entendible.</p>
-<p>Las visualizaciones presentadas hasta el momento representan variables numéricas usando categorías a través de las posiciones en uno de los ejes, ya sea con un punto final en el valor que representa o el tamaño de la barra. Sin embargo, estos gráficos no son adecuados cuando el conjunto de datos muy grandes, ya que la cantidad de barras será excesiva y proporcionará una figura saturada. Ya se había observado en la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasagrupadasserviciosede-fig">3.6</a> que grupos de 8 barras resultan en una visualización compleja y no tan fácil de interpretar, imagine que en lugar de 8 barras por grupo se tuvieran 20 o más, resultaría aun más complejo y probablemente muy confusa.</p>
-<p>Una alternativa a las barras y puntos son los mapas de calor, los cuales están formados por dos variables categóricas, una en cada eje, y los valores son representados a través de una escala de color secuencial. La figura @ref(fig: mapadecalor-fig) utiliza este enfoque para mostrar el número de accidentes ocurridos por día y mes en los años 2014 a 2016, es una figura útil para detectar tendencias más amplias que para visualizar exactamente cada uno de los valores que representa, se identifica con claridad que los primeros 15 días del mes de enero se presenta menor accidentalidad comparado con los días restantes de este mismo mes.</p>
+<p>Las visualizaciones presentadas hasta el momento representan variables numéricas usando categorías a través de las posiciones en uno de los ejes, ya sea con un punto final en el valor que representa o el tamaño de la barra. Sin embargo, estos gráficos no son adecuados cuando el conjunto de datos muy grandes, ya que la cantidad de barras será excesiva y proporcionará una figura saturada. Ya se había observado en la figura <a href="3-1-visualización-de-cantidades.html#fig:barrasagrupadasserviciosede-fig">3.7</a> que grupos de 8 barras resultan en una visualización compleja y no tan fácil de interpretar, imagine que en lugar de 8 barras por grupo se tuvieran 20 o más, resultaría aun más complejo y probablemente muy confusa.</p>
+<p>Una alternativa a las barras y puntos son los mapas de calor, los cuales están formados por dos variables categóricas, una en cada eje, y los valores son representados a través de una escala de color secuencial. La figura <a href="3-1-visualización-de-cantidades.html#fig:mapadecalor-fig">3.12</a> utiliza este enfoque para mostrar el número de accidentes ocurridos por día y mes en los años 2014 a 2016, es una figura útil para detectar tendencias más amplias que para visualizar exactamente cada uno de los valores que representa, se identifica con claridad que los primeros 15 días del mes de enero se presenta menor accidentalidad comparado con los días restantes de este mismo mes.</p>
 <div class="figure" style="text-align: center"><span id="fig:mapadecalor-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/mapadecalor-fig-1.png" alt="Mapa de calor para representar la accidentalidad en la ciudad de Medelllín" width="672" />
 <p class="caption">
-Figura 3.10: Mapa de calor para representar la accidentalidad en la ciudad de Medelllín
+Figura 3.12: Mapa de calor para representar la accidentalidad en la ciudad de Medelllín
 </p>
 </div>
 <p>Como ya se ha mencionado en múltiples ocasiones se debe prestar mucha atención al orden de llas variables categóricas, en este caso dichas variables presentan un orden natural ya que son meses y días, en el caso de no presentarse un orden natural podría reordenarse las categorías usando la variable numérica para lograr una visualización mas clara, atractiva y estéticamente llamativa.</p>
