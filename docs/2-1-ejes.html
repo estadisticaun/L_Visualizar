@@ -24,7 +24,7 @@
 <meta name="author" content="Camila Acosta Ramirez" />
 
 
-<meta name="date" content="2021-05-31" />
+<meta name="date" content="2021-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -144,7 +144,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="2-2-geometría.html"><a href="2-2-geometría.html"><i class="fa fa-check"></i><b>2.2</b> Geometría</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="2-2-geometría.html"><a href="2-2-geometría.html#forma-y-tipo-de-línea"><i class="fa fa-check"></i><b>2.2.1</b> Forma y tipo de línea</a></li>
 <li class="chapter" data-level="2.2.2" data-path="2-2-geometría.html"><a href="2-2-geometría.html#tamaño"><i class="fa fa-check"></i><b>2.2.2</b> Tamaño</a></li>
-<li class="chapter" data-level="2.2.3" data-path="2-2-geometría.html"><a href="2-2-geometría.html#color"><i class="fa fa-check"></i><b>2.2.3</b> Color</a></li>
+<li class="chapter" data-level="2.2.3" data-path="2-2-geometría.html"><a href="2-2-geometría.html#colores"><i class="fa fa-check"></i><b>2.2.3</b> Color</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="2-3-texto.html"><a href="2-3-texto.html"><i class="fa fa-check"></i><b>2.3</b> Texto</a></li>
 </ul></li>
@@ -180,11 +180,11 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
             <section class="normal" id="section-">
 <div id="ejes" class="section level2">
 <h2><span class="header-section-number">2.1</span> Ejes</h2>
-<p>Los ejes son de los elementos de mayor relevancia dentro de cada gráfico ya que determina la posición donde se ubica cada dato. Cuando se trata de gráficos en dos dimensiones, los más comunes, las posiciones son descritas a través de dos valores que especifican un punto de forma única, y por lo tanto se necesitan escalas de posición, estas escalas son generalmente los ejes X y Y. Por convención general el eje X corre horizontalmente y el eje Y lo hace de manera vertical, aunque esto no siempre debe ser así, hay gráficos en los cuales los ejes son radiales.
+<p>Los ejes son de los elementos de mayor relevancia dentro de cada gráfico ya que determinan la posición donde se ubica cada dato. Cuando se trata de gráficos en dos dimensiones, los más comunes, las posiciones son descritas a través de dos valores que especifican un punto de forma única, y por lo tanto se necesitan escalas de posición, estas escalas son generalmente los ejes X y Y. Por convención general el eje X corre horizontalmente y el eje Y lo hace de manera vertical, aunque esto no siempre debe ser así, hay gráficos en los cuales los ejes son radiales.
 El objetivo principal de las visualizaciones que se crean es comparar los datos, es decir, identificar el comportamiento de cada observación en relación con las demás que posee el conjunto de datos. Para realizar estas comparaciones es importante definir la escala de los ejes de manera adecuada, una mala elección de estas escalas lo puede conducir a interpretar la información de manera errada; es recomendable iniciar los ejes en 0, aunque no siempre es necesario si es importante considerar que los datos sean comparables.</p>
 <p>Para ilustrar la importancia de la correcta elección del inicio del eje Y consideremos la visualización de cantidades a lo largo de una escala lineal. La figura <a href="2-1-ejes.html#fig:usoincorrectoejey-fig">2.2</a> muestra las ventas en cinco estados de EE.UU; una vista rápida a esta visualización indica que las ventas en North Dakota son extremadamente bajas en comparación con los demás estados, sin embargo, este gráfico es engañoso ya que las ventas inician en <span class="math inline">\(\$900\)</span> USD, por lo tanto, mientras que el punto final de cada barra indica de manera correcta el total de ventas, la altura de la barra representa la medida en que las ventas superan los <span class="math inline">\(\$900\)</span> dólares; la percepción humana entenderá la altura de cada barra como las ventas por estado lo que conlleva a una interpretación errónea.</p>
 <div class="figure" style="text-align: center"><span id="fig:usoincorrectoejey-fig"></span>
-<img src="Lineamientos-Visualizar_files/figure-html/usoincorrectoejey-fig-1.png" alt="Ventas por estados de EE.UU, visualiazción engañosa" width="80%" />
+<img src="Imágenes/iniciarejecero.jpg" alt="Ventas por estados de EE.UU, visualiazción engañosa" width="100%" />
 <p class="caption">
 Figura 2.2: Ventas por estados de EE.UU, visualiazción engañosa
 </p>
@@ -194,6 +194,20 @@ Figura 2.2: Ventas por estados de EE.UU, visualiazción engañosa
 <img src="Lineamientos-Visualizar_files/figure-html/usocorrectoejeyinicio0-fig-1.png" alt="Ventas por estados de EE.UU, uso correcto de la escala lineal" width="80%" />
 <p class="caption">
 Figura 2.3: Ventas por estados de EE.UU, uso correcto de la escala lineal
+</p>
+</div>
+<p>Como se mencionó anteriormente no siempre es necesario iniciar los ejes en cero, existen ocasiones en las cuales los datos se encuentran agrupados en un intervalo específico y comenzar los ejes en cero hará que las discrepancias entre los datos no se observen con claridad, la figura <a href="2-1-ejes.html#fig:ejeenceroincorrecto-fig">2.4</a> presenta la relación X-Y de datos ficticios, fue etiquetada como incorrecta ya que iniciar el eje Y en cero no permite visualizar con claridad las ubicaciones de los puntos a lo largo del eje vertical.</p>
+<div class="figure" style="text-align: center"><span id="fig:ejeenceroincorrecto-fig"></span>
+<img src="Imágenes/incorrectoejeencero.jpg" alt="Visualización engañosa por iniciar eje en cero" width="100%" />
+<p class="caption">
+Figura 2.4: Visualización engañosa por iniciar eje en cero
+</p>
+</div>
+<p>En este caso se debe restringir el dominio del eje Y al intervalo 100 a 115 aproximadamente ya que allí es donde se concentran las observaciones, note que la figura <a href="2-1-ejes.html#fig:restringirintervalo-fig">2.5</a> es más informativa ya que permite identificar con claridad la ubicación de los puntos dando como resultado una visualización clara y explicativa.</p>
+<div class="figure" style="text-align: center"><span id="fig:restringirintervalo-fig"></span>
+<img src="Lineamientos-Visualizar_files/figure-html/restringirintervalo-fig-1.png" alt="Restringir dominio del eje Y para una visualización más clara" width="90%" />
+<p class="caption">
+Figura 2.5: Restringir dominio del eje Y para una visualización más clara
 </p>
 </div>
 </div>

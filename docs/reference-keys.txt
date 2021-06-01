@@ -46,3 +46,9 @@ applications
 example-one
 example-two
 final-words
+fig:manejotextosddsa-fig
+fig:ejeenceroincorrecto-fig
+fig:restringirintervalo-fig
+fig:lineasparadistinguir-fig
+fig:lineaspararesaltar-fig
+colores

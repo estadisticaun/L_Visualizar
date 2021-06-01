@@ -24,7 +24,7 @@
 <meta name="author" content="Camila Acosta Ramirez" />
 
 
-<meta name="date" content="2021-05-31" />
+<meta name="date" content="2021-06-01" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -144,7 +144,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.2" data-path="2-2-geometría.html"><a href="2-2-geometría.html"><i class="fa fa-check"></i><b>2.2</b> Geometría</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="2-2-geometría.html"><a href="2-2-geometría.html#forma-y-tipo-de-línea"><i class="fa fa-check"></i><b>2.2.1</b> Forma y tipo de línea</a></li>
 <li class="chapter" data-level="2.2.2" data-path="2-2-geometría.html"><a href="2-2-geometría.html#tamaño"><i class="fa fa-check"></i><b>2.2.2</b> Tamaño</a></li>
-<li class="chapter" data-level="2.2.3" data-path="2-2-geometría.html"><a href="2-2-geometría.html#color"><i class="fa fa-check"></i><b>2.2.3</b> Color</a></li>
+<li class="chapter" data-level="2.2.3" data-path="2-2-geometría.html"><a href="2-2-geometría.html#colores"><i class="fa fa-check"></i><b>2.2.3</b> Color</a></li>
 </ul></li>
 <li class="chapter" data-level="2.3" data-path="2-3-texto.html"><a href="2-3-texto.html"><i class="fa fa-check"></i><b>2.3</b> Texto</a></li>
 </ul></li>
@@ -183,82 +183,97 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <p>La geometría es una parte primordial y que hará las visualizaciones mucho mas claras y entendibles. Dentro de las geometrías principales podemos considerar la forma, tamaño, tipo de línea y color.</p>
 <div id="forma-y-tipo-de-línea" class="section level3">
 <h3><span class="header-section-number">2.2.1</span> Forma y tipo de línea</h3>
-<p>Estas dos son estéticas o atributos que generalmente se usan para representar datos categóricos, dentro de visualizaciones discretas o continuas. Cuando se trata de gráficos de dispersión se opta por usar diferentes formas a partir de una variable categórica con el fin de comparar los comportamientos de cada uno de los valores que toma la variable cualitativa. En el caso de los gráficos de líneas se opta por usar diferentes estilos o tipos de líneas nuevamente con el fin de diferenciar la categoría de los datos, por lo general los estilos usados son líneas continuadas y punteadas. Ambos elementos pueden ser usados para distinguir o resaltar, en el caso de ser usados para distinguir se asigna una forma o tipo de línea a cada uno de los niveles de la variable categórica y en el caso de resaltado se usa la misma forma o tipo de línea para todos los datos excepto para aquellos elementos que queremos resaltar.</p>
-<p>La figura <a href="2-2-geometría.html#fig:formasparadistinguir-fig">2.4</a> ilustra el uso de distintas formas para distinguir las especies de flores registradas en la base de datos Iris. Como ya se menciono se usan tantas formas como niveles tenga la variable categórica, en este caso se usan círculos, triángulos y cuadrados.</p>
+<p>Estas dos son estéticas o atributos que generalmente se usan para representar datos categóricos, dentro de visualizaciones discretas o continuas. Cuando se trata de gráficos de dispersión se opta por usar diferentes formas a partir de una variable categórica con el fin de comparar los comportamientos de cada uno de los valores que toma la variable cualitativa. En el caso de los gráficos de líneas se opta por usar diferentes estilos o tipos de líneas nuevamente con el fin de diferenciar la categoría de los datos, por lo general los estilos usados son líneas continuas y punteadas. Ambos elementos pueden ser usados para distinguir o resaltar, en el caso de ser usados para distinguir se asigna una forma o tipo de línea a cada uno de los niveles de la variable categórica y en el caso de resaltado se usa la misma forma o tipo de línea para todos los datos excepto para aquellos elementos que queremos resaltar.</p>
+<p>La figura <a href="2-2-geometría.html#fig:formasparadistinguir-fig">2.6</a> ilustra el uso de distintas formas para distinguir las especies de flores registradas en la base de datos Iris. Como ya se menciono se usan tantas formas como niveles tenga la variable categórica, en este caso se usan círculos, triángulos y cuadrados.</p>
 <div class="figure" style="text-align: center"><span id="fig:formasparadistinguir-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/formasparadistinguir-fig-1.png" alt="Uso de las formas para distinguir grupos de datos" width="80%" />
 <p class="caption">
-Figura 2.4: Uso de las formas para distinguir grupos de datos
+Figura 2.6: Uso de las formas para distinguir grupos de datos
 </p>
 </div>
-<p>Si quisiéramos resaltar una de las especies por ejemplo, Visicolor debemos asignar la misma forma a las especies Setosa y Virginica y una distinta a la especie a resaltar, por ejemplo usar círculos y triángulos, como se presenta en la figura <a href="2-2-geometría.html#fig:formaspararesaltar-fig">2.5</a>.</p>
+<p>Si quisiéramos resaltar una de las especies por ejemplo, Versicolor debemos asignar la misma forma a las especies Setosa y Virginica y una distinta a la especie a resaltar, por ejemplo usar círculos y triángulos, como se presenta en la figura <a href="2-2-geometría.html#fig:formaspararesaltar-fig">2.7</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:formaspararesaltar-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/formaspararesaltar-fig-1.png" alt="Uso de las formas para resaltar un grupo de observaciones" width="80%" />
 <p class="caption">
-Figura 2.5: Uso de las formas para resaltar un grupo de observaciones
+Figura 2.7: Uso de las formas para resaltar un grupo de observaciones
 </p>
 </div>
+<p>Cuando se trata de gráficos de líneas que comúnmente son utilizados para representar series de tiempo también es posible hacer uso del tipo de línea tanto para distinguir como para resaltar, al igual que en los gráficos de dispersión debemos usar tantas formas como categorías tenga la variable discreta si la intención es distinguir. Se usara un conjunto de datos de R llamado babynames que contiene información de la cantidad de bebes nacidos desde el año 1880 hasta 2017 con los respectivos nombres, se realiza un gráfico de líneas con los tres nombres de niñas más populares y se cambia el tipo de línea para distinguir entre nombres como se muestra en la figura <a href="2-2-geometría.html#fig:lineasparadistinguir-fig">2.8</a>.</p>
+<div class="figure" style="text-align: center"><span id="fig:lineasparadistinguir-fig"></span>
+<img src="Lineamientos-Visualizar_files/figure-html/lineasparadistinguir-fig-1.png" alt="Uso del tipo de líneas para distinguir grupos de observaciones" width="80%" />
+<p class="caption">
+Figura 2.8: Uso del tipo de líneas para distinguir grupos de observaciones
+</p>
+</div>
+<p>En el caso de querer resaltar algún nombre en particular debemos usar un tipo de línea diferente para el nombre a resaltar, por ejemplo, en la figura <a href="2-2-geometría.html#fig:lineaspararesaltar-fig">2.9</a> se usa una línea punteada para representar la popularidad a través del tiempo del nombre Jennifer y los otros dos se dejaron como líneas continuas.</p>
+<div class="figure" style="text-align: center"><span id="fig:lineaspararesaltar-fig"></span>
+<img src="Lineamientos-Visualizar_files/figure-html/lineaspararesaltar-fig-1.png" alt="Uso del tipo de líneas para resaltar un grupo de observaciones" width="80%" />
+<p class="caption">
+Figura 2.9: Uso del tipo de líneas para resaltar un grupo de observaciones
+</p>
+</div>
+<p>Adicional a las formas y tipos de líneas se puede cambiar con el color para generar visualizaciones más atractivas e informativas, ya que al color se le pueden dar distintos usos, esto se muestra en la subsección <a href="2-2-geometría.html#colores">2.2.3</a>.</p>
 </div>
 <div id="tamaño" class="section level3">
 <h3><span class="header-section-number">2.2.2</span> Tamaño</h3>
 <p>El tamaño generalmente es una estética usada en gráficos de dispersión, se incluye una nueva variable continua o discreta que determina el tamaño de cada observación representada en el gráfico. Este atributo es de gran utilidad, pero se debe tener mucho cuidado al usarlo, ya que en el caso de datos desproporcionados un solo punto ocupará un tamaño exagerado que será poco comparable con los demás datos.</p>
-<p>La figura <a href="2-2-geometría.html#fig:usotamanodiscreto-fig">2.6</a> ilustra el uso de una variable discreta para asignar diferentes tamaños a las observaciones.</p>
+<p>La figura <a href="2-2-geometría.html#fig:usotamanodiscreto-fig">2.10</a> ilustra el uso de una variable discreta para asignar diferentes tamaños a las observaciones.</p>
 <div class="figure" style="text-align: center"><span id="fig:usotamanodiscreto-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/usotamanodiscreto-fig-1.png" alt="Asignación de tamaños mediante una variable discreta" width="80%" />
 <p class="caption">
-Figura 2.6: Asignación de tamaños mediante una variable discreta
+Figura 2.10: Asignación de tamaños mediante una variable discreta
 </p>
 </div>
-<p>La figura <a href="2-2-geometría.html#fig:usotamanocontinuo-fig">2.7</a> muestra el uso de una variable continua para determinar el tamaño de cada observación, note que a demás de la geometría relacionada al tamaño se debe usar la transparencia para evitar que los países con mayor población oculten o se sobrepongan a aquellos a países de menor población.</p>
+<p>La figura <a href="2-2-geometría.html#fig:usotamanocontinuo-fig">2.11</a> muestra el uso de una variable continua para determinar el tamaño de cada observación, note que a demás de la geometría relacionada al tamaño se debe usar la transparencia para evitar que los países con mayor población oculten o se sobrepongan a aquellos a países de menor población.</p>
 <div class="figure" style="text-align: center"><span id="fig:usotamanocontinuo-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/usotamanocontinuo-fig-1.png" alt="Asignación de tamaños mediante una variable continua" width="80%" />
 <p class="caption">
-Figura 2.7: Asignación de tamaños mediante una variable continua
+Figura 2.11: Asignación de tamaños mediante una variable continua
 </p>
 </div>
 </div>
-<div id="color" class="section level3">
+<div id="colores" class="section level3">
 <h3><span class="header-section-number">2.2.3</span> Color</h3>
 <p>El color es una de las estéticas más importantes y que pueden marcar una gran diferencia en la interpretación de sus datos. Existen algunos colores que destacan más que otros por lo que darán un peso innecesario a los datos, es decir, que atraen la atención de los usuarios a esos puntos y que pueden no necesariamente ser los de interés central, también es recomendable no superar los seis colores por gráfico. El color dentro de una visualización puede ser usado principalmente para tres casos: para distinguir grupos de datos entre sí, uso del color para representar valores de datos y finalmente puede ser usado para resaltar.</p>
 <div id="distinguir-grupos-de-datos" class="section level4">
 <h4><span class="header-section-number">2.2.3.1</span> Distinguir grupos de datos</h4>
 <p>Emplear el color como una herramienta para distinguir es uno de los usos más comunes que se le da al color cuando se trata de gráficos que incluyen variables categóricas y que no tienen un orden específico como diferentes niveles de formación dentro de una universidad o departamentos dentro de un mapa. En este caso, se utiliza una escala de colores cualitativa la cual contiene un conjunto finito de colores específicos que se eligen para versen claramente distintos entre sí y que al mismo tiempo deben ser equivalentes entre sí. Es decir que lo colores seleccionados se deben poder diferenciar de manera clara y precisa, pero uno no debe resaltar más que otro. También es importante que el conjunto de colores seleccionados no presente un orden ya que esto creara un orden en la visualización que por definición de los datos no se tiene. Como recomendación general, las escalas de color cualitativas funcionan mejor cuando hay de tres a cinco categorías diferentes; tener ocho o diez categorías hará que la tarea de hacer coincidir los colores sea tediosa, a demás la leyenda será demasiado extensa y el usuario tendrá que hacer un fuerte trabajo de búsqueda para identificar el color correspondiente a cada categoría; en el caso de muchas categorías se recomienda usar etiquetas directas sobre la observación para así facilitar la comprensión del gráfico aunque con esto también se debe tener cuidado ya que muchas etiquetas hará que la visualización se sature y la información no sea transmitida de la manera correcta.</p>
-<p>La figura <a href="2-2-geometría.html#fig:usocolordistinguir-fig">2.8</a> muestra el uso correcto de los colores como herramienta para distinguir, se seleccionaron colores que contrastan entre sí pero no compiten por la atención, este gráfico en particular posee ocho categorías distintas pero aún así se logra identificar claramente cada una de las sedes de admisión.</p>
+<p>La figura <a href="2-2-geometría.html#fig:usocolordistinguir-fig">2.12</a> muestra el uso correcto de los colores como herramienta para distinguir, se seleccionaron colores que contrastan entre sí pero no compiten por la atención, este gráfico en particular posee ocho categorías distintas pero aún así se logra identificar claramente cada una de las sedes de admisión.</p>
 <div class="figure" style="text-align: center"><span id="fig:usocolordistinguir-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/usocolordistinguir-fig-1.png" alt="Uso del color como herramienta para distinguir grupos de datos" width="100%" />
 <p class="caption">
-Figura 2.8: Uso del color como herramienta para distinguir grupos de datos
+Figura 2.12: Uso del color como herramienta para distinguir grupos de datos
 </p>
 </div>
 </div>
 <div id="representar-valores" class="section level4">
 <h4><span class="header-section-number">2.2.3.2</span> Representar valores</h4>
 <p>El color también puede ser usado como herramienta para representar variables cuantitativas como ingresos, temperatura, entre otros. En este caso se usa una escala de color secuencial, la cual indica claramente que valores son más grandes o pequeños y que tan distantes se encuentran dos valores específicos entre sí. Estas escalas secuenciales de color pueden basarse en un solo tono por ejemplo de azul oscuro a azul claro, o en múltiples matices por ejemplo de rojo oscuro a amarillo claro.</p>
-<p>En la figura <a href="2-2-geometría.html#fig:usocolorrepresentar-fig">2.9</a> presenta un uso adecuado de la escala de colores secuencial, se usa una paleta de un solo tono que inicia en azul claro y termina en un azul un poco más fuerte. Esta visualización presenta la cantidad de estudiantes graduados en el periodo 2020-II por departamento de nacimiento y la escala de color fue usada para colorear el conteo por cada uno de estos departamentos.</p>
+<p>En la figura <a href="2-2-geometría.html#fig:usocolorrepresentar-fig">2.13</a> presenta un uso adecuado de la escala de colores secuencial, se usa una paleta de un solo tono que inicia en azul claro y termina en un azul un poco más fuerte. Esta visualización presenta la cantidad de estudiantes graduados en el periodo 2020-II por departamento de nacimiento y la escala de color fue usada para colorear el conteo por cada uno de estos departamentos.</p>
 <div class="figure" style="text-align: center"><span id="fig:usocolorrepresentar-fig"></span>
 <img src="Imágenes/escaladecolorsecuencial.jpg" alt="Uso de la escala de color secuencial para representar valores" width="100%" />
 <p class="caption">
-Figura 2.9: Uso de la escala de color secuencial para representar valores
+Figura 2.13: Uso de la escala de color secuencial para representar valores
 </p>
 </div>
 <p>Existen algunas ocasiones en las cuales es necesario visualizar la desviación de los valores de los datos en una de dos direcciones en relación con un punto medio neutral. Un ejemplo sencillo y muy básico de estos casos es cuando se tienen números positivos y negativos, que se representan por dos colores, puede ser verde para los números positivos y rojo para los negativos, a partir de la intensidad de estos colores se indica la lejanía con el cero. La escala de color usada en estos casos se denomina divergente y puede pensarse como dos escalas de colores secuenciales que se unen en un punto medio; estas escalas deben ser equilibradas, de modo que la progresión de los colores claros en el centro a los colores oscuros del exterior debe ser la aproximadamente igual para ambas direcciones.</p>
 <div class="figure" style="text-align: center"><span id="fig:escaladivergente-fig"></span>
 <img src="Imágenes/escaladivergente.jpg" alt="Escala divergente para representar valores" width="100%" />
 <p class="caption">
-Figura 2.10: Escala divergente para representar valores
+Figura 2.14: Escala divergente para representar valores
 </p>
 </div>
-<p>La figura <a href="2-2-geometría.html#fig:escaladivergente-fig">2.10</a> presenta una de los tantos usos que se le puede dar a las escalas de colores divergentes, se presenta los beneficios por estados. Es importante notar que la escala de colores no se encuentra equilibrada y esto se debe a la desproporción de los datos, a pesar de esto la visualización sigue siendo informativa y se logra distinción entre los colores.</p>
+<p>La figura <a href="2-2-geometría.html#fig:escaladivergente-fig">2.14</a> presenta una de los tantos usos que se le puede dar a las escalas de colores divergentes, se presenta los beneficios por estados. Es importante notar que la escala de colores no se encuentra equilibrada y esto se debe a la desproporción de los datos, a pesar de esto la visualización sigue siendo informativa y se logra distinción entre los colores.</p>
 </div>
 <div id="resaltar-observaciones" class="section level4">
 <h4><span class="header-section-number">2.2.3.3</span> Resaltar observaciones</h4>
 <p>Emplear el color para resaltar observaciones es de gran utilidad cuando el conjunto de datos contiene información clave sobre la historia que se quiere contar a través del gráfico y enfatizar en estos elementos conlleva a una mejor comprensión de la información que se desea comunicar. Para lograr este énfasis podemos colorear estos elementos de la figura con colores o tonalidades que se destaquen vívidamente contra el resto de la figura; generalmente se usan escalas de color de acento, las cuales contienen tanto un conjunto de colores tenues como un conjunto coincidente de colores más fuertes.</p>
 <p>Cuando se trabaja con una escala de color de acento, es fundamental que los colores básicos no compitan por la atención. Estos colores de base deben ser monótonos pero que apoye bien el color de acento, es muy común cometer el error de usar colores de línea de base que son demasiado coloridos, de modo que terminan compitiendo por la atención del lector. Una alternativa fácil es usar un color neutro en todos los elementos de la figura, excepto para la categoría de puntos que se quiere resaltar.</p>
-<p>La figura <a href="2-2-geometría.html#fig:resaltardatos-fig">2.11</a> muestra el total de estudiantes admitidos por departamento de nacimiento, se hace uso de una escala de color de acento para resaltar los departamentos pertenecientes a la región andina. Observe que se usa un color neutro para los departamentos que no son de interés y un color azul llamativo para atraer la atención del usuario a la región andina. Esta figura presenta uno de los tantos usos que se le puede dar a las escalas de colores de acento para resaltar datos, es posible aplicarla a gráficos de líneas, diagramas de dispersión, entre otros.</p>
+<p>La figura <a href="2-2-geometría.html#fig:resaltardatos-fig">2.15</a> muestra el total de estudiantes admitidos por departamento de nacimiento, se hace uso de una escala de color de acento para resaltar los departamentos pertenecientes a la región andina. Observe que se usa un color neutro para los departamentos que no son de interés y un color azul llamativo para atraer la atención del usuario a la región andina. Esta figura presenta uno de los tantos usos que se le puede dar a las escalas de colores de acento para resaltar datos, es posible aplicarla a gráficos de líneas, diagramas de dispersión, entre otros.</p>
 <div class="figure" style="text-align: center"><span id="fig:resaltardatos-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/resaltardatos-fig-1.png" alt="Escala de color de acento para resaltar observaciones" width="80%" />
 <p class="caption">
-Figura 2.11: Escala de color de acento para resaltar observaciones
+Figura 2.15: Escala de color de acento para resaltar observaciones
 </p>
 </div>
 </div>
