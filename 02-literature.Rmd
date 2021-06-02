@@ -44,6 +44,7 @@ ggplot(filtrar, aes(x = State, y = Sales)) +
   coord_cartesian(ylim = c(0, 1700)) +
   labs(y = "Sales USD", 
        title = "Sales by states in USA") +
+  theme_bw() + 
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
@@ -54,7 +55,7 @@ knitr::include_graphics("Imágenes/incorrectoejeencero.jpg")
 ```
 En este caso se debe restringir el dominio del eje Y al intervalo 100 a 115 aproximadamente ya que allí es donde se concentran las observaciones, note que la figura \@ref(fig:restringirintervalo-fig) es más informativa ya que permite identificar con claridad la ubicación de los puntos dando como resultado una visualización clara y explicativa.
 
-```{r restringirintervalo-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Restringir dominio del eje Y para una visualización más clara', out.width='90%'}
+```{r restringirintervalo-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Restringir dominio del eje Y para una visualización más clara', out.width='80%'}
 x <- c(1, 2, 3, 4, 5, 6)
 y <- c(100, 101, 110, 109, 104, 113)
 data <- data.frame(x,y)
@@ -64,6 +65,7 @@ ggplot(data, aes(x = x, y = y)) +
   labs(title = "X vs Y",
        x = "X",
        y = "Y") + 
+  theme_bw() + 
   theme(plot.title = element_text(hjust = 0.5),
         axis.text.x = element_text(size = 10, face = "bold"),
         axis.text.y = element_text(size = 10, face = "bold"),
@@ -86,6 +88,7 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, shape=Species)) +
   geom_point(size=3) +
   labs(x = "Sepal Lenght", y = "Sepal Width", 
        title = "Sepal Lenght vs Sepal Width by species") +
+  theme_bw() + 
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
@@ -97,6 +100,7 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width)) +
   scale_shape_manual(values = c(19, 17, 19)) +
   labs(x = "Sepal Lenght", y = "Sepal Width", 
        title = "Sepal Lenght vs Sepal Width by species") +
+  theme_bw() + 
   theme(plot.title = element_text(hjust = 0.5))
 
 ```
@@ -139,6 +143,7 @@ ggplot(iris, aes(x=Sepal.Length, y=Sepal.Width, size = Species, color = Species)
   geom_point() + 
   labs(x = "Sepal Lenght", y = "Sepal Width", 
        title = "Sepal Lenght vs Sepal Width by species") + 
+  theme_bw() +
   theme(plot.title = element_text(hjust = 0.5))
 ```
 
@@ -152,6 +157,7 @@ data %>%
   ggplot(aes(x=gdpPercap, y=lifeExp, size = pop)) +
   geom_point(alpha=0.5) +
   scale_size(range = c(.1, 24)) + 
+  theme_bw() + 
   theme(legend.position = 'none',
         plot.title = element_text(hjust = 0.5)) +
   labs(title = "GDP per capita and life expectancy")
@@ -167,7 +173,7 @@ Emplear el color como una herramienta para distinguir es uno de los usos más co
 
 La figura \@ref(fig:usocolordistinguir-fig) muestra el uso correcto de los colores como herramienta para distinguir, se seleccionaron colores que contrastan entre sí pero no compiten por la atención, este gráfico en particular posee ocho categorías distintas pero aún así se logra identificar claramente cada una de las sedes de admisión.
 
-```{r usocolordistinguir-fig,echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del color como herramienta para distinguir grupos de datos', message=FALSE, warning=FALSE, out.width='100%'}
+```{r usocolordistinguir-fig,echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del color como herramienta para distinguir grupos de datos', message=FALSE, warning=FALSE, out.width='90%'}
 graduados <- Graduados %>% 
   mutate(YEAR_SEMESTER = paste(YEAR, SEMESTRE, sep = " - ")) %>% 
   group_by(YEAR_SEMESTER, SEDE_NOMBRE_ADM) %>% 
@@ -185,9 +191,8 @@ ggplot(data = graduados, aes(x = YEAR_SEMESTER, y = n, group = SEDE_NOMBRE_ADM,
                                "#FBB03B", # AMARILLO    | Orinoquia
                                "#93278F" # MORADO      | Palmira
                                )) +
-  theme(panel.background = element_rect(fill = "#ecf0f1"),
-  panel.grid.minor = element_line(linetype = "dotted"),
-  axis.text.x = element_text(angle = 45, hjust = 1),
+  theme_bw() + 
+  theme(axis.text.x = element_text(angle = 45, hjust = 1),
   legend.position = 'bottom',
   plot.title = element_text(hjust = 0.5)) +
   labs(x = "Periodo", y = "Número de graduados",
@@ -248,6 +253,7 @@ ggplot(data=deptos_region,
   scale_y_continuous(breaks=seq(0, 3000, 500)) +
   scale_fill_manual(values = c("cornsilk3", "#29abe2", "cornsilk3" , 
                                "cornsilk3", "cornsilk3")) +
+  theme_bw() + 
   theme(plot.title = element_text(hjust = 0.5)) 
 
 ```
@@ -269,13 +275,14 @@ La figura \@ref(fig:usoincorrectotextos-fig) ilustra lo que no se debe hacer en 
   labs(title = "Sepal Width vs Sepal Length by Species",
                                x = "Sepal Width", 
                                y = "Sepal Length") + 
+  theme_bw() +
   theme(text = element_text(size = 15),
         plot.title = element_text(size = 10, hjust = 0.5)) 
 ```
 
 La figura \@ref(fig:manejotextos-fig) presenta la clara jerarquía existente entre los textos del gráfico, observe que se trabaja con la misma fuente pero se juega con mayúsculas y minúsculas para dar la importancia que cada elemento requiere, esta visualización es un ejemplo en el cual se puede omitir el título de la leyenda, ya que las etiquetas son tan claras que usar un título conlleva a un gráfico saturado. 
 
-```{r manejotextos-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso correcto del texto para contextualizar', out.width='90%'}
+```{r manejotextos-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso correcto del texto para contextualizar', out.width='80%'}
 Aspirantes <- UnalData::Aspirantes
 sexo_admitidos <- Aspirantes %>% 
   filter(ADMITIDO == 'Sí', YEAR == '2021', SEMESTRE == 1) %>% 

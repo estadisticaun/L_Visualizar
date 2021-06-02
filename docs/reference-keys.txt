@@ -3,8 +3,12 @@ tab:nice-tab
 fig:partesgrafico-fig
 fig:usoincorrectoejey-fig
 fig:usocorrectoejeyinicio0-fig
+fig:ejeenceroincorrecto-fig
+fig:restringirintervalo-fig
 fig:formasparadistinguir-fig
 fig:formaspararesaltar-fig
+fig:lineasparadistinguir-fig
+fig:lineaspararesaltar-fig
 fig:usotamanodiscreto-fig
 fig:usotamanocontinuo-fig
 fig:usocolordistinguir-fig
@@ -32,7 +36,7 @@ ejes
 geometría
 forma-y-tipo-de-línea
 tamaño
-color
+colores
 distinguir-grupos-de-datos
 representar-valores
 resaltar-observaciones
@@ -46,9 +50,3 @@ applications
 example-one
 example-two
 final-words
-fig:manejotextosddsa-fig
-fig:ejeenceroincorrecto-fig
-fig:restringirintervalo-fig
-fig:lineasparadistinguir-fig
-fig:lineaspararesaltar-fig
-colores

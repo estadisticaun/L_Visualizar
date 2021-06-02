@@ -113,7 +113,7 @@
 
 \title{Lineamientos conceptuales para la visualización estadística}
 \author{Camila Acosta Ramirez}
-\date{2021-05-31}
+\date{2021-06-02}
 
 \begin{document}
 \maketitle
@@ -204,7 +204,7 @@ You can write citations, too. For example, we are using the \textbf{bookdown} pa
 \hypertarget{partes-principales-de-un-gruxe1fico}{%
 \chapter{Partes principales de un gráfico}\label{partes-principales-de-un-gruxe1fico}}
 
-A la hora de crear un gráfico es necesario tener presente cada uno de los elementos que lo conforman y determinar cual es la mejor manera de representar cada uno de estos para lograr el impacto deseado en la visualización. El diseño correcto de estos elementos garantizara el éxito de su gráfico, al comunicar de manera acertada la información que pretende presentar. Dentro de la gama de gráficos estadísticos básicos se identifican tres elementos importantes los cuales son ejes, geometría en la cual se incluyen la forma, tamaño y color, tipos de líneas y texto el cual incluye las etiquetas de los ejes, titulo y leyenda.
+A la hora de crear un gráfico es necesario tener presente cada uno de los elementos que lo conforman y determinar cual es la mejor manera de representar cada uno de estos para lograr el impacto deseado en la visualización. El diseño correcto de estos elementos garantizará el éxito de su gráfico, al comunicar de manera acertada la información que pretende presentar. Dentro de la gama de gráficos estadísticos básicos se identifican tres elementos importantes los cuales son ejes, geometría en la cual se incluyen la forma, tamaño y color, tipos de líneas y texto el cual incluye las etiquetas de los ejes, título y leyenda.
 
 \begin{figure}
 
@@ -222,14 +222,14 @@ A continuación, se presentan las características que se consideraron más impo
 \hypertarget{ejes}{%
 \section{Ejes}\label{ejes}}
 
-Los ejes son de los elementos de mayor relevancia dentro de cada gráfico ya que determina la posición donde se ubica cada dato. Cuando se trata de gráficos en dos dimensiones, los más comunes, las posiciones son descritas a través de dos valores que especifican un punto de forma única, y por lo tanto se necesitan escalas de posición, estas escalas son generalmente los ejes X y Y. Por convención general el eje X corre horizontalmente y el eje Y lo hace de manera vertical, aunque esto no siempre debe ser así, hay gráficos en los cuales los ejes son radiales.
+Los ejes son de los elementos de mayor relevancia dentro de cada gráfico ya que determinan la posición donde se ubica cada dato. Cuando se trata de gráficos en dos dimensiones, los más comunes, las posiciones son descritas a través de dos valores que especifican un punto de forma única, y por lo tanto se necesitan escalas de posición, estas escalas son generalmente los ejes X y Y. Por convención general el eje X corre horizontalmente y el eje Y lo hace de manera vertical, aunque esto no siempre debe ser así, hay gráficos en los cuales los ejes son radiales.
 El objetivo principal de las visualizaciones que se crean es comparar los datos, es decir, identificar el comportamiento de cada observación en relación con las demás que posee el conjunto de datos. Para realizar estas comparaciones es importante definir la escala de los ejes de manera adecuada, una mala elección de estas escalas lo puede conducir a interpretar la información de manera errada; es recomendable iniciar los ejes en 0, aunque no siempre es necesario si es importante considerar que los datos sean comparables.
 
 Para ilustrar la importancia de la correcta elección del inicio del eje Y consideremos la visualización de cantidades a lo largo de una escala lineal. La figura \ref{fig:usoincorrectoejey-fig} muestra las ventas en cinco estados de EE.UU; una vista rápida a esta visualización indica que las ventas en North Dakota son extremadamente bajas en comparación con los demás estados, sin embargo, este gráfico es engañoso ya que las ventas inician en \(\$900\) USD, por lo tanto, mientras que el punto final de cada barra indica de manera correcta el total de ventas, la altura de la barra representa la medida en que las ventas superan los \(\$900\) dólares; la percepción humana entenderá la altura de cada barra como las ventas por estado lo que conlleva a una interpretación errónea.
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/usoincorrectoejey-fig-1} 
+{\centering \includegraphics[width=1\linewidth]{Imágenes/iniciarejecero} 
 
 }
 
@@ -247,6 +247,28 @@ La forma correcta de visualizar estos datos se presenta en la figura \ref{fig:us
 \caption{Ventas por estados de EE.UU, uso correcto de la escala lineal}\label{fig:usocorrectoejeyinicio0-fig}
 \end{figure}
 
+Como se mencionó anteriormente no siempre es necesario iniciar los ejes en cero, existen ocasiones en las cuales los datos se encuentran agrupados en un intervalo específico y comenzar los ejes en cero hará que las discrepancias entre los datos no se observen con claridad, la figura \ref{fig:ejeenceroincorrecto-fig} presenta la relación X-Y de datos ficticios, fue etiquetada como incorrecta ya que iniciar el eje Y en cero no permite visualizar con claridad las ubicaciones de los puntos a lo largo del eje vertical.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/incorrectoejeencero} 
+
+}
+
+\caption{Visualización engañosa por iniciar eje en cero}\label{fig:ejeenceroincorrecto-fig}
+\end{figure}
+
+En este caso se debe restringir el dominio del eje Y al intervalo 100 a 115 aproximadamente ya que allí es donde se concentran las observaciones, note que la figura \ref{fig:restringirintervalo-fig} es más informativa ya que permite identificar con claridad la ubicación de los puntos dando como resultado una visualización clara y explicativa.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/restringirintervalo-fig-1} 
+
+}
+
+\caption{Restringir dominio del eje Y para una visualización más clara}\label{fig:restringirintervalo-fig}
+\end{figure}
+
 \hypertarget{geometruxeda}{%
 \section{Geometría}\label{geometruxeda}}
 
@@ -255,7 +277,7 @@ La geometría es una parte primordial y que hará las visualizaciones mucho mas 
 \hypertarget{forma-y-tipo-de-luxednea}{%
 \subsection{Forma y tipo de línea}\label{forma-y-tipo-de-luxednea}}
 
-Estas dos son estéticas o atributos que generalmente se usan para representar datos categóricos, dentro de visualizaciones discretas o continuas. Cuando se trata de gráficos de dispersión se opta por usar diferentes formas a partir de una variable categórica con el fin de comparar los comportamientos de cada uno de los valores que toma la variable cualitativa. En el caso de los gráficos de líneas se opta por usar diferentes estilos o tipos de líneas nuevamente con el fin de diferenciar la categoría de los datos, por lo general los estilos usados son líneas continuadas y punteadas. Ambos elementos pueden ser usados para distinguir o resaltar, en el caso de ser usados para distinguir se asigna una forma o tipo de línea a cada uno de los niveles de la variable categórica y en el caso de resaltado se usa la misma forma o tipo de línea para todos los datos excepto para aquellos elementos que queremos resaltar.
+Estas dos son estéticas o atributos que generalmente se usan para representar datos categóricos, dentro de visualizaciones discretas o continuas. Cuando se trata de gráficos de dispersión se opta por usar diferentes formas a partir de una variable categórica con el fin de comparar los comportamientos de cada uno de los valores que toma la variable cualitativa. En el caso de los gráficos de líneas se opta por usar diferentes estilos o tipos de líneas nuevamente con el fin de diferenciar la categoría de los datos, por lo general los estilos usados son líneas continuas y punteadas. Ambos elementos pueden ser usados para distinguir o resaltar, en el caso de ser usados para distinguir se asigna una forma o tipo de línea a cada uno de los niveles de la variable categórica y en el caso de resaltado se usa la misma forma o tipo de línea para todos los datos excepto para aquellos elementos que queremos resaltar.
 
 La figura \ref{fig:formasparadistinguir-fig} ilustra el uso de distintas formas para distinguir las especies de flores registradas en la base de datos Iris. Como ya se menciono se usan tantas formas como niveles tenga la variable categórica, en este caso se usan círculos, triángulos y cuadrados.
 
@@ -268,7 +290,7 @@ La figura \ref{fig:formasparadistinguir-fig} ilustra el uso de distintas formas 
 \caption{Uso de las formas para distinguir grupos de datos}\label{fig:formasparadistinguir-fig}
 \end{figure}
 
-Si quisiéramos resaltar una de las especies por ejemplo, Visicolor debemos asignar la misma forma a las especies Setosa y Virginica y una distinta a la especie a resaltar, por ejemplo usar círculos y triángulos, como se presenta en la figura \ref{fig:formaspararesaltar-fig}.
+Si quisiéramos resaltar una de las especies por ejemplo, Versicolor debemos asignar la misma forma a las especies Setosa y Virginica y una distinta a la especie a resaltar, por ejemplo usar círculos y triángulos, como se presenta en la figura \ref{fig:formaspararesaltar-fig}.
 
 \begin{figure}
 
@@ -278,6 +300,30 @@ Si quisiéramos resaltar una de las especies por ejemplo, Visicolor debemos asig
 
 \caption{Uso de las formas para resaltar un grupo de observaciones}\label{fig:formaspararesaltar-fig}
 \end{figure}
+
+Cuando se trata de gráficos de líneas que comúnmente son utilizados para representar series de tiempo también es posible hacer uso del tipo de línea tanto para distinguir como para resaltar, al igual que en los gráficos de dispersión debemos usar tantas formas como categorías tenga la variable discreta si la intención es distinguir. Se usara un conjunto de datos de R llamado babynames que contiene información de la cantidad de bebes nacidos desde el año 1880 hasta 2017 con los respectivos nombres, se realiza un gráfico de líneas con los tres nombres de niñas más populares y se cambia el tipo de línea para distinguir entre nombres como se muestra en la figura \ref{fig:lineasparadistinguir-fig}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/lineasparadistinguir-fig-1} 
+
+}
+
+\caption{Uso del tipo de líneas para distinguir grupos de observaciones}\label{fig:lineasparadistinguir-fig}
+\end{figure}
+
+En el caso de querer resaltar algún nombre en particular debemos usar un tipo de línea diferente para el nombre a resaltar, por ejemplo, en la figura \ref{fig:lineaspararesaltar-fig} se usa una línea punteada para representar la popularidad a través del tiempo del nombre Jennifer y los otros dos se dejaron como líneas continuas.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/lineaspararesaltar-fig-1} 
+
+}
+
+\caption{Uso del tipo de líneas para resaltar un grupo de observaciones}\label{fig:lineaspararesaltar-fig}
+\end{figure}
+
+Adicional a las formas y tipos de líneas se puede cambiar con el color para generar visualizaciones más atractivas e informativas, ya que al color se le pueden dar distintos usos, esto se muestra en la subsección \ref{colores}.
 
 \hypertarget{tamauxf1o}{%
 \subsection{Tamaño}\label{tamauxf1o}}
@@ -306,8 +352,8 @@ La figura \ref{fig:usotamanocontinuo-fig} muestra el uso de una variable continu
 \caption{Asignación de tamaños mediante una variable continua}\label{fig:usotamanocontinuo-fig}
 \end{figure}
 
-\hypertarget{color}{%
-\subsection{Color}\label{color}}
+\hypertarget{colores}{%
+\subsection{Color}\label{colores}}
 
 El color es una de las estéticas más importantes y que pueden marcar una gran diferencia en la interpretación de sus datos. Existen algunos colores que destacan más que otros por lo que darán un peso innecesario a los datos, es decir, que atraen la atención de los usuarios a esos puntos y que pueden no necesariamente ser los de interés central, también es recomendable no superar los seis colores por gráfico. El color dentro de una visualización puede ser usado principalmente para tres casos: para distinguir grupos de datos entre sí, uso del color para representar valores de datos y finalmente puede ser usado para resaltar.
 
@@ -320,7 +366,7 @@ La figura \ref{fig:usocolordistinguir-fig} muestra el uso correcto de los colore
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{Lineamientos-Visualizar_files/figure-latex/usocolordistinguir-fig-1} 
+{\centering \includegraphics[width=0.9\linewidth]{Lineamientos-Visualizar_files/figure-latex/usocolordistinguir-fig-1} 
 
 }
 
@@ -398,7 +444,7 @@ La figura \ref{fig:manejotextos-fig} presenta la clara jerarquía existente entr
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.9\linewidth]{Lineamientos-Visualizar_files/figure-latex/manejotextos-fig-1} 
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/manejotextos-fig-1} 
 
 }
 
@@ -424,7 +470,7 @@ Suponga que queremos visualizar la cantidad de estudiantes de estudiantes admiti
 
 \begin{figure}
 
-{\centering \includegraphics{Lineamientos-Visualizar_files/figure-latex/barrasadmitidosnivel-fig-1} 
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/barrasadmitidosnivel-fig-1} 
 
 }
 
@@ -446,7 +492,7 @@ La mejor solución para etiquetas largas es cambiar a un gráfico de barras hori
 
 \begin{figure}
 
-{\centering \includegraphics{Lineamientos-Visualizar_files/figure-latex/barrasadmitidosnivelhorizontal-fig-1} 
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/barrasadmitidosnivelhorizontal-fig-1} 
 
 }
 
@@ -459,7 +505,7 @@ Sin embargo, las etiquetas solo pueden ser reordenadas cuando las categorías qu
 
 \begin{figure}
 
-{\centering \includegraphics{Lineamientos-Visualizar_files/figure-latex/graduadosporgrupoedad-fig-1} 
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/graduadosporgrupoedad-fig-1} 
 
 }
 
@@ -482,7 +528,7 @@ Las figuras mostradas en la subsección anterior representan variables cualitati
 
 \begin{figure}
 
-{\centering \includegraphics{Lineamientos-Visualizar_files/figure-latex/barrasagrupadasservicioedad-fig-1} 
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/barrasagrupadasservicioedad-fig-1} 
 
 }
 
@@ -493,7 +539,7 @@ Con los gráficos de barras agrupadas se debe tener cuidado ya que las variables
 
 \begin{figure}
 
-{\centering \includegraphics{Lineamientos-Visualizar_files/figure-latex/barrasagrupadasserviciosede-fig-1} 
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/barrasagrupadasserviciosede-fig-1} 
 
 }
 
@@ -504,7 +550,7 @@ Una alternativa a esta figura es visualizar como categoría principal la sede a 
 
 \begin{figure}
 
-{\centering \includegraphics[width=1\linewidth]{Imágenes/barrasagrupadas} 
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/barrasagrupadassedeservicio-fig-1} 
 
 }
 
@@ -515,7 +561,7 @@ Como ya vimos los gráficos de barras agrupadas consisten en dibujar una barra a
 
 \begin{figure}
 
-{\centering \includegraphics{Lineamientos-Visualizar_files/figure-latex/barrasaplidasserviciosexo-fig-1} 
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/barrasaplidasserviciosexo-fig-1} 
 
 }
 
@@ -531,14 +577,14 @@ Suponga que se quiere visualizar la edad promedio de los estudiantes graduados p
 
 \begin{figure}
 
-{\centering \includegraphics{Lineamientos-Visualizar_files/figure-latex/diagramapuntos-fig-1} 
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/diagramapuntos-fig-1} 
 
 }
 
 \caption{Diagrama de puntos como alternativa a los gráficos de barras}\label{fig:diagramapuntos-fig}
 \end{figure}
 
-La figura @ref(fig: barrasedadpromedio-fig) muestra la edad promedio de los estudiantes graduados por nivel de formación usando un gráfico de barras, esta figura fue etiquetada como incorrecta ya que al usar barras el eje debe iniciar en cero y las discrepancias existentes entre las edades promedios de los niveles especialidades médicas y especialización no se logra apreciar con claridad.
+La figura \ref{fig:barrasedadpromedio-fig} muestra la edad promedio de los estudiantes graduados por nivel de formación usando un gráfico de barras, esta figura fue etiquetada como incorrecta ya que al usar barras el eje debe iniciar en cero y las discrepancias existentes entre las edades promedios de los niveles especialidades médicas y especialización no se logra apreciar con claridad.
 
 \begin{figure}
 
@@ -568,14 +614,14 @@ La figura \ref{fig:mapadecalor-fig} es informativa pero incorrecta ya que no se 
 
 \begin{figure}
 
-{\centering \includegraphics{Lineamientos-Visualizar_files/figure-latex/mapadecalorcorrecto-fig-1} 
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/mapadecalorcorrecto-fig-1} 
 
 }
 
 \caption{Mapa de calor para representar la accidentalidad en la ciudad de Medelllín}\label{fig:mapadecalorcorrecto-fig}
 \end{figure}
 
-Como ya se ha mencionado en múltiples ocasiones se debe prestar mucha atención al orden de llas variables categóricas, en este caso dichas variables presentan un orden natural ya que son meses y días, en el caso de no presentarse un orden natural podría reordenarse las categorías usando la variable numérica para lograr una visualización mas clara, atractiva y estéticamente llamativa.
+Como ya se ha mencionado en múltiples ocasiones se debe prestar mucha atención al orden de las variables categóricas, en este caso dichas variables presentan un orden natural ya que son meses y días, en el caso de no presentarse un orden natural podría reordenarse las categorías usando la variable numérica para lograr una visualización mas clara, atractiva y estéticamente llamativa.
 
 \hypertarget{applications}{%
 \chapter{Applications}\label{applications}}
