@@ -30,6 +30,12 @@ fig:diagramapuntos-fig
 fig:barrasedadpromedio-fig
 fig:mapadecalor-fig
 fig:mapadecalorcorrecto-fig
+fig:circular3d-fig
+fig:circularpaes-fig
+fig:usoderejillas-fig
+fig:rejillagris-fig
+fig:barrasconpatrones-fig
+fig:graduadosporgrupoedadcorrecto-fig
 intro
 partes-principales-de-un-gráfico
 ejes
@@ -46,7 +52,5 @@ visualización-de-cantidades
 gráfico-de-barras
 barras-agrupadas-y-apiladas
 gráficos-de-puntos-y-mapas-de-calor
-applications
-example-one
-example-two
+errores-en-la-trama
 final-words

@@ -1,15 +1,12 @@
 # ¿Cómo visualizar los datos? 
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
-library(UnalR)
 library(UnalData)
 library(dplyr)
 library(ggplot2)
 library(stringr)
 library(magrittr)
 library(tidyverse)
-library(cowplot)
-library(multipanelfigure)
 ```
 
 En la actualidad hay muchos gráficos disponibles para visualizar nuestros datos, pero no todos los gráficos pueden ser usados para lo que se quiere representar, por esta razón es importante conocer cuáles son los gráficos apropiados para los datos que se quieren mostrar. Dentro de los datos más comunes a visualizar se tienen las cantidades, proporciones, distribuciones, series de tiempo, datos geoespaciales, relaciones X-Y e indicadores hacia una meta en particular.

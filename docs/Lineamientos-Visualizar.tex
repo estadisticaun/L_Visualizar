@@ -113,7 +113,7 @@
 
 \title{Lineamientos conceptuales para la visualización estadística}
 \author{Camila Acosta Ramirez}
-\date{2021-06-02}
+\date{2021-06-03}
 
 \begin{document}
 \maketitle
@@ -623,16 +623,80 @@ La figura \ref{fig:mapadecalor-fig} es informativa pero incorrecta ya que no se 
 
 Como ya se ha mencionado en múltiples ocasiones se debe prestar mucha atención al orden de las variables categóricas, en este caso dichas variables presentan un orden natural ya que son meses y días, en el caso de no presentarse un orden natural podría reordenarse las categorías usando la variable numérica para lograr una visualización mas clara, atractiva y estéticamente llamativa.
 
-\hypertarget{applications}{%
-\chapter{Applications}\label{applications}}
+\hypertarget{errores-en-la-trama}{%
+\chapter{Errores en la trama}\label{errores-en-la-trama}}
 
-Some \emph{significant} applications are demonstrated in this chapter.
+El principal y más grande error dentro de la visualización de datos es no respetar la integridad gráfica, por integridad gráfica nos referimos a los factores de engaño o adornos que se añaden, pensando que harán las figuras más atractivas y llamativas, pero en realidad saturan y opacan la verdadera intención de los gráficos que es informar. Un ejemplo claro de esto son las figuras 3D, las rejillas y los rellenos con patrones.
 
-\hypertarget{example-one}{%
-\section{Example one}\label{example-one}}
+El factor de engaño corresponde a las distorsiones generadas por la mala elección de los elementos gráficos, también se incluyen elementos gráficos que no corresponden a variaciones de datos o que hacen más compleja la interpretación de estos.
 
-\hypertarget{example-two}{%
-\section{Example two}\label{example-two}}
+Un diseño muy popular que introduce una alta distorsión en los datos son los gráficos en 3D, muchos softwares de visualización permiten arreglar los gráficos convirtiéndolos en objetos tridimensionales que generalmente son rotados hasta conseguir una proyección bidimensional, comúnmente este efecto es aplicado a gráficos de torta, barras y dispersión. El principal problema con los diseños 3D es que la proyección a dos dimensiones para poder visualizarlos en un monitor distorsiona los datos, para ilustrar esto observe la figura \ref{fig:circular3d-fig} que muestra la distribución de aspirantes a pregrado del programa PAES para el periodo 2021-1, note que la rebana correspondiente a la población afrocolombiana se ve más grande que la rebanada de comunidades indígenas, aunque claramente este no es el caso, ya que de los aspirantes a pregrado el \(26\%\) pertenece a comunidades indígenas y el \(17\%\) a la población afroamericana. Este es un claro ejemplo de los factores de engaño que se pueden introducir al gráfico a través de elementos estéticos como el diseño tridimensional.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/circular3d} 
+
+}
+
+\caption{Uso incorrecto de las figuras en 3D}\label{fig:circular3d-fig}
+\end{figure}
+
+Para eliminar el factor de engaño es necesario eliminar de la visualización el efecto 3D, para lograr que cada rebanada sea proporcional a cantidad que representa, como se muestra en la figura \ref{fig:circularpaes-fig}, a pesar de que esta visualización es mucho más clara que la anterior no es del todo correcta, ya que la variable discreta presenta seis categorías y este tipo de gráficos es recomendable cuando no se superan las cuatro categorías.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/circularpaes-fig-1} 
+
+}
+
+\caption{Eliminar efecto 3D}\label{fig:circularpaes-fig}
+\end{figure}
+
+Cuando se presentan más de cuatro categorías es recomendable utilizar un gráfico de barras y ordenar las clases de manera decreciente para lograr una mejor comprensión por parte del usuario.
+
+En muchas ocasiones cuando se realizan gráficos de dispersión se opta por añadir rejillas con la intención de que el usuario identifique con facilidad las coordenadas X y Y de las observaciones, pero es común usar colores muy fuertes para estas rejillas opacando por completo las observaciones, como se ilustra en la figura \ref{fig:usoderejillas-fig}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/rejillas} 
+
+}
+
+\caption{Uso incorrecto de rejillas}\label{fig:usoderejillas-fig}
+\end{figure}
+
+La figura \ref{fig:usoderejillas-fig} representa la relación existente entre el peso en miles de libras y la distancia recorrida en millas por galón para 32 autos, esta figura es etiquetada como incorrecta ya que la rejilla se sobrepone a las observaciones creando una visualización saturada, poco comprensible y degrada la percepción de patrones en los datos. Lo recomendado en estas ocasiones es utilizar puntos rellenos y colores suaves para la rejilla por ejemplo tonalidades grises como se presenta en la figura \ref{fig:rejillagris-fig}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/rejillagris-fig-1} 
+
+}
+
+\caption{Uso de rejillas en tonalidades suaves}\label{fig:rejillagris-fig}
+\end{figure}
+
+Otro adorno comúnmente utilizado que es desagradable y quita la atención de los datos es usar patrones para rellenar las figuras, por ejemplo, utilizar líneas, puntos, estrellas u otras figuras para rellenar las barras, la figura \ref{fig:barrasconpatrones-fig} muestra la distribución de los graduados por grupo de edad para el periodo 2020-2, se etiqueto como incorrecta ya que añadir patrones para rellenar las barras se considera poco atractivo y distrae la atención del usuario.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/barrasconpatrones} 
+
+}
+
+\caption{Uso incorrecto de los patrones para rellenar}\label{fig:barrasconpatrones-fig}
+\end{figure}
+
+Cuando se quiere añadir algún tipo de relleno a las barras se recomienda hacerlo con colores, usando escalas de colores cualitativas si la intención es distinguir datos o una escala secuencial si se trata de representar cantidades, la forma correcta o recomendada para realizar esta gráfica se muestra en la figura \ref{fig:graduadosporgrupoedadcorrecto-fig}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/graduadosporgrupoedadcorrecto-fig-1} 
+
+}
+
+\caption{Uso de los rellenos de color}\label{fig:graduadosporgrupoedadcorrecto-fig}
+\end{figure}
 
 \hypertarget{final-words}{%
 \chapter{Final Words}\label{final-words}}

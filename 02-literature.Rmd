@@ -1,7 +1,6 @@
 # Partes principales de un gráfico
 
 ```{r message=FALSE, warning=FALSE, include=FALSE}
-library(UnalR)
 library(UnalData)
 library(dplyr)
 library(ggplot2)
@@ -294,7 +293,8 @@ sexo_admitidos <- Aspirantes %>%
 ggplot(sexo_admitidos,aes(x = "", y = PORCENTAJE, fill = SEXO))+
   geom_bar(stat = "identity", color = "black")+
   geom_text(aes(label = PORCENTAJE),
-            position = position_stack(vjust = 0.5), color="Black", size = 4)+
+            position = position_stack(vjust = 0.5), color="Black", 
+            size = 4)+
   coord_polar(theta = "y") +
   scale_fill_manual(values=c("#f26532", "#8cc63f"), 
                     name = "")+
