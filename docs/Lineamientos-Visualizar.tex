@@ -113,7 +113,7 @@
 
 \title{Lineamientos conceptuales para la visualización estadística}
 \author{Camila Acosta Ramirez}
-\date{2021-06-03}
+\date{2021-06-08}
 
 \begin{document}
 \maketitle
@@ -622,6 +622,44 @@ La figura \ref{fig:mapadecalor-fig} es informativa pero incorrecta ya que no se 
 \end{figure}
 
 Como ya se ha mencionado en múltiples ocasiones se debe prestar mucha atención al orden de las variables categóricas, en este caso dichas variables presentan un orden natural ya que son meses y días, en el caso de no presentarse un orden natural podría reordenarse las categorías usando la variable numérica para lograr una visualización mas clara, atractiva y estéticamente llamativa.
+
+\hypertarget{visualizaciuxf3n-de-proporciones}{%
+\section{Visualización de proporciones}\label{visualizaciuxf3n-de-proporciones}}
+
+Cuando se están analizando datos se presentan ocasiones en las cuales se quiere representar como algún grupo se divide en partes individuales que representan un porcentaje o proporción de un todo, entre los ejemplos más comunes se incluyen las proporciones de hombres y mujeres dentro de un grupo de personas, el porcentaje de estudiantes graduados por modalidad de formación, el porcentaje de estudiantes admitidos por facultad en cada una de las sedes de la Universidad Nacional de Colombia, entre muchos otros ejemplos.
+
+La visualización más utilizada en este caso es el gráfico circular, gráfico odiado y amado por muchos, el éxito de este gráfico depende principalmente de la correcta elección de grupos y colores. Cuando el todo se divide en muchas partes diferentes o cuando queremos ver los cambios en las proporciones a través de una ventana de tiempo mostrar las proporciones se convierte en un verdadero reto y no hay una visualización única que funcione en todos los casos.
+
+Generalmente para mostrar proporciones se usan gráficos circulares, barras apiladas y barras una al lado de la otra, dependiendo del propósito de la visualización se elige cada una de las opciones mencionadas.
+
+\hypertarget{gruxe1ficos-circulares}{%
+\subsection{Gráficos circulares}\label{gruxe1ficos-circulares}}
+
+Un gráfico circular está compuesto de una variable discreta que determina la cantidad de divisiones del circulo y adicionalmente una variable numérica con la cual se generan los fragmentos y se debe lograr que cada uno sea proporcional a la fracción del total que representa.
+
+Dentro de los datos almacenados para los estudiantes admitidos a la Universidad Nacional se encuentra el estrato socioeconómico el cual está dividido o categorizado en tres grupos, en este caso es posible usar un gráfico circular como se ilustra en la figura \ref{fig:circularcorrecto-fig}, se observa que del total de estudiantes admitidos el \(50.91\%\) pertenece al grupo de estrado 2 o menos, el \(32.88\%\) al estrato 3 y el restante a la categoría de estrato 4 o más.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/circularcorrecto-fig-1} 
+
+}
+
+\caption{Gráfico circular para representar 3 categorías}\label{fig:circularcorrecto-fig}
+\end{figure}
+
+La figura anterior se considera como un uso correcto de los gráficos circulares ya que estos son recomendados para visualizar los datos como proporciones de un todo y enfatizar visualmente en fracciones simples como la mitad, un tercio o un cuarto, es decir, funciona correctamente cuando la cantidad de divisiones no es mayor a cuatro o cinco y es posible utilizarlo en conjuntos de datos pequeños.
+
+Cuando se tienen variables con muchas categorías no se recomienda utilizar los gráficos circulares ya que no se logra enfatizar en las proporciones y las etiquetas de cada categoría no se observan con claridad, la figura \ref{fig:circularincorrecto-fig} se considera un uso incorrecto de los gráficos circulares ya que la variable discreta utilizada tiene nueve categorías, para esta ocasión se prefiere un gráfico de barras, aunque se pierdan algunas características como la relación con el total.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/circularincorrecto} 
+
+}
+
+\caption{Uso incorrecto de los gráficos circulares}\label{fig:circularincorrecto-fig}
+\end{figure}
 
 \hypertarget{errores-en-la-trama}{%
 \chapter{Errores en la trama}\label{errores-en-la-trama}}

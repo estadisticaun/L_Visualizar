@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.5.17)  3 JUN 2021 13:33
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.5.17)  8 JUN 2021 11:12
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1009,13 +1009,20 @@ File: Imágenes/mapadecalor.jpg Graphic file (type bmp)
 File: Lineamientos-Visualizar_files/figure-latex/mapadecalorcorrecto-fig-1.pdf 
 Graphic file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/mapadecalorcorrecto-fig-1.pdf>
-[34] [35] [36
+[34]
+File: Lineamientos-Visualizar_files/figure-latex/circularcorrecto-fig-1.pdf Gra
+phic file (type pdf)
+<use Lineamientos-Visualizar_files/figure-latex/circularcorrecto-fig-1.pdf>
+[35]
+File: Imágenes/circularincorrecto.jpg Graphic file (type bmp)
+<Imágenes/circularincorrecto.jpg>
+[36] [37] [38
 
 ]
 Chapter 4.
 File: Imágenes/circular3d.jpg Graphic file (type bmp)
 <Imágenes/circular3d.jpg>
-[37]
+[39]
 File: Lineamientos-Visualizar_files/figure-latex/circularpaes-fig-1.pdf Graphic
  file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/circularpaes-fig-1.pdf>
@@ -1026,32 +1033,32 @@ file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/rejillagris-fig-1.pdf>
 File: Imágenes/barrasconpatrones.jpg Graphic file (type bmp)
 <Imágenes/barrasconpatrones.jpg>
-[38] [39]
+[40] [41]
 File: Lineamientos-Visualizar_files/figure-latex/graduadosporgrupoedadcorrecto-
 fig-1.pdf Graphic file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/graduadosporgrupoedadcorrecto-f
 ig-1.pdf>
-[40] [41] [42
+[42] [43] [44
 
 ]
 Chapter 5.
-(./Lineamientos-Visualizar.bbl [43] [44
+(./Lineamientos-Visualizar.bbl [45] [46
 
-]) [45] (./Lineamientos-Visualizar.aux)
+]) [47] (./Lineamientos-Visualizar.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Lineamientos-Visualizar.out' has not changed
 .
-(rerunfilecheck)             Checksum: 0DD91D75291B77AC8323314BAC3BF55F;1295.
+(rerunfilecheck)             Checksum: 974AC6CFF36BFBAEB780AFC1C232E9A0;1504.
  ) 
 Here is how much of TeX's memory you used:
- 17218 strings out of 478764
- 324677 string characters out of 5862543
- 761000 words of memory out of 5000000
- 36951 multiletter control sequences out of 15000+600000
+ 17254 strings out of 478764
+ 326271 string characters out of 5862543
+ 761256 words of memory out of 5000000
+ 36985 multiletter control sequences out of 15000+600000
  409897 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  85i,8n,121p,1554b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Lineamientos-Visualizar.pdf (45 pages).
+Output written on Lineamientos-Visualizar.pdf (47 pages).

@@ -30,6 +30,8 @@ fig:diagramapuntos-fig
 fig:barrasedadpromedio-fig
 fig:mapadecalor-fig
 fig:mapadecalorcorrecto-fig
+fig:circularcorrecto-fig
+fig:circularincorrecto-fig
 fig:circular3d-fig
 fig:circularpaes-fig
 fig:usoderejillas-fig
@@ -52,5 +54,7 @@ visualización-de-cantidades
 gráfico-de-barras
 barras-agrupadas-y-apiladas
 gráficos-de-puntos-y-mapas-de-calor
+visualización-de-proporciones
+gráficos-circulares
 errores-en-la-trama
 final-words

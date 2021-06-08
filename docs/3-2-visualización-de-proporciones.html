@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo 4 Errores en la trama | Lineamientos conceptuales para la visualización estadística</title>
-  <meta name="description" content="Capítulo 4 Errores en la trama | Lineamientos conceptuales para la visualización estadística" />
+  <title>3.2 Visualización de proporciones | Lineamientos conceptuales para la visualización estadística</title>
+  <meta name="description" content="3.2 Visualización de proporciones | Lineamientos conceptuales para la visualización estadística" />
   <meta name="generator" content="bookdown 0.22 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo 4 Errores en la trama | Lineamientos conceptuales para la visualización estadística" />
+  <meta property="og:title" content="3.2 Visualización de proporciones | Lineamientos conceptuales para la visualización estadística" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo 4 Errores en la trama | Lineamientos conceptuales para la visualización estadística" />
+  <meta name="twitter:title" content="3.2 Visualización de proporciones | Lineamientos conceptuales para la visualización estadística" />
   
   
   
@@ -31,8 +31,8 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="3-2-visualización-de-proporciones.html"/>
-<link rel="next" href="5-final-words.html"/>
+<link rel="prev" href="3-1-visualización-de-cantidades.html"/>
+<link rel="next" href="4-errores-en-la-trama.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
 <link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
@@ -178,62 +178,40 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="errores-en-la-trama" class="section level1">
-<h1><span class="header-section-number">Capítulo 4</span> Errores en la trama</h1>
-<p>El principal y más grande error dentro de la visualización de datos es no respetar la integridad gráfica, por integridad gráfica nos referimos a los factores de engaño o adornos que se añaden, pensando que harán las figuras más atractivas y llamativas, pero en realidad saturan y opacan la verdadera intención de los gráficos que es informar. Un ejemplo claro de esto son las figuras 3D, las rejillas y los rellenos con patrones.</p>
-<p>El factor de engaño corresponde a las distorsiones generadas por la mala elección de los elementos gráficos, también se incluyen elementos gráficos que no corresponden a variaciones de datos o que hacen más compleja la interpretación de estos.</p>
-<p>Un diseño muy popular que introduce una alta distorsión en los datos son los gráficos en 3D, muchos softwares de visualización permiten arreglar los gráficos convirtiéndolos en objetos tridimensionales que generalmente son rotados hasta conseguir una proyección bidimensional, comúnmente este efecto es aplicado a gráficos de torta, barras y dispersión. El principal problema con los diseños 3D es que la proyección a dos dimensiones para poder visualizarlos en un monitor distorsiona los datos, para ilustrar esto observe la figura <a href="4-errores-en-la-trama.html#fig:circular3d-fig">4.1</a> que muestra la distribución de aspirantes a pregrado del programa PAES para el periodo 2021-1, note que la rebana correspondiente a la población afrocolombiana se ve más grande que la rebanada de comunidades indígenas, aunque claramente este no es el caso, ya que de los aspirantes a pregrado el <span class="math inline">\(26\%\)</span> pertenece a comunidades indígenas y el <span class="math inline">\(17\%\)</span> a la población afroamericana. Este es un claro ejemplo de los factores de engaño que se pueden introducir al gráfico a través de elementos estéticos como el diseño tridimensional.</p>
-<div class="figure" style="text-align: center"><span id="fig:circular3d-fig"></span>
-<img src="Imágenes/circular3d.jpg" alt="Uso incorrecto de las figuras en 3D" width="100%" />
+<div id="visualización-de-proporciones" class="section level2">
+<h2><span class="header-section-number">3.2</span> Visualización de proporciones</h2>
+<p>Cuando se están analizando datos se presentan ocasiones en las cuales se quiere representar como algún grupo se divide en partes individuales que representan un porcentaje o proporción de un todo, entre los ejemplos más comunes se incluyen las proporciones de hombres y mujeres dentro de un grupo de personas, el porcentaje de estudiantes graduados por modalidad de formación, el porcentaje de estudiantes admitidos por facultad en cada una de las sedes de la Universidad Nacional de Colombia, entre muchos otros ejemplos.</p>
+<p>La visualización más utilizada en este caso es el gráfico circular, gráfico odiado y amado por muchos, el éxito de este gráfico depende principalmente de la correcta elección de grupos y colores. Cuando el todo se divide en muchas partes diferentes o cuando queremos ver los cambios en las proporciones a través de una ventana de tiempo mostrar las proporciones se convierte en un verdadero reto y no hay una visualización única que funcione en todos los casos.</p>
+<p>Generalmente para mostrar proporciones se usan gráficos circulares, barras apiladas y barras una al lado de la otra, dependiendo del propósito de la visualización se elige cada una de las opciones mencionadas.</p>
+<div id="gráficos-circulares" class="section level3">
+<h3><span class="header-section-number">3.2.1</span> Gráficos circulares</h3>
+<p>Un gráfico circular está compuesto de una variable discreta que determina la cantidad de divisiones del circulo y adicionalmente una variable numérica con la cual se generan los fragmentos y se debe lograr que cada uno sea proporcional a la fracción del total que representa.</p>
+<p>Dentro de los datos almacenados para los estudiantes admitidos a la Universidad Nacional se encuentra el estrato socioeconómico el cual está dividido o categorizado en tres grupos, en este caso es posible usar un gráfico circular como se ilustra en la figura <a href="3-2-visualización-de-proporciones.html#fig:circularcorrecto-fig">3.14</a>, se observa que del total de estudiantes admitidos el <span class="math inline">\(50.91\%\)</span> pertenece al grupo de estrado 2 o menos, el <span class="math inline">\(32.88\%\)</span> al estrato 3 y el restante a la categoría de estrato 4 o más.</p>
+<div class="figure" style="text-align: center"><span id="fig:circularcorrecto-fig"></span>
+<img src="Lineamientos-Visualizar_files/figure-html/circularcorrecto-fig-1.png" alt="Gráfico circular para representar 3 categorías" width="80%" />
 <p class="caption">
-Figura 4.1: Uso incorrecto de las figuras en 3D
+Figura 3.14: Gráfico circular para representar 3 categorías
 </p>
 </div>
-<p>Para eliminar el factor de engaño es necesario eliminar de la visualización el efecto 3D, para lograr que cada rebanada sea proporcional a cantidad que representa, como se muestra en la figura <a href="4-errores-en-la-trama.html#fig:circularpaes-fig">4.2</a>, a pesar de que esta visualización es mucho más clara que la anterior no es del todo correcta, ya que la variable discreta presenta seis categorías y este tipo de gráficos es recomendable cuando no se superan las cuatro categorías.</p>
-<div class="figure" style="text-align: center"><span id="fig:circularpaes-fig"></span>
-<img src="Lineamientos-Visualizar_files/figure-html/circularpaes-fig-1.png" alt="Eliminar efecto 3D" width="80%" />
+<p>La figura anterior se considera como un uso correcto de los gráficos circulares ya que estos son recomendados para visualizar los datos como proporciones de un todo y enfatizar visualmente en fracciones simples como la mitad, un tercio o un cuarto, es decir, funciona correctamente cuando la cantidad de divisiones no es mayor a cuatro o cinco y es posible utilizarlo en conjuntos de datos pequeños.</p>
+<p>Cuando se tienen variables con muchas categorías no se recomienda utilizar los gráficos circulares ya que no se logra enfatizar en las proporciones y las etiquetas de cada categoría no se observan con claridad, la figura <a href="3-2-visualización-de-proporciones.html#fig:circularincorrecto-fig">3.15</a> se considera un uso incorrecto de los gráficos circulares ya que la variable discreta utilizada tiene nueve categorías, para esta ocasión se prefiere un gráfico de barras, aunque se pierdan algunas características como la relación con el total.</p>
+<div class="figure" style="text-align: center"><span id="fig:circularincorrecto-fig"></span>
+<img src="Imágenes/circularincorrecto.jpg" alt="Uso incorrecto de los gráficos circulares" width="100%" />
 <p class="caption">
-Figura 4.2: Eliminar efecto 3D
-</p>
-</div>
-<p>Cuando se presentan más de cuatro categorías es recomendable utilizar un gráfico de barras y ordenar las clases de manera decreciente para lograr una mejor comprensión por parte del usuario.</p>
-<p>En muchas ocasiones cuando se realizan gráficos de dispersión se opta por añadir rejillas con la intención de que el usuario identifique con facilidad las coordenadas X y Y de las observaciones, pero es común usar colores muy fuertes para estas rejillas opacando por completo las observaciones, como se ilustra en la figura <a href="4-errores-en-la-trama.html#fig:usoderejillas-fig">4.3</a>.</p>
-<div class="figure" style="text-align: center"><span id="fig:usoderejillas-fig"></span>
-<img src="Imágenes/rejillas.jpg" alt="Uso incorrecto de rejillas" width="100%" />
-<p class="caption">
-Figura 4.3: Uso incorrecto de rejillas
-</p>
-</div>
-<p>La figura <a href="4-errores-en-la-trama.html#fig:usoderejillas-fig">4.3</a> representa la relación existente entre el peso en miles de libras y la distancia recorrida en millas por galón para 32 autos, esta figura es etiquetada como incorrecta ya que la rejilla se sobrepone a las observaciones creando una visualización saturada, poco comprensible y degrada la percepción de patrones en los datos. Lo recomendado en estas ocasiones es utilizar puntos rellenos y colores suaves para la rejilla por ejemplo tonalidades grises como se presenta en la figura <a href="4-errores-en-la-trama.html#fig:rejillagris-fig">4.4</a>.</p>
-<div class="figure" style="text-align: center"><span id="fig:rejillagris-fig"></span>
-<img src="Lineamientos-Visualizar_files/figure-html/rejillagris-fig-1.png" alt="Uso de rejillas en tonalidades suaves" width="80%" />
-<p class="caption">
-Figura 4.4: Uso de rejillas en tonalidades suaves
-</p>
-</div>
-<p>Otro adorno comúnmente utilizado que es desagradable y quita la atención de los datos es usar patrones para rellenar las figuras, por ejemplo, utilizar líneas, puntos, estrellas u otras figuras para rellenar las barras, la figura <a href="4-errores-en-la-trama.html#fig:barrasconpatrones-fig">4.5</a> muestra la distribución de los graduados por grupo de edad para el periodo 2020-2, se etiqueto como incorrecta ya que añadir patrones para rellenar las barras se considera poco atractivo y distrae la atención del usuario.</p>
-<div class="figure" style="text-align: center"><span id="fig:barrasconpatrones-fig"></span>
-<img src="Imágenes/barrasconpatrones.jpg" alt="Uso incorrecto de los patrones para rellenar" width="100%" />
-<p class="caption">
-Figura 4.5: Uso incorrecto de los patrones para rellenar
-</p>
-</div>
-<p>Cuando se quiere añadir algún tipo de relleno a las barras se recomienda hacerlo con colores, usando escalas de colores cualitativas si la intención es distinguir datos o una escala secuencial si se trata de representar cantidades, la forma correcta o recomendada para realizar esta gráfica se muestra en la figura <a href="4-errores-en-la-trama.html#fig:graduadosporgrupoedadcorrecto-fig">4.6</a>.</p>
-<div class="figure" style="text-align: center"><span id="fig:graduadosporgrupoedadcorrecto-fig"></span>
-<img src="Lineamientos-Visualizar_files/figure-html/graduadosporgrupoedadcorrecto-fig-1.png" alt="Uso de los rellenos de color" width="80%" />
-<p class="caption">
-Figura 4.6: Uso de los rellenos de color
+Figura 3.15: Uso incorrecto de los gráficos circulares
 </p>
 </div>
 
 </div>
+</div>
+<!-- </div> -->
             </section>
 
           </div>
         </div>
       </div>
-<a href="3-2-visualización-de-proporciones.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="5-final-words.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="3-1-visualización-de-cantidades.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="4-errores-en-la-trama.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
