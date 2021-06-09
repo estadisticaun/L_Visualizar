@@ -31,7 +31,7 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="3-1-visualización-de-cantidades.html"/>
+<link rel="prev" href="3-1-cantidades.html"/>
 <link rel="next" href="4-errores-en-la-trama.html"/>
 <script src="libs/jquery-2.2.3/jquery.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -149,14 +149,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="2-3-texto.html"><a href="2-3-texto.html"><i class="fa fa-check"></i><b>2.3</b> Texto</a></li>
 </ul></li>
 <li class="chapter" data-level="3" data-path="3-cómo-visualizar-los-datos.html"><a href="3-cómo-visualizar-los-datos.html"><i class="fa fa-check"></i><b>3</b> ¿Cómo visualizar los datos?</a><ul>
-<li class="chapter" data-level="3.1" data-path="3-1-visualización-de-cantidades.html"><a href="3-1-visualización-de-cantidades.html"><i class="fa fa-check"></i><b>3.1</b> Visualización de cantidades</a><ul>
-<li class="chapter" data-level="3.1.1" data-path="3-1-visualización-de-cantidades.html"><a href="3-1-visualización-de-cantidades.html#gráfico-de-barras"><i class="fa fa-check"></i><b>3.1.1</b> Gráfico de barras</a></li>
-<li class="chapter" data-level="3.1.2" data-path="3-1-visualización-de-cantidades.html"><a href="3-1-visualización-de-cantidades.html#barras-agrupadas-y-apiladas"><i class="fa fa-check"></i><b>3.1.2</b> Barras agrupadas y apiladas</a></li>
-<li class="chapter" data-level="3.1.3" data-path="3-1-visualización-de-cantidades.html"><a href="3-1-visualización-de-cantidades.html#gráficos-de-puntos-y-mapas-de-calor"><i class="fa fa-check"></i><b>3.1.3</b> Gráficos de puntos y mapas de calor</a></li>
+<li class="chapter" data-level="3.1" data-path="3-1-cantidades.html"><a href="3-1-cantidades.html"><i class="fa fa-check"></i><b>3.1</b> Visualización de cantidades</a><ul>
+<li class="chapter" data-level="3.1.1" data-path="3-1-cantidades.html"><a href="3-1-cantidades.html#gráfico-de-barras"><i class="fa fa-check"></i><b>3.1.1</b> Gráfico de barras</a></li>
+<li class="chapter" data-level="3.1.2" data-path="3-1-cantidades.html"><a href="3-1-cantidades.html#barras-agrupadas-y-apiladas"><i class="fa fa-check"></i><b>3.1.2</b> Barras agrupadas y apiladas</a></li>
+<li class="chapter" data-level="3.1.3" data-path="3-1-cantidades.html"><a href="3-1-cantidades.html#gráficos-de-puntos-y-mapas-de-calor"><i class="fa fa-check"></i><b>3.1.3</b> Gráficos de puntos y mapas de calor</a></li>
 </ul></li>
 <li class="chapter" data-level="3.2" data-path="3-2-visualización-de-proporciones.html"><a href="3-2-visualización-de-proporciones.html"><i class="fa fa-check"></i><b>3.2</b> Visualización de proporciones</a><ul>
 <li class="chapter" data-level="3.2.1" data-path="3-2-visualización-de-proporciones.html"><a href="3-2-visualización-de-proporciones.html#gráficos-circulares"><i class="fa fa-check"></i><b>3.2.1</b> Gráficos circulares</a></li>
 <li class="chapter" data-level="3.2.2" data-path="3-2-visualización-de-proporciones.html"><a href="3-2-visualización-de-proporciones.html#barras-apiladas"><i class="fa fa-check"></i><b>3.2.2</b> Barras apiladas</a></li>
+<li class="chapter" data-level="3.2.3" data-path="3-2-visualización-de-proporciones.html"><a href="3-2-visualización-de-proporciones.html#barras-agrupadas"><i class="fa fa-check"></i><b>3.2.3</b> Barras agrupadas</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="4-errores-en-la-trama.html"><a href="4-errores-en-la-trama.html"><i class="fa fa-check"></i><b>4</b> Errores en la trama</a></li>
@@ -236,7 +237,20 @@ Figura 3.18: Barras apiladas para la serie temporal del sexo de admitidos
 Figura 3.19: Distribución de estudiantes admitidos por sexo y nivel de formación
 </p>
 </div>
-<p>La visualización <a href="3-2-visualización-de-proporciones.html#fig:apiladasadmitidosexonivel-fig">3.19</a> permite identificar con claridad como se comporta la proporción de hombres y mujeres admitidos en los niveles de formación ofrecidos por la Universidad Nacional de Colombia, se identifica que en pregrado cerca del <span class="math inline">\(30\%\)</span> de las personas admitidas son mujeres mientras que para los niveles de especialización la participación de los mujeres aumenta, llegado alrededor de <span class="math inline">\(50\%\)</span>.</p>
+<p>La visualización <a href="3-2-visualización-de-proporciones.html#fig:apiladasadmitidosexonivel-fig">3.19</a> permite identificar con claridad como se comporta la proporción de hombres y mujeres admitidos en los niveles de formación ofrecidos por la Universidad Nacional de Colombia, se identifica que en pregrado cerca del <span class="math inline">\(30\%\)</span> de las personas admitidas son mujeres mientras que para los niveles de especialización la participación de las mujeres aumenta, llegado alrededor de <span class="math inline">\(50\%\)</span>.</p>
+</div>
+<div id="barras-agrupadas" class="section level3">
+<h3><span class="header-section-number">3.2.3</span> Barras agrupadas</h3>
+<p>Las barras dispuestas una al lado de la otra permite una fácil comparación visual de las proporciones, es informativo incluso cuando el conjunto de datos es pequeño y si los datos a mostrar se dividen en muchas partes este es el grafico indicado para visualizar las proporciones, también es uno de los más recomendados y utilizados cuando se quiere ilustrar series temporales de proporciones.</p>
+<p>Considere nuevamente la figura <a href="3-2-visualización-de-proporciones.html#fig:apiladasincorrecto-fig">3.17</a>, en la cual se intento ilustrar la distribución de estudiantes graduados por nivel de formación desde el año 2018 hasta 2020 y esa figura fue etiquetada como incorrecta por que no se lograba observar con claridad las contribuciones de los niveles doctorado y especialidades médicas. Ahora representaremos la misma información, pero con el enfoque de barras agrupadas, es decir tendremos tres grupos de barras donde cada grupo tiene cinco barras que representan cada uno de los niveles de formación ofrecidos en la Universidad.</p>
+<div class="figure" style="text-align: center"><span id="fig:agrupadasnivel-fig"></span>
+<img src="Lineamientos-Visualizar_files/figure-html/agrupadasnivel-fig-1.png" alt="Distribución de estudiantes admitidos por nivel de formación para los últimos tres años" width="80%" />
+<p class="caption">
+Figura 3.20: Distribución de estudiantes admitidos por nivel de formación para los últimos tres años
+</p>
+</div>
+<p>La figura <a href="3-2-visualización-de-proporciones.html#fig:agrupadasnivel-fig">3.20</a> permite visualizar con claridad las contribuciones de cada uno de los niveles de formación sobre el total de estudiantes graduados, los niveles de especialización y maestría generan alrededor del <span class="math inline">\(20\%\)</span> cada una de estudiantes graduados por año, mientras que las contribuciones de doctorado y especialidades médicas están alrededor del <span class="math inline">\(2\%\)</span> para cada uno de estos niveles. Adicional a poder comparar con claridad estos porcentajes también se puede observar la evolución anual de la proporción de estudiantes graduados por nivel de formación, para los años 2019 y 2020 la cantidad de estudiantes graduados de doctorado fue mayor que para el año 2018, también se observa que la cantidad de graduados de pregrado es similar a lo largo de los tres años representados.</p>
+<p>En la sección <a href="3-1-cantidades.html#cantidades">3.1</a> se hacen algunas recomendaciones acerca de la ubicación de etiquetas, ejes y otras que también se aplican para esta sección con el fin de lograr visualizaciones claras, informativas y atractivas.</p>
 
 </div>
 </div>
@@ -246,7 +260,7 @@ Figura 3.19: Distribución de estudiantes admitidos por sexo y nivel de formaci�
           </div>
         </div>
       </div>
-<a href="3-1-visualización-de-cantidades.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="3-1-cantidades.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 <a href="4-errores-en-la-trama.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>

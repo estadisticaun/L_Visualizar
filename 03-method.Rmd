@@ -13,7 +13,7 @@ En la actualidad hay muchos gráficos disponibles para visualizar nuestros datos
 
 En este capítulo se presenta la forma correcta de representar estos datos con los gráficos que se tienen disponibles, teniendo el contraste entre lo correcto e incorrecto con el fin de informar al usuario acerca de lo que se debe o no hacer para crear las visualizaciones.
 
-## Visualización de cantidades
+## Visualización de cantidades {#cantidades}
 
 En muchas ocasiones estamos interesados en visualizar la magnitud de algún conjunto de números, por ejemplo, visualizar el volumen de ventas por estados, total de estudiantes admitidos por modalidad de formación, estudiantes graduados por grupos de edad o departamento, entre muchos otros ejemplos. Observe que en todos estos casos se tiene un conjunto de categorías y un valor cuantitativo para cada categoría. La visualización recomendada y más usada en este escenario es el gráfico de barras en el cual se incluyen distintas variaciones tales como las barras simples, agrupadas y apiladas tanto verticales como horizontales. Las alternativas al diagrama de barras son los diagramas de puntos y mapas de calor.
 
@@ -378,4 +378,32 @@ ggplot(admitidos, aes(x = NIVEL, y = CANTIDAD, fill = SEXO)) +
         plot.title = element_text(hjust = 0.5))
 ```
 
-La visualización \@ref(fig:apiladasadmitidosexonivel-fig) permite identificar con claridad como se comporta la proporción de hombres y mujeres admitidos en los niveles de formación ofrecidos por la Universidad Nacional de Colombia, se identifica que en pregrado cerca del $30\%$ de las personas admitidas son mujeres mientras que para los niveles de especialización  la participación de los mujeres aumenta, llegado alrededor de $50\%$. 
+La visualización \@ref(fig:apiladasadmitidosexonivel-fig) permite identificar con claridad como se comporta la proporción de hombres y mujeres admitidos en los niveles de formación ofrecidos por la Universidad Nacional de Colombia, se identifica que en pregrado cerca del $30\%$ de las personas admitidas son mujeres mientras que para los niveles de especialización la participación de las mujeres aumenta, llegado alrededor de $50\%$.
+
+### Barras agrupadas
+
+Las barras dispuestas una al lado de la otra permite una fácil comparación visual de las proporciones, es informativo incluso cuando el conjunto de datos es pequeño y si los datos a mostrar se dividen en muchas partes este es el grafico indicado para visualizar las proporciones, también es uno de los más recomendados y utilizados cuando se quiere ilustrar series temporales de proporciones.
+
+ Considere nuevamente la figura \@ref(fig:apiladasincorrecto-fig), en la cual se intento ilustrar la distribución de estudiantes graduados por nivel de formación desde el año 2018 hasta 2020 y esa figura fue etiquetada como incorrecta por que no se lograba observar con claridad las contribuciones de los niveles doctorado y especialidades médicas. Ahora representaremos la misma información, pero con el enfoque de barras agrupadas, es decir tendremos tres grupos de barras donde cada grupo tiene cinco barras que representan cada uno de los niveles de formación ofrecidos en la Universidad.
+
+```{r agrupadasnivel-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Distribución de estudiantes admitidos por nivel de formación para los últimos tres años', warning=FALSE, message=FALSE, out.width='80%'}
+graduados <- UnalData::Graduados %>% 
+  filter(YEAR %in% c('2018', '2019', '2020')) %>% 
+  group_by(YEAR, NIVEL) %>% 
+  summarise(CANTIDAD = n()) %>% 
+  transmute(YEAR, NIVEL, PORCENTAJE = round((CANTIDAD/sum(CANTIDAD))*100, 2))
+ggplot(graduados, aes(x = factor(YEAR), y = PORCENTAJE, fill = NIVEL)) +
+  geom_bar(stat = 'identity', position = 'dodge') +
+  scale_fill_manual(values = c("#6d6666", "#fbb03b", "#29abe2", "#c1272d", 
+                               "#8cc63f"), name = '') +
+  theme_bw() +
+  theme(legend.position = 'bottom',
+        plot.title = element_text(hjust = 0.5)) +
+  labs(x = "", 
+       y = "Estudiantes graduados (%)", 
+       title = "Distribución de estudiantes graduados por nivel de formación")
+```
+
+La figura \@ref(fig:agrupadasnivel-fig) permite visualizar con claridad las contribuciones de cada uno de los niveles de formación sobre el total de estudiantes graduados, los niveles de especialización y maestría generan alrededor del $20\%$ cada una de estudiantes graduados por año, mientras que las contribuciones de doctorado y especialidades médicas están alrededor del $2\%$ para cada uno de estos niveles. Adicional a poder comparar con claridad estos porcentajes también se puede observar la evolución anual de la proporción de estudiantes graduados por nivel de formación, para los años 2019 y 2020 la cantidad de estudiantes graduados de doctorado fue mayor que para el año 2018, también se observa que la cantidad de graduados de pregrado es similar a lo largo de los tres años representados.
+
+En la sección \@ref(cantidades) se hacen algunas recomendaciones acerca de la ubicación de etiquetas, ejes y otras que también se aplican para esta sección con el fin de lograr visualizaciones claras, informativas y atractivas.

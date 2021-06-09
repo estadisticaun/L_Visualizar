@@ -36,6 +36,7 @@ fig:apiladaantiestetica-fig
 fig:apiladasincorrecto-fig
 fig:apiladasadmitidosexo-fig
 fig:apiladasadmitidosexonivel-fig
+fig:agrupadasnivel-fig
 fig:circular3d-fig
 fig:circularpaes-fig
 fig:usoderejillas-fig
@@ -54,12 +55,13 @@ representar-valores
 resaltar-observaciones
 texto
 cómo-visualizar-los-datos
-visualización-de-cantidades
+cantidades
 gráfico-de-barras
 barras-agrupadas-y-apiladas
 gráficos-de-puntos-y-mapas-de-calor
 visualización-de-proporciones
 gráficos-circulares
 barras-apiladas
+barras-agrupadas
 errores-en-la-trama
 final-words
