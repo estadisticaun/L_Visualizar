@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.5.17)  8 JUN 2021 11:12
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.5.17)  9 JUN 2021 12:19
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1016,13 +1016,27 @@ phic file (type pdf)
 [35]
 File: Imágenes/circularincorrecto.jpg Graphic file (type bmp)
 <Imágenes/circularincorrecto.jpg>
-[36] [37] [38
+[36]
+File: Imágenes/unaapiladaincorrecto.jpg Graphic file (type bmp)
+<Imágenes/unaapiladaincorrecto.jpg>
+File: Imágenes/apiladasincorrecto.jpg Graphic file (type bmp)
+<Imágenes/apiladasincorrecto.jpg>
+File: Lineamientos-Visualizar_files/figure-latex/apiladasadmitidosexo-fig-1.pdf
+ Graphic file (type pdf)
+<use Lineamientos-Visualizar_files/figure-latex/apiladasadmitidosexo-fig-1.pdf>
 
-]
+[37] [38]
+File: Lineamientos-Visualizar_files/figure-latex/apiladasadmitidosexonivel-fig-
+1.pdf Graphic file (type pdf)
+<use Lineamientos-Visualizar_files/figure-latex/apiladasadmitidosexonivel-fig-1
+.pdf>
+[39] [40]
 Chapter 4.
 File: Imágenes/circular3d.jpg Graphic file (type bmp)
 <Imágenes/circular3d.jpg>
-[39]
+[41
+
+]
 File: Lineamientos-Visualizar_files/figure-latex/circularpaes-fig-1.pdf Graphic
  file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/circularpaes-fig-1.pdf>
@@ -1033,18 +1047,18 @@ file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/rejillagris-fig-1.pdf>
 File: Imágenes/barrasconpatrones.jpg Graphic file (type bmp)
 <Imágenes/barrasconpatrones.jpg>
-[40] [41]
+[42] [43]
 File: Lineamientos-Visualizar_files/figure-latex/graduadosporgrupoedadcorrecto-
 fig-1.pdf Graphic file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/graduadosporgrupoedadcorrecto-f
 ig-1.pdf>
-[42] [43] [44
+[44] [45] [46
 
 ]
 Chapter 5.
-(./Lineamientos-Visualizar.bbl [45] [46
+(./Lineamientos-Visualizar.bbl [47] [48
 
-]) [47] (./Lineamientos-Visualizar.aux)
+]) [49] (./Lineamientos-Visualizar.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1053,12 +1067,12 @@ Package rerunfilecheck Info: File `Lineamientos-Visualizar.out' has not changed
 (rerunfilecheck)             Checksum: 974AC6CFF36BFBAEB780AFC1C232E9A0;1504.
  ) 
 Here is how much of TeX's memory you used:
- 17254 strings out of 478764
- 326271 string characters out of 5862543
- 761256 words of memory out of 5000000
- 36985 multiletter control sequences out of 15000+600000
+ 17323 strings out of 478764
+ 329548 string characters out of 5862543
+ 761657 words of memory out of 5000000
+ 37050 multiletter control sequences out of 15000+600000
  409897 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  85i,8n,121p,1554b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Lineamientos-Visualizar.pdf (47 pages).
+Output written on Lineamientos-Visualizar.pdf (49 pages).

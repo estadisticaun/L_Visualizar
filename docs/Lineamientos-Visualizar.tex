@@ -113,7 +113,7 @@
 
 \title{Lineamientos conceptuales para la visualización estadística}
 \author{Camila Acosta Ramirez}
-\date{2021-06-08}
+\date{2021-06-09}
 
 \begin{document}
 \maketitle
@@ -660,6 +660,61 @@ Cuando se tienen variables con muchas categorías no se recomienda utilizar los 
 
 \caption{Uso incorrecto de los gráficos circulares}\label{fig:circularincorrecto-fig}
 \end{figure}
+
+\hypertarget{barras-apiladas}{%
+\subsection{Barras apiladas}\label{barras-apiladas}}
+
+Las barras apiladas se recomiendan cuando la intención del grafico es visualizar claramente los datos como proporciones de un todo, para visualizar muchos conjuntos de proporciones o representar series temporales de proporciones.
+
+Con las barras apiladas sucede algo similar a los gráficos de torta ya que tener muchas categorías saturan la visualización y la hacen poco informativa, nuevamente es recomendable para representar no más de 4 categorías y cuidar siempre el orden de cada grupo dentro de cada barra cuando se representan varios conjuntos de proporciones o se tiene una serie temporal de proporciones.
+
+La figura \ref{fig:apiladaantiestetica-fig} utiliza el enfoque de barras apiladas verticalmente para visualizar la distribución de estudiantes admitidos por estrato socioeconómico para el periodo 2021-1, a pesar de ser una figura informativa se etiqueta como antiestética ya que tener una única barra no es visualmente atractivo, para representar esta información en particular se prefiere un gráfico circular.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/unaapiladaincorrecto} 
+
+}
+
+\caption{Barra apilada verticalmente para representar estratos socioeconómicos}\label{fig:apiladaantiestetica-fig}
+\end{figure}
+
+Anteriormente se menciono que las barras apiladas son una de las visualizaciones sugeridas cuando la intención es representar series temporales de proporciones, a pesar de esto hay un caso en el cual este tipo de gráfico falla y es cuando se tienen demasiadas categorías y están desporporcionadas. Suponga que queremos visualizar la cantidad de estudiantes graduados por nivel de formación en los últimos tres años usando el enfoque de barras apiladas como se ilustra en la figura \ref{fig:apiladasincorrecto-fig}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/apiladasincorrecto} 
+
+}
+
+\caption{Barras apiladas para nivel de formación}\label{fig:apiladasincorrecto-fig}
+\end{figure}
+
+La figura anterior permite visualizar los datos como partes de un todo, pero al tener datos desproporcionados no es clara la contribución que tiene cada nivel de formación sobre el total de estudiantes graduados, un poco más del \(50\%\) de estudiantes graduados pertenecen a pregrado, cerca del \(25\%\) a maestría, alrededor del \(20\%\) a especialización y los aportes de especialidades médicas y doctorado no son claras ya que son muy pequeñas, por esta razón dicha figura fue etiquetada como incorrecta.
+
+Un caso útil y en el cual realmente se explota el potencial de los gráficos de barras apiladas es cuando se representan datos con solo dos categorías ya que los cambios a través del tiempo serán mucho más notorios y claros o incluso si se tratara de conjuntos de barras apiladas y no series temporales, la figura \ref{fig:apiladasadmitidosexo-fig} permite visualizar la distribución de estudiantes admitidos por sexo desde el año 2008 hasta 2020, esta visualización permite identificar claramente las contribuciones de cada uno de los sexos en el total de estudiantes admitidos y los cambios en el tiempo también son claros a pesar de que las proporciones se mantienen estables.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/apiladasadmitidosexo-fig-1} 
+
+}
+
+\caption{Barras apiladas para la serie temporal del sexo de admitidos}\label{fig:apiladasadmitidosexo-fig}
+\end{figure}
+
+Como se mencionó anteriormente los gráficos de barras apiladas también son útiles para representar conjuntos de proporciones en el caso de usar este enfoque es necesario tener dos variables categóricas una que marcara las divisiones de cada barra y la otra será usada en uno de los ejes para generar tantas barras como categorías se tengan. Suponga que queremos visualizar la distribución de estudiantes admitidos por modalidad formación y sexo, para realizar utilizaremos el enfoque de barras apiladas horizontalmente como se muestra en la figura \ref{fig:apiladasadmitidosexonivel-fig}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/apiladasadmitidosexonivel-fig-1} 
+
+}
+
+\caption{Distribución de estudiantes admitidos por sexo y nivel de formación}\label{fig:apiladasadmitidosexonivel-fig}
+\end{figure}
+
+La visualización \ref{fig:apiladasadmitidosexonivel-fig} permite identificar con claridad como se comporta la proporción de hombres y mujeres admitidos en los niveles de formación ofrecidos por la Universidad Nacional de Colombia, se identifica que en pregrado cerca del \(30\%\) de las personas admitidas son mujeres mientras que para los niveles de especialización la participación de los mujeres aumenta, llegado alrededor de \(50\%\).
 
 \hypertarget{errores-en-la-trama}{%
 \chapter{Errores en la trama}\label{errores-en-la-trama}}

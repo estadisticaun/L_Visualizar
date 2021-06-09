@@ -32,6 +32,10 @@ fig:mapadecalor-fig
 fig:mapadecalorcorrecto-fig
 fig:circularcorrecto-fig
 fig:circularincorrecto-fig
+fig:apiladaantiestetica-fig
+fig:apiladasincorrecto-fig
+fig:apiladasadmitidosexo-fig
+fig:apiladasadmitidosexonivel-fig
 fig:circular3d-fig
 fig:circularpaes-fig
 fig:usoderejillas-fig
@@ -56,5 +60,6 @@ barras-agrupadas-y-apiladas
 gráficos-de-puntos-y-mapas-de-calor
 visualización-de-proporciones
 gráficos-circulares
+barras-apiladas
 errores-en-la-trama
 final-words
