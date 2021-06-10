@@ -24,7 +24,7 @@
 <meta name="author" content="Camila Acosta Ramirez" />
 
 
-<meta name="date" content="2021-06-09" />
+<meta name="date" content="2021-06-10" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -203,53 +203,60 @@ Figura 3.14: Gráfico circular para representar 3 categorías
 Figura 3.15: Uso incorrecto de los gráficos circulares
 </p>
 </div>
+<p>Existe un caso especial en el cual los gráficos circulares fallan, suponga que se quiere mostrar el cambio en porcentaje para categorías de productos en cierta empresa de 2017 a 2019, los productos son clasificados en tres grupos Furniture, Technology y Office Supplies para representar los porcentajes de ventas de estas categorías se usa un gráfico circular como se ilustra en la figura <a href="3-2-visualización-de-proporciones.html#fig:circulartiempoincorrecto-fig">3.16</a>, cuando se utiliza este tipo de visualización es difícil observar con claridad lo que está sucediendo exactamente. Parece que las ventas en la categoría Office Supplies se incrementaron para el año 2018, mientras que las ventas de Tecnología fueron menores en ese mismo año, pero más allá de estas observaciones no podemos describir con claridad lo que esta pasando. En particular, no está claro como se comparan exactamente las ventas de las diferentes categorías dentro de cada año, adicionalmente los cambios en la participación de los grupos de productos en las ventas a lo largo de años son difíciles de observar.</p>
+<div class="figure" style="text-align: center"><span id="fig:circulartiempoincorrecto-fig"></span>
+<img src="Imágenes/circularañosincorrecto.jpg" alt="Participación de productos sobre ventas generales para tres años" width="100%" />
+<p class="caption">
+Figura 3.16: Participación de productos sobre ventas generales para tres años
+</p>
+</div>
 </div>
 <div id="barras-apiladas" class="section level3">
 <h3><span class="header-section-number">3.2.2</span> Barras apiladas</h3>
 <p>Las barras apiladas se recomiendan cuando la intención del grafico es visualizar claramente los datos como proporciones de un todo, para visualizar muchos conjuntos de proporciones o representar series temporales de proporciones.</p>
 <p>Con las barras apiladas sucede algo similar a los gráficos de torta ya que tener muchas categorías saturan la visualización y la hacen poco informativa, nuevamente es recomendable para representar no más de 4 categorías y cuidar siempre el orden de cada grupo dentro de cada barra cuando se representan varios conjuntos de proporciones o se tiene una serie temporal de proporciones.</p>
-<p>La figura <a href="3-2-visualización-de-proporciones.html#fig:apiladaantiestetica-fig">3.16</a> utiliza el enfoque de barras apiladas verticalmente para visualizar la distribución de estudiantes admitidos por estrato socioeconómico para el periodo 2021-1, a pesar de ser una figura informativa se etiqueta como antiestética ya que tener una única barra no es visualmente atractivo, para representar esta información en particular se prefiere un gráfico circular.</p>
+<p>La figura <a href="3-2-visualización-de-proporciones.html#fig:apiladaantiestetica-fig">3.17</a> utiliza el enfoque de barras apiladas verticalmente para visualizar la distribución de estudiantes admitidos por estrato socioeconómico para el periodo 2021-1, a pesar de ser una figura informativa se etiqueta como antiestética ya que tener una única barra no es visualmente atractivo, para representar esta información en particular se prefiere un gráfico circular.</p>
 <div class="figure" style="text-align: center"><span id="fig:apiladaantiestetica-fig"></span>
 <img src="Imágenes/unaapiladaincorrecto.jpg" alt="Barra apilada verticalmente para representar estratos socioeconómicos" width="100%" />
 <p class="caption">
-Figura 3.16: Barra apilada verticalmente para representar estratos socioeconómicos
+Figura 3.17: Barra apilada verticalmente para representar estratos socioeconómicos
 </p>
 </div>
-<p>Anteriormente se menciono que las barras apiladas son una de las visualizaciones sugeridas cuando la intención es representar series temporales de proporciones, a pesar de esto hay un caso en el cual este tipo de gráfico falla y es cuando se tienen demasiadas categorías y están desporporcionadas. Suponga que queremos visualizar la cantidad de estudiantes graduados por nivel de formación en los últimos tres años usando el enfoque de barras apiladas como se ilustra en la figura <a href="3-2-visualización-de-proporciones.html#fig:apiladasincorrecto-fig">3.17</a>.</p>
+<p>Anteriormente se menciono que las barras apiladas son una de las visualizaciones sugeridas cuando la intención es representar series temporales de proporciones, a pesar de esto hay un caso en el cual este tipo de gráfico falla y es cuando se tienen demasiadas categorías y están desporporcionadas. Suponga que queremos visualizar la cantidad de estudiantes graduados por nivel de formación en los últimos tres años usando el enfoque de barras apiladas como se ilustra en la figura <a href="3-2-visualización-de-proporciones.html#fig:apiladasincorrecto-fig">3.18</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:apiladasincorrecto-fig"></span>
 <img src="Imágenes/apiladasincorrecto.jpg" alt="Barras apiladas para nivel de formación" width="100%" />
 <p class="caption">
-Figura 3.17: Barras apiladas para nivel de formación
+Figura 3.18: Barras apiladas para nivel de formación
 </p>
 </div>
 <p>La figura anterior permite visualizar los datos como partes de un todo, pero al tener datos desproporcionados no es clara la contribución que tiene cada nivel de formación sobre el total de estudiantes graduados, un poco más del <span class="math inline">\(50\%\)</span> de estudiantes graduados pertenecen a pregrado, cerca del <span class="math inline">\(25\%\)</span> a maestría, alrededor del <span class="math inline">\(20\%\)</span> a especialización y los aportes de especialidades médicas y doctorado no son claras ya que son muy pequeñas, por esta razón dicha figura fue etiquetada como incorrecta.</p>
-<p>Un caso útil y en el cual realmente se explota el potencial de los gráficos de barras apiladas es cuando se representan datos con solo dos categorías ya que los cambios a través del tiempo serán mucho más notorios y claros o incluso si se tratara de conjuntos de barras apiladas y no series temporales, la figura <a href="3-2-visualización-de-proporciones.html#fig:apiladasadmitidosexo-fig">3.18</a> permite visualizar la distribución de estudiantes admitidos por sexo desde el año 2008 hasta 2020, esta visualización permite identificar claramente las contribuciones de cada uno de los sexos en el total de estudiantes admitidos y los cambios en el tiempo también son claros a pesar de que las proporciones se mantienen estables.</p>
+<p>Un caso útil y en el cual realmente se explota el potencial de los gráficos de barras apiladas es cuando se representan datos con solo dos categorías ya que los cambios a través del tiempo serán mucho más notorios y claros o incluso si se tratara de conjuntos de barras apiladas y no series temporales, la figura <a href="3-2-visualización-de-proporciones.html#fig:apiladasadmitidosexo-fig">3.19</a> permite visualizar la distribución de estudiantes admitidos por sexo desde el año 2008 hasta 2020, esta visualización permite identificar claramente las contribuciones de cada uno de los sexos en el total de estudiantes admitidos y los cambios en el tiempo también son claros a pesar de que las proporciones se mantienen estables.</p>
 <div class="figure" style="text-align: center"><span id="fig:apiladasadmitidosexo-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/apiladasadmitidosexo-fig-1.png" alt="Barras apiladas para la serie temporal del sexo de admitidos" width="80%" />
 <p class="caption">
-Figura 3.18: Barras apiladas para la serie temporal del sexo de admitidos
+Figura 3.19: Barras apiladas para la serie temporal del sexo de admitidos
 </p>
 </div>
-<p>Como se mencionó anteriormente los gráficos de barras apiladas también son útiles para representar conjuntos de proporciones en el caso de usar este enfoque es necesario tener dos variables categóricas una que marcara las divisiones de cada barra y la otra será usada en uno de los ejes para generar tantas barras como categorías se tengan. Suponga que queremos visualizar la distribución de estudiantes admitidos por modalidad formación y sexo, para realizar utilizaremos el enfoque de barras apiladas horizontalmente como se muestra en la figura <a href="3-2-visualización-de-proporciones.html#fig:apiladasadmitidosexonivel-fig">3.19</a>.</p>
+<p>Como se mencionó anteriormente los gráficos de barras apiladas también son útiles para representar conjuntos de proporciones en el caso de usar este enfoque es necesario tener dos variables categóricas una que marcara las divisiones de cada barra y la otra será usada en uno de los ejes para generar tantas barras como categorías se tengan. Suponga que queremos visualizar la distribución de estudiantes admitidos por modalidad formación y sexo, para realizar utilizaremos el enfoque de barras apiladas horizontalmente como se muestra en la figura <a href="3-2-visualización-de-proporciones.html#fig:apiladasadmitidosexonivel-fig">3.20</a>.</p>
 <div class="figure" style="text-align: center"><span id="fig:apiladasadmitidosexonivel-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/apiladasadmitidosexonivel-fig-1.png" alt="Distribución de estudiantes admitidos por sexo y nivel de formación" width="80%" />
 <p class="caption">
-Figura 3.19: Distribución de estudiantes admitidos por sexo y nivel de formación
+Figura 3.20: Distribución de estudiantes admitidos por sexo y nivel de formación
 </p>
 </div>
-<p>La visualización <a href="3-2-visualización-de-proporciones.html#fig:apiladasadmitidosexonivel-fig">3.19</a> permite identificar con claridad como se comporta la proporción de hombres y mujeres admitidos en los niveles de formación ofrecidos por la Universidad Nacional de Colombia, se identifica que en pregrado cerca del <span class="math inline">\(30\%\)</span> de las personas admitidas son mujeres mientras que para los niveles de especialización la participación de las mujeres aumenta, llegado alrededor de <span class="math inline">\(50\%\)</span>.</p>
+<p>La visualización <a href="3-2-visualización-de-proporciones.html#fig:apiladasadmitidosexonivel-fig">3.20</a> permite identificar con claridad como se comporta la proporción de hombres y mujeres admitidos en los niveles de formación ofrecidos por la Universidad Nacional de Colombia, se identifica que en pregrado cerca del <span class="math inline">\(30\%\)</span> de las personas admitidas son mujeres mientras que para los niveles de especialización la participación de las mujeres aumenta, llegado alrededor de <span class="math inline">\(50\%\)</span>.</p>
 </div>
 <div id="barras-agrupadas" class="section level3">
 <h3><span class="header-section-number">3.2.3</span> Barras agrupadas</h3>
 <p>Las barras dispuestas una al lado de la otra permite una fácil comparación visual de las proporciones, es informativo incluso cuando el conjunto de datos es pequeño y si los datos a mostrar se dividen en muchas partes este es el grafico indicado para visualizar las proporciones, también es uno de los más recomendados y utilizados cuando se quiere ilustrar series temporales de proporciones.</p>
-<p>Considere nuevamente la figura <a href="3-2-visualización-de-proporciones.html#fig:apiladasincorrecto-fig">3.17</a>, en la cual se intento ilustrar la distribución de estudiantes graduados por nivel de formación desde el año 2018 hasta 2020 y esa figura fue etiquetada como incorrecta por que no se lograba observar con claridad las contribuciones de los niveles doctorado y especialidades médicas. Ahora representaremos la misma información, pero con el enfoque de barras agrupadas, es decir tendremos tres grupos de barras donde cada grupo tiene cinco barras que representan cada uno de los niveles de formación ofrecidos en la Universidad.</p>
+<p>Considere nuevamente la figura <a href="3-2-visualización-de-proporciones.html#fig:apiladasincorrecto-fig">3.18</a>, en la cual se intento ilustrar la distribución de estudiantes graduados por nivel de formación desde el año 2018 hasta 2020 y esa figura fue etiquetada como incorrecta por que no se lograba observar con claridad las contribuciones de los niveles doctorado y especialidades médicas. Ahora representaremos la misma información, pero con el enfoque de barras agrupadas, es decir tendremos tres grupos de barras donde cada grupo tiene cinco barras que representan cada uno de los niveles de formación ofrecidos en la Universidad.</p>
 <div class="figure" style="text-align: center"><span id="fig:agrupadasnivel-fig"></span>
 <img src="Lineamientos-Visualizar_files/figure-html/agrupadasnivel-fig-1.png" alt="Distribución de estudiantes admitidos por nivel de formación para los últimos tres años" width="80%" />
 <p class="caption">
-Figura 3.20: Distribución de estudiantes admitidos por nivel de formación para los últimos tres años
+Figura 3.21: Distribución de estudiantes admitidos por nivel de formación para los últimos tres años
 </p>
 </div>
-<p>La figura <a href="3-2-visualización-de-proporciones.html#fig:agrupadasnivel-fig">3.20</a> permite visualizar con claridad las contribuciones de cada uno de los niveles de formación sobre el total de estudiantes graduados, los niveles de especialización y maestría generan alrededor del <span class="math inline">\(20\%\)</span> cada una de estudiantes graduados por año, mientras que las contribuciones de doctorado y especialidades médicas están alrededor del <span class="math inline">\(2\%\)</span> para cada uno de estos niveles. Adicional a poder comparar con claridad estos porcentajes también se puede observar la evolución anual de la proporción de estudiantes graduados por nivel de formación, para los años 2019 y 2020 la cantidad de estudiantes graduados de doctorado fue mayor que para el año 2018, también se observa que la cantidad de graduados de pregrado es similar a lo largo de los tres años representados.</p>
+<p>La figura <a href="3-2-visualización-de-proporciones.html#fig:agrupadasnivel-fig">3.21</a> permite visualizar con claridad las contribuciones de cada uno de los niveles de formación sobre el total de estudiantes graduados, los niveles de especialización y maestría generan alrededor del <span class="math inline">\(20\%\)</span> cada una de estudiantes graduados por año, mientras que las contribuciones de doctorado y especialidades médicas están alrededor del <span class="math inline">\(2\%\)</span> para cada uno de estos niveles. Adicional a poder comparar con claridad estos porcentajes también se puede observar la evolución anual de la proporción de estudiantes graduados por nivel de formación, para los años 2019 y 2020 la cantidad de estudiantes graduados de doctorado fue mayor que para el año 2018, también se observa que la cantidad de graduados de pregrado es similar a lo largo de los tres años representados.</p>
 <p>En la sección <a href="3-1-cantidades.html#cantidades">3.1</a> se hacen algunas recomendaciones acerca de la ubicación de etiquetas, ejes y otras que también se aplican para esta sección con el fin de lograr visualizaciones claras, informativas y atractivas.</p>
 
 </div>

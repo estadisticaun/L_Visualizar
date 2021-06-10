@@ -113,7 +113,7 @@
 
 \title{Lineamientos conceptuales para la visualización estadística}
 \author{Camila Acosta Ramirez}
-\date{2021-06-09}
+\date{2021-06-10}
 
 \begin{document}
 \maketitle
@@ -659,6 +659,17 @@ Cuando se tienen variables con muchas categorías no se recomienda utilizar los 
 }
 
 \caption{Uso incorrecto de los gráficos circulares}\label{fig:circularincorrecto-fig}
+\end{figure}
+
+Existe un caso especial en el cual los gráficos circulares fallan, suponga que se quiere mostrar el cambio en porcentaje para categorías de productos en cierta empresa de 2017 a 2019, los productos son clasificados en tres grupos Furniture, Technology y Office Supplies para representar los porcentajes de ventas de estas categorías se usa un gráfico circular como se ilustra en la figura \ref{fig:circulartiempoincorrecto-fig}, cuando se utiliza este tipo de visualización es difícil observar con claridad lo que está sucediendo exactamente. Parece que las ventas en la categoría Office Supplies se incrementaron para el año 2018, mientras que las ventas de Tecnología fueron menores en ese mismo año, pero más allá de estas observaciones no podemos describir con claridad lo que esta pasando. En particular, no está claro como se comparan exactamente las ventas de las diferentes categorías dentro de cada año, adicionalmente los cambios en la participación de los grupos de productos en las ventas a lo largo de años son difíciles de observar.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/circularañosincorrecto} 
+
+}
+
+\caption{Participación de productos sobre ventas generales para tres años}\label{fig:circulartiempoincorrecto-fig}
 \end{figure}
 
 \hypertarget{barras-apiladas}{%

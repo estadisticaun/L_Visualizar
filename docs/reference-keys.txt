@@ -32,6 +32,7 @@ fig:mapadecalor-fig
 fig:mapadecalorcorrecto-fig
 fig:circularcorrecto-fig
 fig:circularincorrecto-fig
+fig:circulartiempoincorrecto-fig
 fig:apiladaantiestetica-fig
 fig:apiladasincorrecto-fig
 fig:apiladasadmitidosexo-fig

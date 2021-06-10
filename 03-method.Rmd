@@ -316,6 +316,12 @@ Cuando se tienen variables con muchas categorías no se recomienda utilizar los 
 knitr::include_graphics("Imágenes/circularincorrecto.jpg")
 ```
 
+Existe un caso especial en el cual los gráficos circulares fallan, suponga que se quiere mostrar el cambio en porcentaje para categorías de productos en cierta empresa de 2017 a 2019, los productos son clasificados en tres grupos Furniture, Technology y Office Supplies para representar los porcentajes de ventas de estas categorías se usa un gráfico circular como se ilustra en la figura \@ref(fig:circulartiempoincorrecto-fig), cuando se utiliza este tipo de visualización es difícil observar con claridad lo que está sucediendo exactamente. Parece que las ventas en la categoría Office Supplies se incrementaron para el año 2018, mientras que las ventas de Tecnología fueron menores en ese mismo año, pero más allá de estas observaciones no podemos describir con claridad lo que esta pasando. En particular, no está claro como se comparan exactamente las ventas de las diferentes categorías dentro de cada año, adicionalmente los cambios en la participación de los grupos de productos en las ventas a lo largo de años son difíciles de observar.
+
+```{r circulartiempoincorrecto-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Participación de productos sobre ventas generales para tres años', out.width='100%'}
+knitr::include_graphics("Imágenes/circularañosincorrecto.jpg")
+```
+
 ### Barras apiladas
 
 Las barras apiladas se recomiendan cuando la intención del grafico es visualizar claramente los datos como proporciones de un todo, para visualizar muchos conjuntos de proporciones o representar series temporales de proporciones.
