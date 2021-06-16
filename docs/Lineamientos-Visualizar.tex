@@ -113,7 +113,7 @@
 
 \title{Lineamientos conceptuales para la visualización estadística}
 \author{Camila Acosta Ramirez}
-\date{2021-06-14}
+\date{2021-06-16}
 
 \begin{document}
 \maketitle
@@ -466,7 +466,7 @@ En muchas ocasiones estamos interesados en visualizar la magnitud de algún conj
 \hypertarget{gruxe1fico-de-barras}{%
 \subsection{Gráfico de barras}\label{gruxe1fico-de-barras}}
 
-Suponga que queremos visualizar la cantidad de estudiantes de estudiantes admitidos por nivel de formación para el periodo 2021-1, este tipo de datos se visualiza comúnmente con barras verticales, para cada nivel de formación se dibuja una barra que inicia en cero y se extiende hasta la cantidad de estudiantes admitidos. La figura \ref{fig:barrasadmitidosnivel-fig} muestra el uso del gráfico de barras para visualizar estas cantidades.
+Suponga que queremos visualizar la cantidad de estudiantes admitidos por nivel de formación para el periodo 2021-1, este tipo de datos se visualiza comúnmente con barras verticales, para cada nivel de formación se dibuja una barra que inicia en cero y se extiende hasta la cantidad de estudiantes admitidos. La figura \ref{fig:barrasadmitidosnivel-fig} muestra el uso del gráfico de barras para visualizar estas cantidades.
 
 \begin{figure}
 
@@ -488,7 +488,7 @@ Uno de los problemas más comunes con los gráficos de barras verticales es que 
 \caption{Uso del gráfico de barras para representar cantidades, girando etiquetas}\label{fig:barrasadmitidosnivelgirar-fig}
 \end{figure}
 
-La mejor solución para etiquetas largas es cambiar a un gráfico de barras horizontales, de esta manera no será necesario aumentar el espaciado entre barras ni girar las etiquetas y se obtiene una visualización compacta en la cual todos los elementos visuales están ubicados de manera horizontal y hace que el gráfico sea más fácil de leer.
+La mejor solución para etiquetas largas es cambiar a un gráfico de barras horizontales, de esta manera no será necesario aumentar el espaciado entre barras ni girar las etiquetas y se obtiene una visualización compacta en la cual todos los elementos visuales están ubicados de manera horizontal y hace que el gráfico sea más fácil de leer y comprender.
 
 \begin{figure}
 
@@ -535,7 +535,7 @@ Las figuras mostradas en la subsección anterior representan variables cualitati
 \caption{Uso de barras agrupadas para representar valores usando dos categorías}\label{fig:barrasagrupadasservicioedad-fig}
 \end{figure}
 
-Con los gráficos de barras agrupadas se debe tener cuidado ya que las variables categóricas elegidas pueden tener muchos niveles y harán que le gráfico se sature y el usuario no comprenda la información de manera correcta, la figura \ref{fig:barrasagrupadasserviciosede-fig} muestra la distribución del número de funcionarios por años de servicio y sede para el periodo 2020-2, aunque la figura es correcta resulta difícil de interpretar por la cantidad de sedes existentes dentro de la Universidad Nacional de Colombia, observe que para cada grupo de años de servicio se crean diez barras
+Con los gráficos de barras agrupadas se debe tener cuidado ya que las variables categóricas elegidas pueden tener muchos niveles y harán que le gráfico se sature y el usuario no comprenda la información de manera correcta, la figura \ref{fig:barrasagrupadasserviciosede-fig} muestra la distribución del número de funcionarios por años de servicio y sede para el periodo 2020-2, aunque la figura es correcta resulta difícil de interpretar por la cantidad de sedes existentes dentro de la Universidad Nacional de Colombia, observe que para cada grupo de años de servicio se crean diez barras.
 
 \begin{figure}
 
@@ -550,11 +550,11 @@ Una alternativa a esta figura es visualizar como categoría principal la sede a 
 
 \begin{figure}
 
-{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/barrasagrupadassedeservicio-fig-1} 
+{\centering \includegraphics[width=1\linewidth]{Imágenes/añosedeadministrativos} 
 
 }
 
-\caption{Cantidad de funcionarios por sede y años de servicio}\label{fig:barrasagrupadassedeservicio-fig}
+\caption{Edad promedio de estudiantes graduados}\label{fig:barrasagrupadassedeservicio-fig}
 \end{figure}
 
 Como ya vimos los gráficos de barras agrupadas consisten en dibujar una barra al lado de la otra, pero hay ocasiones en las cuales se prefiere apiliar las barras, es decir, ubicar una encima de la otra, esto generalmente se realiza cuando la cantidad representada por las barras dispuestas en esta posición es significativa, también es necesario tener cuidado con este tipo de gráficos ya que utilizar muchas categorías para apilar las barras resultara en una visualización saturada y poco informativa. Un uso común de este tipo de gráficos es cuando las barras individuales representan recuentos, por ejemplo, el conjunto de datos llamado Administrativos posee el recuento de funcionarios por sexo, para este caso si apilamos una barra que representa el recuento de mujeres encima de una barra que representa el recuento de hombres, entonces la altura de la barra combinada mostrara el total de funcionarios independiente del género. La figura \ref{fig:barrasaplidasserviciosexo-fig} presenta el uso de barras apiladas como alternativa del uso de barras agrupadas ilustrado en la figura \ref{fig:barrasagrupadasservicioedad-fig}.
@@ -573,7 +573,7 @@ Como ya vimos los gráficos de barras agrupadas consisten en dibujar una barra a
 
 Una de las mayores limitaciones al usar los gráficos de barras ya sean simples o alguna de sus variaciones es que los ejes deben iniciar en cero para lograr que la altura de la barra sea proporcional a la cantidad que representa, existen muchas ocasiones en las cuales es poco práctico iniciar siempre los ejes en cero y una alternativa es usar puntos ubicados en lugares apropiados a lo largo del eje X o Y.
 
-Suponga que se quiere visualizar la edad promedio de los estudiantes graduados por nivel de formación, observe que en este caso no tiene mucho sentido iniciar el eje Y en cero ya que la edad promedio estará por encima de los 20 años aproximadamente y las discrepancias entre los promedios de edades no son muy grandes, por esta razón es conveniente restringir el dominio de eje x al intervalo de 20 a 40 años, para que las diferencias sean notorias y la información sea interpretada con mayor facilidad, como se ilustra en la figura \ref{fig:diagramapuntos-fig}.
+Suponga que se quiere visualizar la edad promedio de los estudiantes graduados por nivel de formación, observe que en este caso no tiene mucho sentido iniciar el eje Y en cero ya que la edad promedio estará por encima de los 20 años aproximadamente y las discrepancias entre los promedios de edades no son muy grandes, por esta razón es conveniente restringir el dominio del eje x al intervalo de 20 a 40 años, para que las diferencias sean notorias y la información sea interpretada con mayor facilidad, como se ilustra en la figura \ref{fig:diagramapuntos-fig}.
 
 \begin{figure}
 
@@ -746,6 +746,53 @@ Considere nuevamente la figura \ref{fig:apiladasincorrecto-fig}, en la cual se i
 La figura \ref{fig:agrupadasnivel-fig} permite visualizar con claridad las contribuciones de cada uno de los niveles de formación sobre el total de estudiantes graduados, los niveles de especialización y maestría generan alrededor del \(20\%\) cada una de estudiantes graduados por año, mientras que las contribuciones de doctorado y especialidades médicas están alrededor del \(2\%\) para cada uno de estos niveles. Adicional a poder comparar con claridad estos porcentajes también se puede observar la evolución anual de la proporción de estudiantes graduados por nivel de formación, para los años 2019 y 2020 la cantidad de estudiantes graduados de doctorado fue mayor que para el año 2018, también se observa que la cantidad de graduados de pregrado es similar a lo largo de los tres años representados.
 
 En la sección \ref{cantidades} se hacen algunas recomendaciones acerca de la ubicación de etiquetas, ejes y otras que también se aplican para esta sección con el fin de lograr visualizaciones claras, informativas y atractivas.
+
+\hypertarget{series-de-tiempo}{%
+\section{Series de tiempo}\label{series-de-tiempo}}
+
+La visualización de series de tiempo puede verse como un caso especial de los diagramas de dispersión, en el cual una de las dos variables puede considerarse como tiempo ya que el tiempo impone una estructura adicional a los datos. En estos casos los puntos tienen un orden inherente y es posible ordenar las observaciones en de manera creciente en el tiempo y definir un antecesor y sucesor para cada punto. Generalmente la visualización de las series de tiempo se realiza usando gráficos de líneas, sin embargo, este tipo de gráficos no se limitan únicamente a esta información, son útiles siempre que una variable impone un orden a los datos.
+
+\hypertarget{series-de-tiempo-individuales}{%
+\subsection{Series de tiempo individuales}\label{series-de-tiempo-individuales}}
+
+Como primer ejemplo de una serie de tiempo, consideremos el patrón de estudiantes graduados a la Universidad Nacional a nivel de cifras generales, estas admisiones se presentan dos veces al año, por tanto, el eje temporal de nuestra visualización se conforma del año y el semestre al que fue admitido el estudiante. Podemos visualizar el comportamiento en la cantidad de estudiantes admitidos haciendo una forma de diagrama de dispersión donde dibujamos los puntos que representan el número de admitidos en cada semestre, como se presenta en la figura \ref{fig:areasincorrecto-fig}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/puntosparaseries-fig-1} 
+
+}
+
+\caption{Gráfico de dispersión para la evolución de admitidos}\label{fig:puntosparaseries-fig}
+\end{figure}
+
+Sin embargo, existe una importante diferencia con los diagramas de dispersión que se analizan en la sección \emph{referencia}. En la figura \ref{fig:areasincorrecto-fig} los puntos están espaciados uniformemente a lo largo del eje X y existe un orden especifico definido por la línea temporal entre ellos. Cada punto tiene exactamente un vecino a la izquierda y uno a la derecha, excepto los puntos de inicio y final que solo tienen un vecino. Una manera de enfatizar visualmente en este orden presentado por los datos es conectando las observaciones con líneas como se ilustra en la figura \ref{fig:lineasparaseries-fig} y este tipo de grafico se denomina gráfico de líneas.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/lineasparaseries-fig-1} 
+
+}
+
+\caption{Gráfico de dispersión para la evolución de admitidos}\label{fig:lineasparaseries-fig}
+\end{figure}
+
+A pesar de que muchos científicos de datos indican que esta practica es incorrecta ya que las líneas no representan datos observados y de alguna manera corresponden a datos inventados, usar líneas para conectar los puntos ayuda con la percepción cuando los puntos están muy separados o están ubicados de manera desigual.
+
+Sin embargo, el uso de líneas para representar series de tiempo es un practica generalmente aceptada y, con frecuencia, los puntos se omiten por completo. Sin puntos la figura logra centrar la atención del usuario en la tendencia general de los datos y menos en las observaciones individuales adicionalmente una figura sin puntos esta menos ocupada visualmente lo que indica claridad para el usuario. En general, cuanto mas densa es la serie de tiempo, es decir mas puntos tiene, se hace menos importante enfatizar en observaciones individuales usando puntos. Para el conjunto de datos de admisiones es posible omitir los puntos y lograr un gráfico más limpio. La siguiente visualización fue realizada usando Flourish, con el fin de incluir herramientas interactivas.
+
+Otra opción bastante utilizada es rellenar el área bajo la curva con un color sólido, como se ilustra en la figura \ref{fig:areasincorrecto-fig}. Esta elección enfatiza aún más en la tendencia general de los datos ya que separa visualmente el área por encima de la curva del área que esta por debajo. Sin embargo, se debe tener cuidado con el inicio del eje Y, ya que si seleccionamos un valor de inicio diferente de cero el área bajo curva representa la medida en que el valor de la observación supera el inicio del eje, mientras que el final de la sombra representa de manera correcta la cantidad de estudiantes admitidos.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/areaincorrectoeje} 
+
+}
+
+\caption{Barras apiladas para nivel de formación}\label{fig:areasincorrecto-fig}
+\end{figure}
+
+Lo correcto para esta visualización es iniciar el eje Y siempre en cero, para lograr que el área sombreada y la línea representen exactamente la misma cantidad, que para este caso en particular corresponde a la cantidad de estudiantes admitidos por semestre.
 
 \hypertarget{errores-en-la-trama}{%
 \chapter{Errores en la trama}\label{errores-en-la-trama}}

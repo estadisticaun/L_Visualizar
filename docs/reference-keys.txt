@@ -38,6 +38,9 @@ fig:apiladasincorrecto-fig
 fig:apiladasadmitidosexo-fig
 fig:apiladasadmitidosexonivel-fig
 fig:agrupadasnivel-fig
+fig:puntosparaseries-fig
+fig:lineasparaseries-fig
+fig:areasincorrecto-fig
 fig:circular3d-fig
 fig:circularpaes-fig
 fig:usoderejillas-fig
@@ -64,5 +67,7 @@ visualización-de-proporciones
 gráficos-circulares
 barras-apiladas
 barras-agrupadas
+series-de-tiempo
+series-de-tiempo-individuales
 errores-en-la-trama
 final-words

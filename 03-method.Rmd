@@ -19,7 +19,7 @@ En muchas ocasiones estamos interesados en visualizar la magnitud de algún conj
 
 ### Gráfico de barras
 
-Suponga que queremos visualizar la cantidad de estudiantes de estudiantes admitidos por nivel de formación para el periodo 2021-1, este tipo de datos se visualiza comúnmente con barras verticales, para cada nivel de formación se dibuja una barra que inicia en cero y se extiende hasta la cantidad de estudiantes admitidos. La figura \@ref(fig:barrasadmitidosnivel-fig) muestra el uso del gráfico de barras para visualizar estas cantidades.
+Suponga que queremos visualizar la cantidad de estudiantes admitidos por nivel de formación para el periodo 2021-1, este tipo de datos se visualiza comúnmente con barras verticales, para cada nivel de formación se dibuja una barra que inicia en cero y se extiende hasta la cantidad de estudiantes admitidos. La figura \@ref(fig:barrasadmitidosnivel-fig) muestra el uso del gráfico de barras para visualizar estas cantidades.
 
 ```{r barrasadmitidosnivel-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del gráfico de barras para representar cantidades', out.width='80%'}
 Aspirantes <- UnalData::Aspirantes
@@ -50,7 +50,7 @@ Uno de los problemas más comunes con los gráficos de barras verticales es que 
 knitr::include_graphics("Imágenes/etiquetasgiradas.jpg")
 ```
 
-La mejor solución para etiquetas largas es cambiar a un gráfico de barras horizontales, de esta manera no será necesario aumentar el espaciado entre barras ni girar las etiquetas y se obtiene una visualización compacta en la cual todos los elementos visuales están ubicados de manera horizontal y hace que el gráfico sea más fácil de leer.
+La mejor solución para etiquetas largas es cambiar a un gráfico de barras horizontales, de esta manera no será necesario aumentar el espaciado entre barras ni girar las etiquetas y se obtiene una visualización compacta en la cual todos los elementos visuales están ubicados de manera horizontal y hace que el gráfico sea más fácil de leer y comprender.
 
 ```{r barrasadmitidosnivelhorizontal-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso del gráfico de barras horizontales para representar cantidades', out.width='80%'}
 ggplot(data = Admitidos, aes(x = reorder(NIVEL,n), y = n, fill = NIVEL)) +
@@ -124,7 +124,7 @@ ggplot(data = servicio_sexo, aes(x = CAT_SERVICIO, y = n, fill = SEXO)) +
        title = "Distribución de funcionarios por años de servicio y sexo, periodo 2020-2")
 ```
 
-Con los gráficos de barras agrupadas se debe tener cuidado ya que las variables categóricas elegidas pueden tener muchos niveles y harán que le gráfico se sature y el usuario no comprenda la información de manera correcta, la figura \@ref(fig:barrasagrupadasserviciosede-fig) muestra la distribución del número de funcionarios por años de servicio y sede para el periodo 2020-2, aunque la figura es correcta resulta difícil de interpretar por la cantidad de sedes existentes dentro de la Universidad Nacional de Colombia, observe que para cada grupo de años de servicio se crean diez barras
+Con los gráficos de barras agrupadas se debe tener cuidado ya que las variables categóricas elegidas pueden tener muchos niveles y harán que le gráfico se sature y el usuario no comprenda la información de manera correcta, la figura \@ref(fig:barrasagrupadasserviciosede-fig) muestra la distribución del número de funcionarios por años de servicio y sede para el periodo 2020-2, aunque la figura es correcta resulta difícil de interpretar por la cantidad de sedes existentes dentro de la Universidad Nacional de Colombia, observe que para cada grupo de años de servicio se crean diez barras.
 
 ```{r barrasagrupadasserviciosede-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Cantidad de funcionarios por años de servicio y sede', out.width='80%'}
 Administrativos <- UnalData::Administrativos
@@ -159,24 +159,8 @@ ggplot(data = servicio_sede, aes(x = CAT_SERVICIO, y = n, fill = SEDE)) +
 
 Una alternativa a esta figura es visualizar como categoría principal la sede a la que pertenece cada funcionario y que los grupos de barras para cada sede se creen a partir de los años de servicio prestados, usando una escala de color secuencial para representar cada uno de los años de servicio prestado por los funcionarios administrativos, con esto solo se tendrán 5 barras por cada sede y el gráfico será más sencillo y comprensible, como se muestra en la figura \@ref(fig:barrasagrupadassedeservicio-fig).
 
-```{r barrasagrupadassedeservicio-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Cantidad de funcionarios por sede y años de servicio', out.width='80%'}
-servicio_sede$CAT_SERVICIO <- factor(servicio_sede$CAT_SERVICIO, 
-                                     levels = c("40 o más", "30 a 39", 
-                                                "20 a 29", "10 a 19", 
-                                                "9 o menos"))
-ggplot(data = servicio_sede, aes(x = reorder(SEDE,n), y = n, 
-                                 fill = CAT_SERVICIO)) +
-  geom_bar(stat = "identity", position = "dodge") +
-  scale_fill_manual(values = c('#023E8A', '#0077B6', '#0096C7', '#00B4D8', 
-                               '#48CAE4'), 
-                    name = "Años de servicio") +
-  theme_bw() +
-  theme(legend.position = 'bottom', 
-        plot.title = element_text(hjust = 0.5)) + 
-  labs(x = "",
-       y = "Número de funcionarios", 
-       title = "Distribución de funcionarios sede y años de servicio, periodo 2020-2") + 
-  coord_flip()
+```{r barrasagrupadassedeservicio-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Edad promedio de estudiantes graduados', out.width='100%'}
+knitr::include_graphics("Imágenes/añosedeadministrativos.jpg")
 ```
 
 Como ya vimos los gráficos de barras agrupadas consisten en dibujar una barra al lado de la otra, pero hay ocasiones en las cuales se prefiere apiliar las barras, es decir, ubicar una encima de la otra, esto generalmente se realiza cuando la cantidad representada por las barras dispuestas en esta posición es significativa, también es necesario tener cuidado con este tipo de gráficos ya que utilizar muchas categorías para apilar las barras resultara en una visualización saturada y poco informativa. Un uso común de este tipo de gráficos es cuando las barras individuales representan recuentos, por ejemplo, el conjunto de datos llamado Administrativos posee el recuento de funcionarios por sexo, para este caso si apilamos una barra que representa el recuento de mujeres encima de una barra que representa el recuento de hombres, entonces la altura de la barra combinada mostrara el total de funcionarios independiente del género. La figura \@ref(fig:barrasaplidasserviciosexo-fig) presenta el uso de barras apiladas como alternativa del uso de barras agrupadas ilustrado en la figura \@ref(fig:barrasagrupadasservicioedad-fig).
@@ -208,7 +192,7 @@ ggplot(data = servicio_sexo, aes(x = CAT_SERVICIO, y = n, fill = SEXO)) +
 
 Una de las mayores limitaciones al usar los gráficos de barras ya sean simples o alguna de sus variaciones es que los ejes deben iniciar en cero para lograr que la altura de la barra sea proporcional a la cantidad que representa, existen muchas ocasiones en las cuales es poco práctico iniciar siempre los ejes en cero y una alternativa es usar puntos ubicados en lugares apropiados a lo largo del eje X o Y.
 
-Suponga que se quiere visualizar la edad promedio de los estudiantes graduados por nivel de formación, observe que en este caso no tiene mucho sentido iniciar el eje Y en cero ya que la edad promedio estará por encima de los 20 años aproximadamente y las discrepancias entre los promedios de edades no son muy grandes, por esta razón es conveniente restringir el dominio de eje x al intervalo de 20 a 40 años, para que las diferencias sean notorias y la información sea interpretada con mayor facilidad, como se ilustra en la figura \@ref(fig:diagramapuntos-fig).
+Suponga que se quiere visualizar la edad promedio de los estudiantes graduados por nivel de formación, observe que en este caso no tiene mucho sentido iniciar el eje Y en cero ya que la edad promedio estará por encima de los 20 años aproximadamente y las discrepancias entre los promedios de edades no son muy grandes, por esta razón es conveniente restringir el dominio del eje x al intervalo de 20 a 40 años, para que las diferencias sean notorias y la información sea interpretada con mayor facilidad, como se ilustra en la figura \@ref(fig:diagramapuntos-fig).
 
 ```{r diagramapuntos-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Diagrama de puntos como alternativa a los gráficos de barras', warning=FALSE, message=FALSE, out.width='80%'}
 Graduados <- UnalData::Graduados
@@ -359,7 +343,7 @@ La visualización \@ref(fig:apiladasadmitidosexonivel-fig) permite identificar c
 
 Las barras dispuestas una al lado de la otra permite una fácil comparación visual de las proporciones, es informativo incluso cuando el conjunto de datos es pequeño y si los datos a mostrar se dividen en muchas partes este es el grafico indicado para visualizar las proporciones, también es uno de los más recomendados y utilizados cuando se quiere ilustrar series temporales de proporciones.
 
- Considere nuevamente la figura \@ref(fig:apiladasincorrecto-fig), en la cual se intento ilustrar la distribución de estudiantes graduados por nivel de formación desde el año 2018 hasta 2020 y esa figura fue etiquetada como incorrecta por que no se lograba observar con claridad las contribuciones de los niveles doctorado y especialidades médicas. Ahora representaremos la misma información, pero con el enfoque de barras agrupadas, es decir tendremos tres grupos de barras donde cada grupo tiene cinco barras que representan cada uno de los niveles de formación ofrecidos en la Universidad.
+Considere nuevamente la figura \@ref(fig:apiladasincorrecto-fig), en la cual se intento ilustrar la distribución de estudiantes graduados por nivel de formación desde el año 2018 hasta 2020 y esa figura fue etiquetada como incorrecta por que no se lograba observar con claridad las contribuciones de los niveles doctorado y especialidades médicas. Ahora representaremos la misma información, pero con el enfoque de barras agrupadas, es decir tendremos tres grupos de barras donde cada grupo tiene cinco barras que representan cada uno de los niveles de formación ofrecidos en la Universidad.
 
 ```{r agrupadasnivel-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Barras apiladas para nivel de formación', out.width='100%'}
 knitr::include_graphics("Imágenes/agrupadasnivel.jpg")
@@ -368,3 +352,63 @@ knitr::include_graphics("Imágenes/agrupadasnivel.jpg")
 La figura \@ref(fig:agrupadasnivel-fig) permite visualizar con claridad las contribuciones de cada uno de los niveles de formación sobre el total de estudiantes graduados, los niveles de especialización y maestría generan alrededor del $20\%$ cada una de estudiantes graduados por año, mientras que las contribuciones de doctorado y especialidades médicas están alrededor del $2\%$ para cada uno de estos niveles. Adicional a poder comparar con claridad estos porcentajes también se puede observar la evolución anual de la proporción de estudiantes graduados por nivel de formación, para los años 2019 y 2020 la cantidad de estudiantes graduados de doctorado fue mayor que para el año 2018, también se observa que la cantidad de graduados de pregrado es similar a lo largo de los tres años representados.
 
 En la sección \@ref(cantidades) se hacen algunas recomendaciones acerca de la ubicación de etiquetas, ejes y otras que también se aplican para esta sección con el fin de lograr visualizaciones claras, informativas y atractivas.
+
+## Series de tiempo
+
+La visualización de series de tiempo puede verse como un caso especial de los diagramas de dispersión, en el cual una de las dos variables puede considerarse como tiempo ya que el tiempo impone una estructura adicional a los datos. En estos casos los puntos tienen un orden inherente y es posible ordenar las observaciones en de manera creciente en el tiempo y definir un antecesor y sucesor para cada punto. Generalmente la visualización de las series de tiempo se realiza usando gráficos de líneas, sin embargo, este tipo de gráficos no se limitan únicamente a esta información, son útiles siempre que una variable impone un orden a los datos.
+
+### Series de tiempo individuales
+
+Como primer ejemplo de una serie de tiempo, consideremos el patrón de estudiantes graduados a la Universidad Nacional a nivel de cifras generales, estas admisiones se presentan dos veces al año, por tanto, el eje temporal de nuestra visualización se conforma del año y el semestre al que fue admitido el estudiante. Podemos visualizar el comportamiento en la cantidad de estudiantes admitidos haciendo una forma de diagrama de dispersión donde dibujamos los puntos que representan el número de admitidos en cada semestre, como se presenta en la figura \@ref(fig:areasincorrecto-fig).
+
+```{r puntosparaseries-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Gráfico de dispersión para la evolución de admitidos', warning=FALSE, message=FALSE, out.width='80%'}
+Admitidos <- UnalData::Aspirantes %>% 
+  filter(ADMITIDO == 'Sí') %>% 
+  mutate(YEAR_SEMESTER = paste(YEAR, SEMESTRE, sep = ' - ')) %>% 
+  group_by(YEAR_SEMESTER) %>% 
+  count()
+
+ggplot(Admitidos, aes(x = YEAR_SEMESTER, y = n)) +
+  geom_point(size = 2.5, color = '#0071bc', shape = 19) +
+  scale_y_continuous(limit = c(0,11000)) +
+  theme_bw() +
+  theme(legend.position = 'none',
+        plot.title = element_text(hjust = 0.5),
+        axis.text.x = element_text(angle = 30, hjust = 1)) +
+  labs(x = "Periodo", 
+       y = "Número de admitidos", 
+       title = "Evolución histórica del total de admitidos a la Universidad")
+```
+
+Sin embargo, existe una importante diferencia con los diagramas de dispersión que se analizan en la sección *referencia*. En la figura \@ref(fig:areasincorrecto-fig) los puntos están espaciados uniformemente a lo largo del eje X y existe un orden especifico definido por la línea temporal entre ellos. Cada punto tiene exactamente un vecino a la izquierda y uno a la derecha, excepto los puntos de inicio y final que solo tienen un vecino. Una manera de enfatizar visualmente en este orden presentado por los datos es conectando las observaciones con líneas como se ilustra en la figura \@ref(fig:lineasparaseries-fig) y este tipo de grafico se denomina gráfico de líneas.
+
+```{r lineasparaseries-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Gráfico de dispersión para la evolución de admitidos', warning=FALSE, message=FALSE, out.width='80%'}
+ggplot(Admitidos, aes(x = YEAR_SEMESTER, y = n, group = 1)) +
+  geom_line(color = '#0071bc', size = 0.6) +
+  geom_point(color = '#0071bc', size = 2.5, shape = 19) + 
+  scale_y_continuous(limit = c(0,11000)) +
+  theme_bw() +
+  theme(legend.position = 'none',
+        plot.title = element_text(hjust = 0.5),
+        axis.text.x = element_text(angle = 30, hjust = 1)) +
+  labs(x = "Periodo", 
+       y = "Número de admitidos", 
+       title = "Evolución histórica del total de admitidos a la Universidad")
+```
+
+A pesar de que muchos científicos de datos indican que esta practica es incorrecta ya que las líneas no representan datos observados y de alguna manera corresponden a datos inventados, usar líneas para conectar los puntos ayuda con la percepción cuando los puntos están muy separados o están ubicados de manera desigual.
+
+Sin embargo, el uso de líneas para representar series de tiempo es un practica generalmente aceptada y, con frecuencia, los puntos se omiten por completo. Sin puntos la figura logra centrar la atención del usuario en la tendencia general de los datos y menos en las observaciones individuales adicionalmente una figura sin puntos esta menos ocupada visualmente lo que indica claridad para el usuario. En general, cuanto mas densa es la serie de tiempo, es decir mas puntos tiene, se hace menos importante enfatizar en observaciones individuales usando puntos. Para el conjunto de datos de admisiones es posible omitir los puntos y lograr un gráfico más limpio. La siguiente visualización fue realizada usando Flourish, con el fin de incluir herramientas interactivas.
+
+<div class="flourish-embed flourish-chart" data-src="visualisation/6449909"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+Otra opción bastante utilizada es rellenar el área bajo la curva con un color sólido, como se ilustra en la figura \@ref(fig:areasincorrecto-fig). Esta elección enfatiza aún más en la tendencia general de los datos ya que separa visualmente el área por encima de la curva del área que esta por debajo. Sin embargo, se debe tener cuidado con el inicio del eje Y, ya que si seleccionamos un valor de inicio diferente de cero el área bajo curva representa la medida en que el valor de la observación supera el inicio del eje, mientras que el final de la sombra representa de manera correcta la cantidad de estudiantes admitidos. 
+
+```{r areasincorrecto-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Barras apiladas para nivel de formación', out.width='100%'}
+knitr::include_graphics("Imágenes/areaincorrectoeje.jpg")
+```
+
+Lo correcto para esta visualización es iniciar el eje Y siempre en cero, para lograr que el área sombreada y la línea representen exactamente la misma cantidad, que para este caso en particular corresponde a la cantidad de estudiantes admitidos por semestre.
+
+<div class="flourish-embed flourish-chart" data-src="visualisation/6450574"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
