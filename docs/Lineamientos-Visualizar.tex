@@ -113,7 +113,7 @@
 
 \title{Lineamientos conceptuales para la visualización estadística}
 \author{Camila Acosta Ramirez}
-\date{2021-06-16}
+\date{2021-06-17}
 
 \begin{document}
 \maketitle
@@ -793,6 +793,26 @@ Otra opción bastante utilizada es rellenar el área bajo la curva con un color 
 \end{figure}
 
 Lo correcto para esta visualización es iniciar el eje Y siempre en cero, para lograr que el área sombreada y la línea representen exactamente la misma cantidad, que para este caso en particular corresponde a la cantidad de estudiantes admitidos por semestre.
+
+\hypertarget{varias-series-de-tiempo}{%
+\subsection{Varias series de tiempo}\label{varias-series-de-tiempo}}
+
+Es muy común querer visualizar varios datos a través del tiempo, por lo general usando una variable categórica para diferenciar las observaciones. En estos casos se debe tener especial cuidado en como graficamos los datos ya que la figura puede tornarse confusa o difícil de interpretar. Suponga que queremos visualizar de manera semestral la cantidad de estudiantes graduados por nivel de formación, un gráfico de dispersión usando colores para distinguir no es una buena idea porque los cursos del tiempo se encuentran entre sí.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/puntoincorrectoseries} 
+
+}
+
+\caption{Uso incorrecto de los puntos para mostrar series de tiempo}\label{fig:puntoincorrectoseries-fig}
+\end{figure}
+
+La figura \ref{fig:puntoincorrectoseries-fig} es un ejemplo claro en el cual conectar los puntos mediante líneas es de vital importancia para generar visualizaciones claras y concisas que permiten una fácil interpretación por parte del usuario.
+
+Los gráficos de líneas no se limitan únicamente a series de tiempo, son apropiados siempre que los puntos de datos tengan un orden natural que pueda ser reflejado en la variable que se ubica a lo largo del eje X, de modo que los puntos vecinos se puedan conectar con una línea. Este enfoque de grafico de líneas puede ser usado para visualizar la cantidad de admitidos por rango de edad y nivel de formación.
+
+La visuliazación anterior permite identificar claramente la cantidad de estudiantes admitidos por rango de edad para cda niveld de formación ofrecido por la Universidad, este enfoque se considera correcto ya que los rangos de edad a pesar de ser una variable discreta presentan un orden natural que se refleja claramente sobre el eje X.
 
 \hypertarget{errores-en-la-trama}{%
 \chapter{Errores en la trama}\label{errores-en-la-trama}}

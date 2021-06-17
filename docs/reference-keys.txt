@@ -41,6 +41,7 @@ fig:agrupadasnivel-fig
 fig:puntosparaseries-fig
 fig:lineasparaseries-fig
 fig:areasincorrecto-fig
+fig:puntoincorrectoseries-fig
 fig:circular3d-fig
 fig:circularpaes-fig
 fig:usoderejillas-fig
@@ -69,5 +70,6 @@ barras-apiladas
 barras-agrupadas
 series-de-tiempo
 series-de-tiempo-individuales
+varias-series-de-tiempo
 errores-en-la-trama
 final-words

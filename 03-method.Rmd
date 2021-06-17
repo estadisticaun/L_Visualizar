@@ -412,3 +412,20 @@ Lo correcto para esta visualización es iniciar el eje Y siempre en cero, para l
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/6450574"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
+### Varias series de tiempo
+
+Es muy común querer visualizar varios datos a través del tiempo, por lo general usando una variable categórica para diferenciar las observaciones. En estos casos se debe tener especial cuidado en como graficamos los datos ya que la figura puede tornarse confusa o difícil de interpretar. Suponga que queremos visualizar de manera semestral la cantidad de estudiantes graduados por nivel de formación, un gráfico de dispersión usando colores para distinguir no es una buena idea porque los cursos del tiempo se encuentran entre sí. 
+
+```{r puntoincorrectoseries-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Uso incorrecto de los puntos para mostrar series de tiempo', out.width='100%'}
+knitr::include_graphics("Imágenes/puntoincorrectoseries.jpg")
+```
+
+La figura \@ref(fig:puntoincorrectoseries-fig) es un ejemplo claro en el cual conectar los puntos mediante líneas es de vital importancia para generar visualizaciones claras y concisas que permiten una fácil interpretación por parte del usuario. 
+
+<div class="flourish-embed flourish-chart" data-src="visualisation/6451257"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+Los gráficos de líneas no se limitan únicamente a series de tiempo, son apropiados siempre que los puntos de datos tengan un orden natural que pueda ser reflejado en la variable que se ubica a lo largo del eje X, de modo que los puntos vecinos se puedan conectar con una línea. Este enfoque de grafico de líneas puede ser usado para visualizar la cantidad de admitidos por rango de edad y nivel de formación.
+
+<div class="flourish-embed flourish-chart" data-src="visualisation/6458009"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
+
+La visuliazación anterior permite identificar claramente la cantidad de estudiantes admitidos por rango de edad para cda niveld de formación ofrecido por la Universidad, este enfoque se considera correcto ya que los rangos de edad a pesar de ser una variable discreta presentan un orden natural que se refleja claramente sobre el eje X. 

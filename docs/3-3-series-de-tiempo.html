@@ -24,7 +24,7 @@
 <meta name="author" content="Camila Acosta Ramirez" />
 
 
-<meta name="date" content="2021-06-16" />
+<meta name="date" content="2021-06-17" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -161,6 +161,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </ul></li>
 <li class="chapter" data-level="3.3" data-path="3-3-series-de-tiempo.html"><a href="3-3-series-de-tiempo.html"><i class="fa fa-check"></i><b>3.3</b> Series de tiempo</a><ul>
 <li class="chapter" data-level="3.3.1" data-path="3-3-series-de-tiempo.html"><a href="3-3-series-de-tiempo.html#series-de-tiempo-individuales"><i class="fa fa-check"></i><b>3.3.1</b> Series de tiempo individuales</a></li>
+<li class="chapter" data-level="3.3.2" data-path="3-3-series-de-tiempo.html"><a href="3-3-series-de-tiempo.html#varias-series-de-tiempo"><i class="fa fa-check"></i><b>3.3.2</b> Varias series de tiempo</a></li>
 </ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="4-errores-en-la-trama.html"><a href="4-errores-en-la-trama.html"><i class="fa fa-check"></i><b>4</b> Errores en la trama</a></li>
@@ -218,6 +219,25 @@ Figura 3.24: Barras apiladas para nivel de formación
 <div class="flourish-embed flourish-chart" data-src="visualisation/6450574">
 <script src="https://public.flourish.studio/resources/embed.js"></script>
 </div>
+</div>
+<div id="varias-series-de-tiempo" class="section level3">
+<h3><span class="header-section-number">3.3.2</span> Varias series de tiempo</h3>
+<p>Es muy común querer visualizar varios datos a través del tiempo, por lo general usando una variable categórica para diferenciar las observaciones. En estos casos se debe tener especial cuidado en como graficamos los datos ya que la figura puede tornarse confusa o difícil de interpretar. Suponga que queremos visualizar de manera semestral la cantidad de estudiantes graduados por nivel de formación, un gráfico de dispersión usando colores para distinguir no es una buena idea porque los cursos del tiempo se encuentran entre sí.</p>
+<div class="figure" style="text-align: center"><span id="fig:puntoincorrectoseries-fig"></span>
+<img src="Imágenes/puntoincorrectoseries.jpg" alt="Uso incorrecto de los puntos para mostrar series de tiempo" width="100%" />
+<p class="caption">
+Figura 3.25: Uso incorrecto de los puntos para mostrar series de tiempo
+</p>
+</div>
+<p>La figura <a href="3-3-series-de-tiempo.html#fig:puntoincorrectoseries-fig">3.25</a> es un ejemplo claro en el cual conectar los puntos mediante líneas es de vital importancia para generar visualizaciones claras y concisas que permiten una fácil interpretación por parte del usuario.</p>
+<div class="flourish-embed flourish-chart" data-src="visualisation/6451257">
+<script src="https://public.flourish.studio/resources/embed.js"></script>
+</div>
+<p>Los gráficos de líneas no se limitan únicamente a series de tiempo, son apropiados siempre que los puntos de datos tengan un orden natural que pueda ser reflejado en la variable que se ubica a lo largo del eje X, de modo que los puntos vecinos se puedan conectar con una línea. Este enfoque de grafico de líneas puede ser usado para visualizar la cantidad de admitidos por rango de edad y nivel de formación.</p>
+<div class="flourish-embed flourish-chart" data-src="visualisation/6458009">
+<script src="https://public.flourish.studio/resources/embed.js"></script>
+</div>
+<p>La visuliazación anterior permite identificar claramente la cantidad de estudiantes admitidos por rango de edad para cda niveld de formación ofrecido por la Universidad, este enfoque se considera correcto ya que los rangos de edad a pesar de ser una variable discreta presentan un orden natural que se refleja claramente sobre el eje X.</p>
 
 </div>
 </div>

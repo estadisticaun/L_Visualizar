@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.5.17)  16 JUN 2021 17:46
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.5.17)  17 JUN 2021 11:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1042,12 +1042,15 @@ phic file (type pdf)
 File: Imágenes/areaincorrectoeje.jpg Graphic file (type bmp)
 <Imágenes/areaincorrectoeje.jpg>
 [44]
+File: Imágenes/puntoincorrectoseries.jpg Graphic file (type bmp)
+<Imágenes/puntoincorrectoseries.jpg>
+[45] [46
+
+]
 Chapter 4.
 File: Imágenes/circular3d.jpg Graphic file (type bmp)
 <Imágenes/circular3d.jpg>
-[45
-
-]
+[47]
 File: Lineamientos-Visualizar_files/figure-latex/circularpaes-fig-1.pdf Graphic
  file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/circularpaes-fig-1.pdf>
@@ -1058,18 +1061,18 @@ file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/rejillagris-fig-1.pdf>
 File: Imágenes/barrasconpatrones.jpg Graphic file (type bmp)
 <Imágenes/barrasconpatrones.jpg>
-[46] [47]
+[48] [49]
 File: Lineamientos-Visualizar_files/figure-latex/graduadosporgrupoedadcorrecto-
 fig-1.pdf Graphic file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/graduadosporgrupoedadcorrecto-f
 ig-1.pdf>
-[48] [49] [50
+[50] [51] [52
 
 ]
 Chapter 5.
-(./Lineamientos-Visualizar.bbl [51] [52
+(./Lineamientos-Visualizar.bbl [53] [54
 
-]) [53] (./Lineamientos-Visualizar.aux)
+]) [55] (./Lineamientos-Visualizar.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -1078,12 +1081,12 @@ Package rerunfilecheck Info: File `Lineamientos-Visualizar.out' has not changed
 (rerunfilecheck)             Checksum: 763D136BE990ED9C5A748656543262B6;1645.
  ) 
 Here is how much of TeX's memory you used:
- 17453 strings out of 478764
- 333732 string characters out of 5862543
- 762144 words of memory out of 5000000
- 37175 multiletter control sequences out of 15000+600000
+ 17477 strings out of 478764
+ 334634 string characters out of 5862543
+ 762289 words of memory out of 5000000
+ 37198 multiletter control sequences out of 15000+600000
  409897 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  85i,8n,121p,1554b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Lineamientos-Visualizar.pdf (53 pages).
+Output written on Lineamientos-Visualizar.pdf (55 pages).
