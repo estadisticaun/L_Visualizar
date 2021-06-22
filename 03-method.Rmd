@@ -355,11 +355,11 @@ En la sección \@ref(cantidades) se hacen algunas recomendaciones acerca de la u
 
 ## Series de tiempo
 
-La visualización de series de tiempo puede verse como un caso especial de los diagramas de dispersión, en el cual una de las dos variables puede considerarse como tiempo ya que el tiempo impone una estructura adicional a los datos. En estos casos los puntos tienen un orden inherente y es posible ordenar las observaciones en de manera creciente en el tiempo y definir un antecesor y sucesor para cada punto. Generalmente la visualización de las series de tiempo se realiza usando gráficos de líneas, sin embargo, este tipo de gráficos no se limitan únicamente a esta información, son útiles siempre que una variable impone un orden a los datos.
+La visualización de series de tiempo puede verse como un caso especial de los diagramas de dispersión, en el cual una de las dos variables puede considerarse como tiempo ya que el tiempo impone una estructura adicional a los datos. En estos casos los puntos tienen un orden inherente y es posible ordenar las observaciones de manera creciente en el tiempo y definir un antecesor y sucesor para cada punto. Generalmente la visualización de las series de tiempo se realiza usando gráficos de líneas, sin embargo, este tipo de gráficos no se limitan únicamente a esta información, son útiles siempre que una variable impone un orden a los datos.
 
 ### Series de tiempo individuales
 
-Como primer ejemplo de una serie de tiempo, consideremos el patrón de estudiantes graduados a la Universidad Nacional a nivel de cifras generales, estas admisiones se presentan dos veces al año, por tanto, el eje temporal de nuestra visualización se conforma del año y el semestre al que fue admitido el estudiante. Podemos visualizar el comportamiento en la cantidad de estudiantes admitidos haciendo una forma de diagrama de dispersión donde dibujamos los puntos que representan el número de admitidos en cada semestre, como se presenta en la figura \@ref(fig:areasincorrecto-fig).
+Como primer ejemplo de una serie de tiempo, consideremos el patrón de estudiantes graduados en la Universidad Nacional a nivel de cifras generales, estas admisiones se presentan dos veces al año, por tanto, el eje temporal de nuestra visualización se conforma del año y el semestre al que fue admitido el estudiante. Podemos visualizar el comportamiento en la cantidad de estudiantes admitidos haciendo una forma de diagrama de dispersión donde dibujamos los puntos que representan el número de admitidos en cada semestre, como se presenta en la figura \@ref(fig:areasincorrecto-fig).
 
 ```{r puntosparaseries-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Gráfico de dispersión para la evolución de admitidos', warning=FALSE, message=FALSE, out.width='80%'}
 Admitidos <- UnalData::Aspirantes %>% 
@@ -380,7 +380,7 @@ ggplot(Admitidos, aes(x = YEAR_SEMESTER, y = n)) +
        title = "Evolución histórica del total de admitidos a la Universidad")
 ```
 
-Sin embargo, existe una importante diferencia con los diagramas de dispersión que se analizan en la sección *referencia*. En la figura \@ref(fig:areasincorrecto-fig) los puntos están espaciados uniformemente a lo largo del eje X y existe un orden especifico definido por la línea temporal entre ellos. Cada punto tiene exactamente un vecino a la izquierda y uno a la derecha, excepto los puntos de inicio y final que solo tienen un vecino. Una manera de enfatizar visualmente en este orden presentado por los datos es conectando las observaciones con líneas como se ilustra en la figura \@ref(fig:lineasparaseries-fig) y este tipo de grafico se denomina gráfico de líneas.
+Sin embargo, existe una importante diferencia con los diagramas de dispersión que se analizan en la sección *referencia*. En la figura \@ref(fig:areasincorrecto-fig) los puntos están espaciados uniformemente a lo largo del eje X y existe un orden específico definido por la línea temporal entre ellos. Cada punto tiene exactamente un vecino a la izquierda y uno a la derecha, excepto los puntos de inicio y final que solo tienen un vecino. Una manera de enfatizar visualmente en este orden presentado por los datos es conectando las observaciones con líneas como se ilustra en la figura \@ref(fig:lineasparaseries-fig) y este tipo de grafico se denomina gráfico de líneas.
 
 ```{r lineasparaseries-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Gráfico de dispersión para la evolución de admitidos', warning=FALSE, message=FALSE, out.width='80%'}
 ggplot(Admitidos, aes(x = YEAR_SEMESTER, y = n, group = 1)) +
@@ -396,15 +396,15 @@ ggplot(Admitidos, aes(x = YEAR_SEMESTER, y = n, group = 1)) +
        title = "Evolución histórica del total de admitidos a la Universidad")
 ```
 
-A pesar de que muchos científicos de datos indican que esta practica es incorrecta ya que las líneas no representan datos observados y de alguna manera corresponden a datos inventados, usar líneas para conectar los puntos ayuda con la percepción cuando los puntos están muy separados o están ubicados de manera desigual.
+A pesar de que muchos científicos de datos indican que esta práctica es incorrecta ya que las líneas no representan datos observados y de alguna manera corresponden a datos inventados, usar líneas para conectar los puntos ayuda con la percepción cuando los puntos están muy separados o están ubicados de manera desigual.
 
 Sin embargo, el uso de líneas para representar series de tiempo es un practica generalmente aceptada y, con frecuencia, los puntos se omiten por completo. Sin puntos la figura logra centrar la atención del usuario en la tendencia general de los datos y menos en las observaciones individuales adicionalmente una figura sin puntos esta menos ocupada visualmente lo que indica claridad para el usuario. En general, cuanto mas densa es la serie de tiempo, es decir mas puntos tiene, se hace menos importante enfatizar en observaciones individuales usando puntos. Para el conjunto de datos de admisiones es posible omitir los puntos y lograr un gráfico más limpio. La siguiente visualización fue realizada usando Flourish, con el fin de incluir herramientas interactivas.
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/6449909"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
-Otra opción bastante utilizada es rellenar el área bajo la curva con un color sólido, como se ilustra en la figura \@ref(fig:areasincorrecto-fig). Esta elección enfatiza aún más en la tendencia general de los datos ya que separa visualmente el área por encima de la curva del área que esta por debajo. Sin embargo, se debe tener cuidado con el inicio del eje Y, ya que si seleccionamos un valor de inicio diferente de cero el área bajo curva representa la medida en que el valor de la observación supera el inicio del eje, mientras que el final de la sombra representa de manera correcta la cantidad de estudiantes admitidos. 
+Otra opción bastante utilizada es rellenar el área bajo la curva con un color sólido, como se ilustra en la figura \@ref(fig:areasincorrecto-fig). Esta elección enfatiza aún más en la tendencia general de los datos ya que separa visualmente el área por encima de la curva del área que esta por debajo. Sin embargo, se debe tener cuidado con el inicio del eje Y, ya que si seleccionamos un valor de inicio diferente de cero el área bajo la curva representa la medida en que el valor de la observación supera el inicio del eje, mientras que el final de la sombra representa de manera correcta la cantidad de estudiantes admitidos. 
 
-```{r areasincorrecto-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Barras apiladas para nivel de formación', out.width='100%'}
+```{r areasincorrecto-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Gráfico de áreas para representar series de tiempo', out.width='100%'}
 knitr::include_graphics("Imágenes/areaincorrectoeje.jpg")
 ```
 
@@ -424,8 +424,8 @@ La figura \@ref(fig:puntoincorrectoseries-fig) es un ejemplo claro en el cual co
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/6451257"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
-Los gráficos de líneas no se limitan únicamente a series de tiempo, son apropiados siempre que los puntos de datos tengan un orden natural que pueda ser reflejado en la variable que se ubica a lo largo del eje X, de modo que los puntos vecinos se puedan conectar con una línea. Este enfoque de grafico de líneas puede ser usado para visualizar la cantidad de admitidos por rango de edad y nivel de formación.
+Los gráficos de líneas no se limitan únicamente a series de tiempo, son apropiados siempre que los puntos de datos tengan un orden natural que pueda ser reflejado en la variable que se ubica a lo largo del eje X, de modo que los puntos vecinos se puedan conectar con una línea. Este enfoque de gráfico de líneas puede ser usado para visualizar la cantidad de admitidos por rango de edad y nivel de formación.
 
 <div class="flourish-embed flourish-chart" data-src="visualisation/6458009"><script src="https://public.flourish.studio/resources/embed.js"></script></div>
 
-La visuliazación anterior permite identificar claramente la cantidad de estudiantes admitidos por rango de edad para cda niveld de formación ofrecido por la Universidad, este enfoque se considera correcto ya que los rangos de edad a pesar de ser una variable discreta presentan un orden natural que se refleja claramente sobre el eje X. 
+La visualización anterior permite identificar claramente la cantidad de estudiantes admitidos por rango de edad para cada nivel de formación ofrecido por la Universidad, este enfoque se considera correcto ya que los rangos de edad a pesar de ser una variable discreta presentan un orden natural que se refleja claramente sobre el eje X. 
