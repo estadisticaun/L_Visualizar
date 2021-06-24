@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.5.17)  21 JUN 2021 22:07
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021/W32TeX) (preloaded format=xelatex 2021.5.17)  24 JUN 2021 10:53
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1044,13 +1044,34 @@ File: Imágenes/areaincorrectoeje.jpg Graphic file (type bmp)
 [44]
 File: Imágenes/puntoincorrectoseries.jpg Graphic file (type bmp)
 <Imágenes/puntoincorrectoseries.jpg>
-[45] [46
-
-]
+[45]
+File: Imágenes/histogramaedadgraduados.jpg Graphic file (type bmp)
+<Imágenes/histogramaedadgraduados.jpg>
+[46]
+File: Lineamientos-Visualizar_files/figure-latex/densidadadministrativos-fig-1.
+pdf Graphic file (type pdf)
+<use Lineamientos-Visualizar_files/figure-latex/densidadadministrativos-fig-1.p
+df>
+[47]
+File: Lineamientos-Visualizar_files/figure-latex/densidadadministrativosrectang
+ular-fig-1.pdf Graphic file (type pdf)
+<use Lineamientos-Visualizar_files/figure-latex/densidadadministrativosrectangu
+lar-fig-1.pdf>
+[48]
+File: Imágenes/histogramagraduadossexo.jpg Graphic file (type bmp)
+<Imágenes/histogramagraduadossexo.jpg>
+[49]
+File: Lineamientos-Visualizar_files/figure-latex/densidadadministrativosexo-fig
+-1.pdf Graphic file (type pdf)
+<use Lineamientos-Visualizar_files/figure-latex/densidadadministrativosexo-fig-
+1.pdf>
+[50]
 Chapter 4.
 File: Imágenes/circular3d.jpg Graphic file (type bmp)
 <Imágenes/circular3d.jpg>
-[47]
+[51
+
+]
 File: Lineamientos-Visualizar_files/figure-latex/circularpaes-fig-1.pdf Graphic
  file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/circularpaes-fig-1.pdf>
@@ -1061,32 +1082,32 @@ file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/rejillagris-fig-1.pdf>
 File: Imágenes/barrasconpatrones.jpg Graphic file (type bmp)
 <Imágenes/barrasconpatrones.jpg>
-[48] [49]
+[52] [53]
 File: Lineamientos-Visualizar_files/figure-latex/graduadosporgrupoedadcorrecto-
 fig-1.pdf Graphic file (type pdf)
 <use Lineamientos-Visualizar_files/figure-latex/graduadosporgrupoedadcorrecto-f
 ig-1.pdf>
-[50] [51] [52
+[54] [55] [56
 
 ]
 Chapter 5.
-(./Lineamientos-Visualizar.bbl [53] [54
+(./Lineamientos-Visualizar.bbl [57] [58
 
-]) [55] (./Lineamientos-Visualizar.aux)
+]) [59] (./Lineamientos-Visualizar.aux)
 
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `Lineamientos-Visualizar.out' has not changed
 .
-(rerunfilecheck)             Checksum: 763D136BE990ED9C5A748656543262B6;1645.
+(rerunfilecheck)             Checksum: 511CBBDFAFE5A13D8AC7832A51B26903;1864.
  ) 
 Here is how much of TeX's memory you used:
- 17477 strings out of 478764
- 334634 string characters out of 5862543
- 762300 words of memory out of 5000000
- 37198 multiletter control sequences out of 15000+600000
+ 17559 strings out of 478764
+ 339184 string characters out of 5862543
+ 763019 words of memory out of 5000000
+ 37275 multiletter control sequences out of 15000+600000
  409897 words of font info for 82 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  85i,8n,121p,1554b,358s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on Lineamientos-Visualizar.pdf (55 pages).
+Output written on Lineamientos-Visualizar.pdf (59 pages).

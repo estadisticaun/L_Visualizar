@@ -113,7 +113,7 @@
 
 \title{Lineamientos conceptuales para la visualización estadística}
 \author{Camila Acosta Ramirez}
-\date{2021-06-21}
+\date{2021-06-24}
 
 \begin{document}
 \maketitle
@@ -813,6 +813,88 @@ La figura \ref{fig:puntoincorrectoseries-fig} es un ejemplo claro en el cual con
 Los gráficos de líneas no se limitan únicamente a series de tiempo, son apropiados siempre que los puntos de datos tengan un orden natural que pueda ser reflejado en la variable que se ubica a lo largo del eje X, de modo que los puntos vecinos se puedan conectar con una línea. Este enfoque de gráfico de líneas puede ser usado para visualizar la cantidad de admitidos por rango de edad y nivel de formación.
 
 La visualización anterior permite identificar claramente la cantidad de estudiantes admitidos por rango de edad para cada nivel de formación ofrecido por la Universidad, este enfoque se considera correcto ya que los rangos de edad a pesar de ser una variable discreta presentan un orden natural que se refleja claramente sobre el eje X.
+
+\hypertarget{visualizaciuxf3n-de-distribuciones}{%
+\section{Visualización de distribuciones}\label{visualizaciuxf3n-de-distribuciones}}
+
+Cuando se realiza análisis de datos con frecuencia se presentan situaciones en las que nos interesa comprender como se distribuye una variable en particular en un conjunto de datos, para estos casos el tipo de gráficos utilizado corresponde a histogramas y densidades. Es común tener tanto una como múltiples distribuciones, razón por la cual esta sección será dividida en visualización de una y varias distribuciones.
+
+\hypertarget{visualizaciuxf3n-de-una-uxfanica-distribuciuxf3n}{%
+\subsection{Visualización de una única distribución}\label{visualizaciuxf3n-de-una-uxfanica-distribuciuxf3n}}
+
+Para esta sección usaremos los datos relacionados con la edad de estudiantes y administrativos ya que son variables numéricas y continuas para las cuales es posible visualizar la distribución. Como se mencionó anteriormente existen principalmente dos posibilidades gráficas las cuales son histogramas y densidades.
+
+Los histogramas consisten en rectángulos llenos cuya altura corresponde a los conteos y los anchos corresponden al ancho de los contenedores, es importante resaltar que todos los contenedores deberán tener el mismo ancho para que la visualización represente un histograma válido. La figura \ref{fig:histogramaedadgraduados-fig} presenta el histograma correspondiente a la edad de los estudiantes graduados de la Universidad Nacional sin diferenciar por ningún tipo de característica como sexo o nivel de formación.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/histogramaedadgraduados} 
+
+}
+
+\caption{Histograma para la edad de estudiantes graduados}\label{fig:histogramaedadgraduados-fig}
+\end{figure}
+
+Los histogramas son generados a partir de una agrupación de datos por lo que su apariencia visual dependerá de la elección del ancho de los intervalos o contenedores, generalmente los programas de visualización que permiten graficar histogramas eligen el ancho del intervalo de manera predeterminada, pero es posible que este ancho no sea el más apropiado para la información que se quiere presentar. Por esta razón es fundamental siempre probar con diferentes anchos de intervalo para verificar que el histograma resultante refleje los datos subyacentes con precisión. En general, si el ancho del contenedor es demasiado pequeño el histograma se vuelve demasiado puntual, visualmente ocupado y las principales tendencias en los datos se ocultan. Por otro lado, si el ancho del contenedor es demasiado grande, las características más pequeñas en la distribución de los datos tienden a desaparecer.
+
+\emph{PONER LAS CUATRO FIGURAS DE HISTOGRAMAS}
+
+Para la distribución de edades de los estudiantes graduados, podemos observar que un ancho de intervalo de 1 año es demasiado pequeño y un ancho de intervalo de 10 años es demasiado grande, mientras que los anchos de contenedor entre 3 y 5 años funcionan bien. Es de resaltar que no existe una regla general que indique de manera exacta el ancho de intervalo correcto, es más una elección visual que permita ver las tendencias generales sin llegar a mostrar los datos de manera puntual pero tampoco agruparlos en intervalos muy grandes que oculten las características de la distribución.
+
+A pesar de la popularidad de los histogramas como opción para la visualización de distribuciones por su facilidad de generación de manera manual, a medida que le tiempo avanza se desarrollan tecnologías que desarrollan los gráficos de densidad y han logrado opacar la popularidad de los histogramas. En una gráfica de densidad, lo que se intenta es visualizar la distribución de probabilidad subyacente de los datos dibujando una curva continúa apropiada. La figura \ref{fig:densidadadministrativos-fig} presenta el gráfico de densidad para la edad de los administrativos de la Universidad Nacional en el periodo 2020-2.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/densidadadministrativos-fig-1} 
+
+}
+
+\caption{Densidad para la edad del personal administrativo, periodo 2020-2}\label{fig:densidadadministrativos-fig}
+\end{figure}
+
+Esta curva de densidad debe estimarse a partir de los datos, y el método más utilizado para este procedimiento de estimación se denomina estimación de densidad de kernel, con este método de estimación se dibuja una curva continua (el kernel) con un ancho pequeño en la ubicación de cada punto de datos, y luego se suman todas estas curvas para obtener la estimación de la densidad final. El kernel más utilizado es el kernel Gaussiano pero hay muchas otras opciones.
+
+Al igual que en el caso de los histogramas, la apariencia visual exacta de una gráfica de densidad depende de las opciones del kernel. Por ejemplo, un kernel gaussiano tendrá tendencia a producir estimaciones de densidad que parece gaussianas con características y colas suaves, por el contrario, un núcleo o kernel rectangular puede generar escalones en la curva de densidad. La figura \emph{referencia} muestra la distribución de la edad de los administrativos que laboran en la Universidad usando un kernel rectangular, observe que al usar este tipo de kernel se pierde la suavidad en la curva.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/densidadadministrativosrectangular-fig-1} 
+
+}
+
+\caption{Densidad para la edad del personal administrativo en el periodo 2020-2, kernel rectangular}\label{fig:densidadadministrativosrectangular-fig}
+\end{figure}
+
+En general, la elección del kernel no afecta de manera drástica el conjunto de datos cuando este tiene una cantidad grande de información, pero puede resultar en visualizaciones engañosas cuando el conjunto de datos posee poca información.
+
+Como en todo no hay una visualización completamente correcta la elección entre histogramas y gráficos de densidad dependerá de lo que se quiera comunicar y como se quieran ver reflejadas las características especificas de los datos. También existe la posibilidad de no utilizar estos dos gráficos y optar por realizar funciones empíricas de densidad acumulativa o qqplot; lo que si es cierto es que las densidades tienen una ventaja inherente sobre los histogramas cuando se trata de visualizar mas de una distribución a la vez.
+
+\hypertarget{visualizaciuxf3n-de-muxfaltiples-distribuciones}{%
+\subsection{Visualización de múltiples distribuciones}\label{visualizaciuxf3n-de-muxfaltiples-distribuciones}}
+
+En múltiples escenarios del análisis de datos existen ocasiones en las cuales es necesario la visualización de múltiples distribuciones de manera simultánea. Por ejemplo, suponga que estamos interesados en visualizar como se distribuyen las edades de los estudiantes graduados por sexo, la idea es identificar las diferencias existentes entre las edades de hombres y mujeres, ¿los hombres y mujeres son generalmente de la misma edad o existe una diferencia de edad entre los sexos?; una estrategia de visualización comúnmente utilizada en estas situaciones es un histograma apilado, donde se dibujan las barras del histograma para hombres en la parte superior de las barras para las mujeres, en un color diferente como se ilustra en la figura \ref{fig:histogramagraduadossexo-fig}.
+
+\begin{figure}
+
+{\centering \includegraphics[width=1\linewidth]{Imágenes/histogramagraduadossexo} 
+
+}
+
+\caption{Histograma para la edad de estudiantes graduados discriminado por sexo}\label{fig:histogramagraduadossexo-fig}
+\end{figure}
+
+La figura anterior fue etiquetada como incorrecta ya que este tipo de visualización no es recomendable ya que es posible identificar dos problemas claves. El primero de ellos tiene que ver con solo mirar la figura, no esta completamente claro donde comienzan exactamente las barras, podríamos preguntarnos si inician donde cambia de color o están destinadas a iniciar desde cero, es decir, para el rango de 21 a 14 años hay alrededor de 15.000 hombres o cerca de 27.000. Em segundo lugar, las alturas de las barras para los conteos de hombres no se pueden comparar directamente entre sí, por que todas las barras comienzan en una altura diferente.
+
+Lo correcto en estas ocasiones es usar gráficos de densidad superpuestos, ya que estos ayudan al ojo a mantener las distribuciones separadas. Sin embargo, para el conjunto de datos de administrativos, la distribución de edad los empleados hombres y mujeres son casi idénticas hasta alrededor de los 25 años y luego divergen, esto se observa en la figura \ref{fig:densidadadministrativosexo-fig}, por lo que la visualización resultante es válida pero no la ideal.
+
+\begin{figure}
+
+{\centering \includegraphics[width=0.8\linewidth]{Lineamientos-Visualizar_files/figure-latex/densidadadministrativosexo-fig-1} 
+
+}
+
+\caption{Densidad para la edad del personal administrativo en el periodo 2020-2 discriminado por sexo}\label{fig:densidadadministrativosexo-fig}
+\end{figure}
 
 \hypertarget{errores-en-la-trama}{%
 \chapter{Errores en la trama}\label{errores-en-la-trama}}

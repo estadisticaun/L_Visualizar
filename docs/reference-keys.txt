@@ -42,6 +42,11 @@ fig:puntosparaseries-fig
 fig:lineasparaseries-fig
 fig:areasincorrecto-fig
 fig:puntoincorrectoseries-fig
+fig:histogramaedadgraduados-fig
+fig:densidadadministrativos-fig
+fig:densidadadministrativosrectangular-fig
+fig:histogramagraduadossexo-fig
+fig:densidadadministrativosexo-fig
 fig:circular3d-fig
 fig:circularpaes-fig
 fig:usoderejillas-fig
@@ -71,5 +76,8 @@ barras-agrupadas
 series-de-tiempo
 series-de-tiempo-individuales
 varias-series-de-tiempo
+visualización-de-distribuciones
+visualización-de-una-única-distribución
+visualización-de-múltiples-distribuciones
 errores-en-la-trama
 final-words
