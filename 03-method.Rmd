@@ -446,9 +446,11 @@ knitr::include_graphics("Imágenes/histogramaedadgraduados.jpg")
 
 Los histogramas son generados a partir de una agrupación de datos por lo que su apariencia visual dependerá de la elección del ancho de los intervalos o contenedores, generalmente los programas de visualización que permiten graficar histogramas eligen el ancho del intervalo de manera predeterminada, pero es posible que este ancho no sea el más apropiado para la información que se quiere presentar. Por esta razón es fundamental siempre probar con diferentes anchos de intervalo para verificar que el histograma resultante refleje los datos subyacentes con precisión. En general, si el ancho del contenedor es demasiado pequeño el histograma se vuelve demasiado puntual, visualmente ocupado y las principales tendencias en los datos se ocultan. Por otro lado, si el ancho del contenedor es demasiado grande, las características más pequeñas en la distribución de los datos tienden a desaparecer. 
 
-*PONER LAS CUATRO FIGURAS DE HISTOGRAMAS*
+```{r histogramaedadgraduadosintervalos-fig, echo=FALSE, fig.align='center', fig.asp=.75, fig.cap='Histograma para la edad de estudiantes graduados, diferentes anchos de intervalo', out.width='100%'}
+knitr::include_graphics("Imágenes/Histogramavariosintervalos.jpg")
+```
 
-Para la distribución de edades de los estudiantes graduados, podemos observar que un ancho de intervalo de 1 año es demasiado pequeño y un ancho de intervalo de 10 años es demasiado grande, mientras que los anchos de contenedor entre 3 y 5 años funcionan bien. Es de resaltar que no existe una regla general que indique de manera exacta el ancho de intervalo correcto, es más una elección visual que permita ver las tendencias generales sin llegar a mostrar los datos de manera puntual pero tampoco agruparlos en intervalos muy grandes que oculten las características de la distribución.
+Para la distribución de edades de los estudiantes graduados, se observa de la figura \@ref(fig:histogramaedadgraduadosintervalos-fig) que un ancho de intervalo de 1 año es demasiado pequeño y un ancho de intervalo de 10 años es demasiado grande, mientras que los anchos de contenedor entre 3 y 5 años funcionan bien. Es de resaltar que no existe una regla general que indique de manera exacta el ancho de intervalo correcto, es más una elección visual que permita ver las tendencias generales sin llegar a mostrar los datos de manera puntual pero tampoco agruparlos en intervalos muy grandes que oculten las características de la distribución.
 
 A pesar de la popularidad de los histogramas como opción para la visualización de distribuciones por su facilidad de generación de manera manual, a medida que le tiempo avanza se desarrollan tecnologías que desarrollan los gráficos de densidad y han logrado opacar la popularidad de los histogramas. En una gráfica de densidad, lo que se intenta es visualizar la distribución de probabilidad subyacente de los datos dibujando una curva continúa apropiada. La figura \@ref(fig:densidadadministrativos-fig) presenta el gráfico de densidad para la edad de los administrativos de la Universidad Nacional en el periodo 2020-2. 
 
@@ -511,5 +513,5 @@ ggplot(administrativos, aes(x = EDAD, group = SEXO, fill = SEXO)) +
   labs(x = "", 
        y = "Densidad", 
        title = "Densidad para la edad de los administrativos por sexo, periodo 2020-2")
-
 ```
+

@@ -43,6 +43,7 @@ fig:lineasparaseries-fig
 fig:areasincorrecto-fig
 fig:puntoincorrectoseries-fig
 fig:histogramaedadgraduados-fig
+fig:histogramaedadgraduadosintervalos-fig
 fig:densidadadministrativos-fig
 fig:densidadadministrativosrectangular-fig
 fig:histogramagraduadossexo-fig
